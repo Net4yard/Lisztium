@@ -1,0 +1,192 @@
+@charset "UTF-8";
+html { /* 48px */
+  /* 40px */
+  /* 32px */
+  /* 28px */
+  /* 24px */
+  /* 20px */
+  /* 16px */
+  /* 1080px - 1440px */
+  /* 720px - 1080px */
+  /* 480px - 720px */
+  /* 360px - 480px */
+  /* 360px alatti méretek (pl. kisebb mobiltelefonok, okosórák) */
+}
+html h1 {
+  font-size: 3rem !important;
+}
+html h2 {
+  font-size: 2.5rem !important;
+}
+html h3 {
+  font-size: 2rem !important;
+}
+html h4 {
+  font-size: 1.75rem !important;
+}
+html h5 {
+  font-size: 1.5rem !important;
+}
+html h6 {
+  font-size: 1.25rem !important;
+}
+html p {
+  font-size: 1rem !important;
+}
+@media screen and (max-width: 1440px) {
+  html { /* 44px */
+    /* 36px */
+    /* 30px */
+    /* 26px */
+    /* 22px */
+    /* 18px */
+    /* 15px */
+  }
+  html h1 {
+    font-size: 2.75rem !important;
+  }
+  html h2 {
+    font-size: 2.25rem !important;
+  }
+  html h3 {
+    font-size: 1.875rem !important;
+  }
+  html h4 {
+    font-size: 1.625rem !important;
+  }
+  html h5 {
+    font-size: 1.375rem !important;
+  }
+  html h6 {
+    font-size: 1.125rem !important;
+  }
+  html p {
+    font-size: 0.9375rem !important;
+  }
+}
+@media screen and (max-width: 1080px) {
+  html { /* 40px */
+    /* 32px */
+    /* 28px */
+    /* 24px */
+    /* 20px */
+    /* 16px */
+    /* 14px */
+  }
+  html h1 {
+    font-size: 2.5rem !important;
+  }
+  html h2 {
+    font-size: 2rem !important;
+  }
+  html h3 {
+    font-size: 1.75rem !important;
+  }
+  html h4 {
+    font-size: 1.5rem !important;
+  }
+  html h5 {
+    font-size: 1.25rem !important;
+  }
+  html h6 {
+    font-size: 1rem !important;
+  }
+  html p {
+    font-size: 0.875rem !important;
+  }
+}
+@media screen and (max-width: 720px) {
+  html { /* 32px */
+    /* 28px */
+    /* 24px */
+    /* 20px */
+    /* 18px */
+    /* 16px */
+    /* 13px */
+  }
+  html h1 {
+    font-size: 2rem !important;
+  }
+  html h2 {
+    font-size: 1.75rem !important;
+  }
+  html h3 {
+    font-size: 1.5rem !important;
+  }
+  html h4 {
+    font-size: 1.25rem !important;
+  }
+  html h5 {
+    font-size: 1.125rem !important;
+  }
+  html h6 {
+    font-size: 1rem !important;
+  }
+  html p {
+    font-size: 0.8125rem !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  html { /* 28px */
+    /* 24px */
+    /* 22px */
+    /* 20px */
+    /* 18px */
+    /* 16px */
+    /* 12px */
+  }
+  html h1 {
+    font-size: 1.75rem !important;
+  }
+  html h2 {
+    font-size: 1.5rem !important;
+  }
+  html h3 {
+    font-size: 1.375rem !important;
+  }
+  html h4 {
+    font-size: 1.25rem !important;
+  }
+  html h5 {
+    font-size: 1.125rem !important;
+  }
+  html h6 {
+    font-size: 1rem !important;
+  }
+  html p {
+    font-size: 0.75rem !important;
+  }
+}
+@media screen and (max-width: 360px) {
+  html { /* 24px */
+    /* 22px */
+    /* 20px */
+    /* 18px */
+    /* 16px */
+    /* 14px */
+    /* 12px */
+  }
+  html h1 {
+    font-size: 1.5rem !important;
+  }
+  html h2 {
+    font-size: 1.375rem !important;
+  }
+  html h3 {
+    font-size: 1.25rem !important;
+  }
+  html h4 {
+    font-size: 1.125rem !important;
+  }
+  html h5 {
+    font-size: 1rem !important;
+  }
+  html h6 {
+    font-size: 0.875rem !important;
+  }
+  html p {
+    font-size: 0.75rem !important;
+  }
+}
+
+/*# sourceMappingURL=font.css.map */
