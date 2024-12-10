@@ -60,6 +60,9 @@ html {
         font-size: 1.6rem;
         font-weight: 400;
         color: white;
+        @media only screen and (max-width: 1080px) {
+          font-size: 1.3rem;
+        }
 
         &:hover {
           color: $main-seventh-color;
