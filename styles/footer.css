@@ -1,0 +1,16 @@
+@charset "UTF-8";
+footer {
+  background: linear-gradient(to right, #79c7c1, #7286c0);
+  height: 15vh;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+footer .bottom {
+  display: grid;
+  align-items: end; /* Szöveg alulra igazítása */
+  justify-items: center; /* Középre igazítás vízszintesen */
+  height: 14vh;
+}
+
+/*# sourceMappingURL=footer.css.map */
