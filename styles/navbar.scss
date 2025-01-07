@@ -32,12 +32,17 @@ html {
   padding: 0.5rem 1.5rem;
   background: linear-gradient(to right, $main-color, $main-secondary-color);
   height: 50px;
+  position: fixed;
+  overflow: hidden;
+  float: right;
+  width: 100%;
+  z-index: 999;
 
   .nav-menu {
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    @media only screen and (max-width: 720px) {
+    @media only screen and (max-width: 850px) {
       position: fixed;
       left: -100%;
       top: 5rem;
@@ -115,7 +120,7 @@ html {
     }
   }
 
-  @media only screen and (max-width: 720px) {
+  @media only screen and (max-width: 850px) {
     display: block;
     cursor: pointer;
   }
