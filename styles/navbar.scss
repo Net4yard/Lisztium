@@ -1,5 +1,6 @@
 $main-color: #019788;
 $main-secondary-color: #4f68b0;
+$main-sixth-color: #f1be34;
 $main-seventh-color: #f2a859;
 
 * {
@@ -57,9 +58,31 @@ html {
       margin: 2.5rem 0;
 
       .nav-link {
-        font-size: 1.6rem;
+        img{
+          height: 35px;
+          vertical-align: middle;
+          margin-right: 5px;
+        }
+        font-size: 1.3rem;
         font-weight: 400;
         color: white;
+        margin-right: 20px;
+
+        @media only screen and (max-width: 1440px) {
+          font-size: 1rem;
+          img{
+            height: 30px;
+          }
+        }
+
+        @media only screen and (max-width: 1080px) {
+          font-size: 0.7rem;
+          img{
+            height: 25px;
+          }
+        }
+
+
 
         &:hover {
           color: $main-seventh-color;
@@ -105,4 +128,11 @@ html {
     transition: all 0.3s ease-in-out;
     background-color: #101010;
   }
+}
+
+#apply {
+  @extend .nav-link; // Örökli a .nav-link stílusait
+  padding: 10px;
+  border-radius: 10px;
+  background: linear-gradient(to right, $main-sixth-color, $main-seventh-color);
 }

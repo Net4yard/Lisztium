@@ -1,0 +1,17 @@
+$main-color: #79c7c1;
+$main-secondary-color: #7286c0;
+
+footer{
+    background: linear-gradient(to right, $main-color, $main-secondary-color);
+    height: 15vh;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    
+    .bottom{
+        display: grid;
+        align-items: end; /* Szöveg alulra igazítása */
+        justify-items: center; /* Középre igazítás vízszintesen */
+        height: 14vh;
+    }
+}

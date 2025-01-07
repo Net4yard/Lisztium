@@ -5,3 +5,22 @@ $main-fouth-color: #51b3d5;
 $main-fifth-color: #b659dc;
 $main-sixth-color: #f1be34;
 $main-seventh-color: #f2a859;
+
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f4f4f4;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #7286c0;
+    border-radius: 10px;
+    border: 3px solid #f4f4f4;
+  }
+  
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #79c7c1 #f4f4f4;
+  }
