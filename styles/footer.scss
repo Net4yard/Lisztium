@@ -7,7 +7,12 @@ footer{
     text-align: center;
     color: white;
     text-decoration: none;
-    
+    border-radius: 10px 10px 0 0;
+
+    a{
+        color: white;
+    }
+
     .bottom{
         display: grid;
         align-items: end; /* Szöveg alulra igazítása */

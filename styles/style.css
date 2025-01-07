@@ -1,3 +1,22 @@
+@charset "UTF-8";
+.semiovaltop {
+  background-color: white;
+  width: 100%;
+  height: 50px;
+  border-radius: 50%/100%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.semiovalbottom {
+  background-color: white;
+  width: 100%;
+  height: 50px;
+  border-radius: 50%/100%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
 .section-1 {
   min-height: 700px;
 }
@@ -22,7 +41,7 @@
   width: 40%;
 }
 .section-2 .section-2-div .row .column_left img {
-  width: 75%;
+  width: 100%;
   height: auto;
 }
 .section-2 .section-2-div .row .column_right {
@@ -45,6 +64,173 @@
 }
 
 .section-3 {
+  margin-bottom: 150px;
+}
+.section-3 .greenline {
+  margin-top: 20vh;
+  background: linear-gradient(to right, #79c7c1, #8ee7a4);
+  width: 95%;
+  height: 30vh;
+  border-radius: 0 200px 200px 0;
+  display: flex;
+  /* Kezdőállapot: eltolás és átlátszóság */
+  transform: translateX(-100%);
+  opacity: 0;
+  /* Animáció alkalmazása */
+  animation: slideInLeft 1.5s ease-out forwards;
+  animation-delay: 0s;
+}
+.section-3 .greenline.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+.section-3 .greenline .shortgreenline {
+  background: linear-gradient(to right, #8ee7a4, #79c7c1);
+  width: 50%;
+  height: 40vh;
+  transform: translateY(-5vh);
+  border-radius: 0 200px 200px 0;
+}
+.section-3 .greenline .piano {
+  width: 45%;
+  text-align: center;
+  margin-top: 5vh;
+  margin-left: 5vh;
+}
+.section-3 .purpleline {
+  margin-top: 20vh;
+  background: linear-gradient(to right, #51b3d5, #7286c0);
+  width: 95%;
+  height: 30vh;
+  border-radius: 200px 0 0 200px;
+  display: flex;
+  margin-left: auto;
+  margin-right: 0;
+  /* Kezdőállapot: eltolás és átlátszóság */
+  transform: translateX(-100%);
+  opacity: 0;
+  /* Animáció alkalmazása */
+  animation: slideInRight 1.5s ease-out forwards;
+  animation-delay: 0s;
+}
+.section-3 .purpleline.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+.section-3 .purpleline .shortpurpleline {
+  background: linear-gradient(to right, #b659dc, #79c7c1);
+  width: 50%;
+  height: 40vh;
+  transform: translateY(-5vh);
+  border-radius: 200px 0 0 200px;
+  margin-right: 0;
+}
+.section-3 .purpleline .violin {
+  width: 45%;
+  text-align: center;
+  margin-top: 5vh;
+  margin-left: 10vh;
+}
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%); /* Teljesen balra */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0); /* Eredeti helyére */
+    opacity: 1;
+  }
+}
+
+.section-4 {
+  max-height: 1500px;
+}
+.section-4 ul {
+  list-style-type: circle !important;
+}
+.section-4 .orangebox {
+  align-items: center;
+  margin: auto;
+  background: linear-gradient(to right, #f1be34, #f2a859);
+  height: 25vh;
+  width: 70%;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+}
+.section-4 .orangebox p {
+  padding: 50px;
+}
+.section-4 .bluebox {
+  background: linear-gradient(to right, #79c7c1, #7286c0);
+  align-items: center;
+  margin: auto;
+  height: 60vh;
+  width: 60%;
+  margin-top: 50px;
+  border-radius: 10px;
+  padding: 50px;
+}
+.section-4 .bluebox h3 {
+  margin-bottom: 30px;
+}
+.section-4 .bluebox li {
+  padding: 20px;
+}
+.section-4 .smallbluebox {
+  background: linear-gradient(to right, #79c7c1, #7286c0);
+  align-items: center;
+  margin: auto;
+  height: 25vh;
+  width: 70%;
+  margin-top: 50px;
+  border-radius: 10px;
+  text-align: center;
+}
+.section-4 .smallbluebox h3 {
+  padding: 10px;
+}
+.section-4 .smallbluebox p {
+  padding: 20px;
+}
+
+.section-5 {
+  background: linear-gradient(to right, #79c7c1, #7286c0);
+  height: auto;
+}
+.section-5 h2 {
+  padding-top: 50px;
+  width: 350px;
+  text-align: center;
+  margin: auto;
+  z-index: 15;
+  margin-bottom: -125px;
+}
+.section-5 .whitebox {
+  width: 90%;
+  height: 80vh;
+  background: white;
+  margin: auto;
+  align-items: center;
+  border-radius: 10px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  mask: linear-gradient(to top, #fff 600px, transparent 600px), linear-gradient(to bottom, #fff -10%, transparent -10%), linear-gradient(to left, #fff 400px, transparent 400px), linear-gradient(to right, #fff 400px, transparent 400px), radial-gradient(circle 50px at 50% 50%, black 100%, transparent 100%);
+  mask-repeat: no-repeat;
+  -webkit-mask: linear-gradient(to top, #fff 625px, transparent 625px), linear-gradient(to bottom, #fff -10%, transparent -10%), linear-gradient(to left, #fff 400px, transparent 400px), linear-gradient(to right, #fff 400px, transparent 400px);
+}
+
+.section-6 {
   height: 500px;
 }
 
