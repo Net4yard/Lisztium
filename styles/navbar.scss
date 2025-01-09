@@ -37,6 +37,7 @@ html {
   float: right;
   width: 100%;
   z-index: 999;
+  box-shadow: 15px 1px 20px black;
 
   .nav-menu {
     display: flex;
@@ -72,6 +73,7 @@ html {
         font-weight: 400;
         color: white;
         margin-right: 20px;
+        transition: all 0.3s;
 
         @media only screen and (max-width: 1440px) {
           font-size: 1rem;
@@ -91,6 +93,26 @@ html {
 
         &:hover {
           color: $main-seventh-color;
+          font-size: 1.4rem;
+          img{
+            height: 37px;
+            transition: all 0.3s;
+          }
+          transition: all 0.3s;
+
+          @media only screen and (max-width: 1440px) {
+            font-size: 1.1rem;
+            img{
+              height: 32px;
+            }
+          }
+
+          @media only screen and (max-width: 1080px) {
+            font-size: 0.8rem;
+            img{
+              height: 27px;
+            }
+          }
         }
       }
     }
@@ -140,4 +162,7 @@ html {
   padding: 10px;
   border-radius: 10px;
   background: linear-gradient(to right, $main-sixth-color, $main-seventh-color);
+  &:hover{
+    color: $main-secondary-color !important;
+  }
 }
