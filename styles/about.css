@@ -1,0 +1,17 @@
+.section-3 .section-3-div h1 {
+  background: linear-gradient(to right, #79c7c1, #7286c0);
+  text-align: center;
+  border-radius: 10px;
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.section-3 .section-3-div .circle {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #019788, #7286c0);
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=about.css.map */
