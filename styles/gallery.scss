@@ -1,0 +1,35 @@
+$main-color: #019788;
+$main-secondary-color: #7286c0;
+$main-third-color: #8ee7a4;
+$main-fouth-color: #51b3d5;
+$main-fifth-color: #b659dc;
+$main-sixth-color: #f1be34;
+$main-seventh-color: #f2a859;
+$main-eighth-color: #79c7c1;
+
+.section-3{
+
+    .section-3-div{
+        max-width: 1920px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); // Oszlopok dinamikus száma
+        gap: 10px; // Távolság a képek között
+        padding: 20px;
+        margin-left: 15%;
+        margin-right: 15%;
+      
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover; // A képek méretének igazítása
+        }
+
+        @media (max-width: 1440px) {
+              grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          }
+          
+          @media (max-width: 720px) {
+              grid-template-columns: 1fr; // Egy oszlop
+          }
+    }
+}
