@@ -1,3 +1,4 @@
+@charset "UTF-8";
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -19,6 +20,32 @@
 
 body {
   overflow-x: hidden;
+}
+
+#scrollToTopButton {
+  max-width: 100%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #019788;
+  box-shadow: 0px 4px 10px rgba(73, 45, 22, 0.801);
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+  transition: all 0.5s ease-in-out;
+}
+#scrollToTopButton svg {
+  width: 25px;
+  height: 25px;
+}
+
+#scrollToTopButton.show {
+  display: block;
 }
 
 .section-1 {
@@ -58,7 +85,12 @@ body {
 }
 @media only screen and (max-width: 720px) {
   .section-2 .section-2-div .row {
-    display: block;
+    display: flex; /* Maradjon flexbox */
+    flex-direction: column; /* Oszlop elrendezés */
+    justify-content: center; /* Középre igazítás függőlegesen */
+    align-items: center; /* Középre igazítás vízszintesen */
+    margin: auto;
+    width: 90%; /* Szélesség kicsit rugalmasabbá tétele */
   }
 }
 .section-2 .section-2-div .row:after {

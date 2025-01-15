@@ -27,6 +27,8 @@ $main-eighth-color: #79c7c1;
 
 .section-3{
     height: auto;
+    margin-bottom: 150px;
+
     .greenline{
         margin-top: 20vh;
         background: linear-gradient(to right, $main-color, $main-third-color);
@@ -61,9 +63,37 @@ $main-eighth-color: #79c7c1;
             margin-top: 5vh;
             margin-left: 5vh;
         }
+
+        @media only screen and (max-width: 720px) {
+            background: transparent;
+            border: 1px solid grey;
+            border-radius: 10px;
+            width: 90%;
+            color: #000;
+            flex-direction: column; /* Elemek egymás alá helyezése */
+            align-items: center;
+            margin: auto;
+            margin-top: 35vh;
+            height: 85%;
+            padding-top: 20px;
+            
+            .shortgreenline{
+                width: 125%;
+                transform: translate(-7%, -75%);
+                position: fixed;
+                height: 25vh;
+            }
+              
+            .piano {
+                width: 70%;
+                padding-top: 10vh;
+                padding-bottom: 1vh;
+                text-align: center;
+                margin: auto;
+                height: 80%;
+            }
+        }
     }
-
-
 
     .purpleline{
         margin-top: 20vh;
@@ -102,8 +132,37 @@ $main-eighth-color: #79c7c1;
             margin-top: 5vh;
             margin-left: 10vh;
         }
+
+        @media only screen and (max-width: 720px) {
+            background: transparent;
+            border: 1px solid grey;
+            border-radius: 10px;
+            width: 90%;
+            color: #000;
+            flex-direction: column; /* Elemek egymás alá helyezése */
+            align-items: center;
+            margin: auto;
+            margin-top: 35vh;
+            height: 85%;
+            padding-top: 20px;
+            
+            .shortpurpleline{
+                width: 125%;
+                transform: translate(7%, -75%);
+                position: fixed;
+                height: 25vh;
+            }
+              
+            .violin {
+                width: 70%;
+                padding-top: 10vh;
+                padding-bottom: 1vh;
+                text-align: center;
+                margin: auto;
+                height: 80%;
+            }
+        }
     }
-    margin-bottom: 150px;
 
     @keyframes slideInLeft {
         0% {
@@ -134,6 +193,21 @@ $main-eighth-color: #79c7c1;
     ul{
         list-style-type: circle !important;
     }
+    .plane_left{
+        left: 0;
+        width: 10vh;
+        height: auto;
+        position: fixed;
+    }
+
+    .plane_right{
+        right: 0;
+        width: 15vh;
+        height: auto;
+        position: fixed;
+        transform: scaleX(-1); /* A kép vízszintesen tükrözve lesz */
+    }
+
     .orangebox{
         align-items: center;
         margin: auto;
@@ -158,6 +232,11 @@ $main-eighth-color: #79c7c1;
         &.visible {
             transform: translateY(0);
             opacity: 1;
+        }
+
+        .plane_left{
+            @extend .plane_left;
+            margin-top: -50px;
         }
     }
 
@@ -232,6 +311,39 @@ $main-eighth-color: #79c7c1;
             opacity: 1;
           }
       }
+      @media only screen and (max-width: 720px) {
+        .orangebox{
+            width: 90%;
+            p{
+                padding: 10px;
+                padding-top: 25px;
+                padding-bottom: 25px;
+            }
+        }
+        .bluebox{
+            width: 90%;
+            h3{
+                text-align: center;
+            }
+
+            li{
+                padding: 5px;
+            }
+        }
+        .smallbluebox{
+            width: 90%;
+            h3{
+                padding-top: 45px;
+            }
+            p{
+                padding: 10px;
+                padding-bottom: 25px;
+            }
+            .plane_left{
+                margin-bottom: 50px;
+            }
+        }
+    }
 }
 
 .section-5{
@@ -296,8 +408,25 @@ $main-eighth-color: #79c7c1;
                     height: 50%; // Az elem alsó fele
                   }
             }
+            
         }
 
+    }
+    @media only screen and (max-width: 720px) {
+        h2{
+            margin-bottom: -75px;
+        }
+        .whitebox{
+            height: auto;
+            .card_container{
+                height: 1500px;
+                align-items: center;
+                margin: auto;
+                .card{
+                    
+                }
+            }
+        }
     }
 
 }
@@ -383,7 +512,7 @@ $main-eighth-color: #79c7c1;
                 transition: all 0.3s;
             }
 
-            @media (max-width: 720px) {
+            @media only screen and (max-width: 720px) {
                 flex-direction: column; // Kártyák egymás alá helyezése
                 gap: 10px; // Kisebb távolság a kártyák között
                 min-height: auto;
