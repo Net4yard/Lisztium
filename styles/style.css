@@ -17,56 +17,6 @@
   border-top-right-radius: 0;
 }
 
-body {
-  overflow-x: hidden;
-}
-
-.section-1 {
-  min-height: 700px;
-}
-
-.section-2 {
-  background: linear-gradient(to right, #019788, #7286c0);
-  height: auto;
-  position: relative;
-  margin: auto;
-}
-.section-2 .section-2-div {
-  max-width: 1920px;
-}
-.section-2 .section-2-div .row {
-  display: flex;
-  position: relative;
-  margin: auto;
-  width: 80%;
-}
-.section-2 .section-2-div .row .column_left {
-  flex: 20%;
-  width: 40%;
-}
-.section-2 .section-2-div .row .column_left img {
-  width: 100%;
-  height: auto;
-}
-.section-2 .section-2-div .row .column_right {
-  flex: 80%;
-  width: 60%;
-  color: #fff;
-  text-align: center;
-  padding-top: 5vh;
-  padding-bottom: 5vh;
-}
-@media only screen and (max-width: 720px) {
-  .section-2 .section-2-div .row {
-    display: block;
-  }
-}
-.section-2 .section-2-div .row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 .section-3 {
   height: auto;
   margin-bottom: 150px;
@@ -102,6 +52,35 @@ body {
   margin-top: 5vh;
   margin-left: 5vh;
 }
+@media only screen and (max-width: 720px) {
+  .section-3 .greenline {
+    background: transparent;
+    border: 1px solid grey;
+    border-radius: 10px;
+    width: 90%;
+    color: #000;
+    flex-direction: column; /* Elemek egymás alá helyezése */
+    align-items: center;
+    margin: auto;
+    margin-top: 35vh;
+    height: 85%;
+    padding-top: 20px;
+  }
+  .section-3 .greenline .shortgreenline {
+    width: 125%;
+    transform: translate(-7%, -75%);
+    position: fixed;
+    height: 25vh;
+  }
+  .section-3 .greenline .piano {
+    width: 70%;
+    padding-top: 10vh;
+    padding-bottom: 1vh;
+    text-align: center;
+    margin: auto;
+    height: 80%;
+  }
+}
 .section-3 .purpleline {
   margin-top: 20vh;
   background: linear-gradient(to right, #51b3d5, #7286c0);
@@ -136,6 +115,35 @@ body {
   margin-top: 5vh;
   margin-left: 10vh;
 }
+@media only screen and (max-width: 720px) {
+  .section-3 .purpleline {
+    background: transparent;
+    border: 1px solid grey;
+    border-radius: 10px;
+    width: 90%;
+    color: #000;
+    flex-direction: column; /* Elemek egymás alá helyezése */
+    align-items: center;
+    margin: auto;
+    margin-top: 35vh;
+    height: 85%;
+    padding-top: 20px;
+  }
+  .section-3 .purpleline .shortpurpleline {
+    width: 125%;
+    transform: translate(7%, -75%);
+    position: fixed;
+    height: 25vh;
+  }
+  .section-3 .purpleline .violin {
+    width: 70%;
+    padding-top: 10vh;
+    padding-bottom: 1vh;
+    text-align: center;
+    margin: auto;
+    height: 80%;
+  }
+}
 @keyframes slideInLeft {
   0% {
     transform: translateX(-100%);
@@ -164,6 +172,19 @@ body {
 .section-4 ul {
   list-style-type: circle !important;
 }
+.section-4 .plane_left, .section-4 .orangebox .plane_left {
+  left: 0;
+  width: 10vh;
+  height: auto;
+  position: fixed;
+}
+.section-4 .plane_right {
+  right: 0;
+  width: 15vh;
+  height: auto;
+  position: fixed;
+  transform: scaleX(-1); /* A kép vízszintesen tükrözve lesz */
+}
 .section-4 .orangebox {
   align-items: center;
   margin: auto;
@@ -186,6 +207,9 @@ body {
 .section-4 .orangebox.visible {
   transform: translateY(0);
   opacity: 1;
+}
+.section-4 .orangebox .plane_left {
+  margin-top: -50px;
 }
 .section-4 .bluebox {
   background: linear-gradient(to right, #79c7c1, #7286c0);
@@ -250,6 +274,38 @@ body {
     opacity: 1;
   }
 }
+@media only screen and (max-width: 720px) {
+  .section-4 .orangebox {
+    width: 90%;
+  }
+  .section-4 .orangebox p {
+    padding: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .section-4 .bluebox {
+    width: 90%;
+  }
+  .section-4 .bluebox h3 {
+    text-align: center;
+  }
+  .section-4 .bluebox li {
+    padding: 5px;
+  }
+  .section-4 .smallbluebox {
+    width: 90%;
+  }
+  .section-4 .smallbluebox h3 {
+    padding-top: 45px;
+  }
+  .section-4 .smallbluebox p {
+    padding: 10px;
+    padding-bottom: 25px;
+  }
+  .section-4 .smallbluebox .plane_left {
+    margin-bottom: 50px;
+  }
+}
 
 .section-5 {
   background: linear-gradient(to right, #019788, #7286c0);
@@ -299,6 +355,19 @@ body {
 }
 .section-5 .whitebox .card_container .card .bottom-half {
   height: 50%;
+}
+@media only screen and (max-width: 720px) {
+  .section-5 h2 {
+    margin-bottom: -75px;
+  }
+  .section-5 .whitebox {
+    height: auto;
+  }
+  .section-5 .whitebox .card_container {
+    height: 1500px;
+    align-items: center;
+    margin: auto;
+  }
 }
 
 .section-6 {
@@ -373,7 +442,7 @@ body {
   height: 52vh;
   transition: all 0.3s;
 }
-@media (max-width: 720px) {
+@media only screen and (max-width: 720px) {
   .section-6 .card_container .card {
     flex-direction: column;
     gap: 10px;
