@@ -66,10 +66,11 @@ body{
   background: linear-gradient(to right, $main-color, $main-secondary-color);
   height: auto;
   position: relative;
-  margin: auto;
 
   .section-2-div{
       max-width: 1920px;
+      align-items: center;
+      margin: auto;
 
       .row {
           display: flex;

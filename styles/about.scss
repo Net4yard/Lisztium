@@ -10,6 +10,8 @@ $main-eighth-color: #79c7c1;
 .section-3{
     .section-3-div{
         max-width: 1920px;
+        align-items: center;
+        margin: auto;
         h1{
             background: linear-gradient(to right, $main-eighth-color, $main-secondary-color);
             text-align: center;

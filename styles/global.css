@@ -56,10 +56,11 @@ body {
   background: linear-gradient(to right, #019788, #7286c0);
   height: auto;
   position: relative;
-  margin: auto;
 }
 .section-2 .section-2-div {
   max-width: 1920px;
+  align-items: center;
+  margin: auto;
 }
 .section-2 .section-2-div .row {
   display: flex;
