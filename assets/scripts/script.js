@@ -17,3 +17,23 @@ scrollToTopButton.addEventListener("click", function () {
     behavior: "smooth",
   });
 });
+
+const colors = [
+  ["#019788", "#7286c0"],
+  ["#8ee7a4", "#51b3d5"],
+  ["#f1be34", "#f2a859"]
+];
+
+const columns = document.querySelectorAll(".columns");
+
+columns.forEach((item) => {
+  const randomColorPair = colors[Math.floor(Math.random() * colors.length)];
+  const circle = item.querySelector(".circle");
+  const title = item.querySelector(".title");
+
+  // Kör színe
+  circle.style.background = `radial-gradient(circle, ${randomColorPair[0]}, ${randomColorPair[1]})`;
+
+  // Címsor színe az első szín
+  title.style.color = randomColorPair[0];
+});

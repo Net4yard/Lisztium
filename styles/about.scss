@@ -9,6 +9,7 @@ $main-eighth-color: #79c7c1;
 
 .section-3{
     .section-3-div{
+        max-width: 1920px;
         h1{
             background: linear-gradient(to right, $main-eighth-color, $main-secondary-color);
             text-align: center;
@@ -19,18 +20,107 @@ $main-eighth-color: #79c7c1;
             margin-bottom: 50px;
         }
 
-        .circle {
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle, $main-color, $main-secondary-color);
-            border-radius: 50%;
-        }
-        
-        .leftbox{
+        .container850above{   
+            display: flex; /* Flexbox alapértelmezett használata */
+            flex-wrap: wrap; /* Elemek új sorba kerülnek, ha nem férnek el */
+            justify-content: space-around; /* Elemek közötti térköz */
+            align-items: center; /* Vertikális igazítás középre */
+            margin: auto;
+            width: 90%; /* 90%-os szélességet használja */
+            gap: 20px; /* Elemek közötti távolság */
+            margin-bottom: 10px;
+            .columns{
+                display: flex; /* Egy sor elemeinek elrendezése */
+                flex-direction: row; /* Elemek egymás mellett vízszintesen */
+                width: 70%; /* A teljes szélességet használja */
+                .leftbox, .rightbox{
+                    width: 60%;
+                    height: 15vh;
+                    border-radius: 10px;
+                    margin-top: 7vh;
+                    z-index: -1;
+                    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+                }
+    
+                .leftbox {
+                    transform: translateX(20%); /* Belógás jobbról */
+                }
+                
+                .rightbox {
+                    transform: translateX(-20%); /* Belógás balról */
+                }
 
-        }
-        .rightbox{
+                .circle {
+                    width: 300px;
+                    height: 300px;
+                    border-radius: 50%;
+                    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+                } 
+                
+                .title {
+                    margin-top: 10px;
+                    text-align: center;
+                }
+            }
 
+            @media only screen and (max-width: 850px) {
+                display: none;
+            }
+        }
+        .container850below{
+            display: flex; /* Flexbox alapértelmezett használata */
+            flex-wrap: wrap; /* Elemek új sorba kerülnek, ha nem férnek el */
+            justify-content: space-around; /* Elemek közötti térköz */
+            align-items: center; /* Vertikális igazítás középre */
+            margin: auto;
+            width: 90%; /* 90%-os szélességet használja */
+            gap: 20px; /* Elemek közötti távolság */
+            margin-bottom: 10px;
+            .columns{
+                display: flex; /* Egy sor elemeinek elrendezése */
+                flex-direction: column; /* Elemek egymás alatt */
+                align-items: center; /* Középre igazítás */
+                width: 70%; /* A teljes szélességet használja */
+                .leftbox, .rightbox{
+                    width: 60%;
+                    height: 15vh;
+                    border-radius: 10px;
+                    margin-top: 7vh;
+                    z-index: -1;
+                    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+                    width: 70%; /* Szélesebb doboz */
+                transform: translateX(0); /* Nincs oldalra tolás */
+                margin-top: -30px; /* Doboz belógása a körbe */
+                }
+
+                .circle {
+                    width: 300px;
+                    height: 300px;
+                    border-radius: 50%;
+                    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+                    margin-bottom: -50px; /* Kör belógása a doboz mögé */
+                } 
+                
+                .title {
+                    margin-top: 10px;
+                    text-align: center;
+                }
+            }
+
+            @media only screen and (min-width: 851px) {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: 850px) {
+            h1{
+                text-align: center;
+                border-radius: 10px;
+                margin-left: 60%;
+                margin-right: 60%;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
         }
     }
 }
