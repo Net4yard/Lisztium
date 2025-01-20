@@ -304,6 +304,7 @@
   }
   .section-4 .smallbluebox .plane_left {
     margin-bottom: 50px;
+    width: 75px;
   }
 }
 
@@ -375,6 +376,7 @@
   height: auto;
   align-items: center;
   margin: auto;
+  width: 90%;
 }
 .section-6 h2 {
   text-align: center;
@@ -390,6 +392,7 @@
   align-items: center; /* Középre igazítás függőlegesen */
   margin: auto;
   gap: 20px;
+  width: 90%;
 }
 .section-6 .card_container .card {
   display: inline-flex;
@@ -447,7 +450,7 @@
     flex-direction: column;
     gap: 10px;
     min-height: auto;
-    margin-bottom: 35vh;
+    margin-bottom: 10vh;
   }
   .section-6 .card_container .card h2 {
     margin-bottom: 20px;
