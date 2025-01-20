@@ -221,10 +221,6 @@ $main-eighth-color: #79c7c1;
         border-radius: 10px;
         text-align: center;
         padding: 10px;
-        p{
-            padding: 50px;
-        }
-
         transform: translateY(10%);
         opacity: 0;
         
@@ -236,7 +232,9 @@ $main-eighth-color: #79c7c1;
             transform: translateY(0);
             opacity: 1;
         }
-
+        p{
+            padding: 50px;
+        }
         .plane_left{
             @extend .plane_left;
             margin-top: -50px;
@@ -252,13 +250,6 @@ $main-eighth-color: #79c7c1;
         margin-top: 50px;
         border-radius: 10px;
         padding: 50px;
-        h3{
-            margin-bottom: 30px;
-        }
-        li{
-            padding: 20px;
-            list-style: disc;
-        }
 
         transform: translateY(10%);
         opacity: 0;
@@ -267,10 +258,20 @@ $main-eighth-color: #79c7c1;
         animation: slideInUp 1.5s ease-out forwards;
         animation-delay: 0s;
 
+
         &.visible {
             transform: translateY(0);
             opacity: 1;
         }
+
+        h3{
+            margin-bottom: 30px;
+        }
+        li{
+            padding: 20px;
+            list-style: disc;
+        }
+
     }
 
     .smallbluebox{
@@ -283,13 +284,6 @@ $main-eighth-color: #79c7c1;
         margin-top: 50px;
         border-radius: 10px;
         text-align: center;
-        h3{
-            padding: 10px;
-        }
-        p{
-            padding: 20px;
-        }
-
         transform: translateY(10%);
         opacity: 0;
         
@@ -300,6 +294,13 @@ $main-eighth-color: #79c7c1;
         &.visible {
             transform: translateY(0);
             opacity: 1;
+        }
+
+        h3{
+            padding: 10px;
+        }
+        p{
+            padding: 20px;
         }
     }
 
@@ -372,18 +373,18 @@ $main-eighth-color: #79c7c1;
         margin-top: 100px;
         margin-bottom: 100px;  
         mask: 
-        linear-gradient(to top, #fff 600px, transparent 600px),
+        linear-gradient(to top, #fff 50%, transparent 40%),
         linear-gradient(to bottom, #fff -10%, transparent -10%),
-        linear-gradient(to left, #fff 400px, transparent 400px),
-        linear-gradient(to right, #fff 400px, transparent 400px),
-        radial-gradient(circle 50px at 50% 50%, black 100%, transparent 100%);
+        linear-gradient(to left, #fff 40%, transparent 400px),
+        linear-gradient(to right, #fff 10%, transparent 10%),
+        radial-gradient(circle 50px at 20% 50%, black 100%, transparent 100%);
       mask-repeat: no-repeat;
 
       -webkit-mask: 
-        linear-gradient(to top, #fff 625px, transparent 625px),
-        linear-gradient(to bottom, #fff -10%, transparent -10%),
-        linear-gradient(to left, #fff 400px, transparent 400px),
-        linear-gradient(to right, #fff 400px, transparent 400px);
+        linear-gradient(to top, #fff 90%, transparent 90%),
+        linear-gradient(to bottom, #fff -95%, transparent -95%),
+        linear-gradient(to left, #fff 40%, transparent 40%),
+        linear-gradient(to right, #fff 40%, transparent 40%);
 
         .card_container{
             width: 90%;
@@ -521,7 +522,7 @@ $main-eighth-color: #79c7c1;
                 flex-direction: column; // Kártyák egymás alá helyezése
                 gap: 10px; // Kisebb távolság a kártyák között
                 min-height: auto;
-
+                margin-bottom: 10vh;
                 h2{
                     margin-bottom: 20px;
                 }
@@ -536,7 +537,7 @@ $main-eighth-color: #79c7c1;
                 .side_card_right {
                   margin: auto;
                 }
-                margin-bottom: 10vh;
+
             }
         }
     }
