@@ -324,6 +324,7 @@
 }
 .section-5 .whitebox {
   width: 90%;
+  max-width: 1920px;
   height: 80vh;
   background: white;
   margin: auto;
@@ -400,6 +401,7 @@
   display: inline-flex;
   margin-top: 10px;
   text-align: center;
+  margin: auto;
 }
 .section-6 .card_container .card li {
   list-style: disc;

@@ -365,6 +365,7 @@ $main-eighth-color: #79c7c1;
 
     .whitebox{
         width: 90%;
+        max-width: 1920px;
         height: 80vh;
         background: white;
         margin: auto;
@@ -463,6 +464,7 @@ $main-eighth-color: #79c7c1;
             display: inline-flex;
             margin-top: 10px;
             text-align: center;
+            margin: auto;
 
             li{
                 list-style: disc;

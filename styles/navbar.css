@@ -85,28 +85,28 @@ html a {
     height: 25px;
   }
 }
-.navbar .nav-menu .nav-item .nav-link:hover, .navbar .nav-menu .nav-item #apply:hover {
+.navbar .nav-menu .nav-item .nav-link:hover, .navbar .nav-menu .nav-item #apply:hover, .navbar .nav-menu .nav-item .nav-link:active, .navbar .nav-menu .nav-item #apply:active {
   color: #f2a859;
   font-size: 1.4rem;
   transition: all 0.3s;
 }
-.navbar .nav-menu .nav-item .nav-link:hover img, .navbar .nav-menu .nav-item #apply:hover img {
+.navbar .nav-menu .nav-item .nav-link:hover img, .navbar .nav-menu .nav-item #apply:hover img, .navbar .nav-menu .nav-item .nav-link:active img, .navbar .nav-menu .nav-item #apply:active img {
   height: 37px;
   transition: all 0.3s;
 }
 @media only screen and (max-width: 1440px) {
-  .navbar .nav-menu .nav-item .nav-link:hover, .navbar .nav-menu .nav-item #apply:hover {
+  .navbar .nav-menu .nav-item .nav-link:hover, .navbar .nav-menu .nav-item #apply:hover, .navbar .nav-menu .nav-item .nav-link:active, .navbar .nav-menu .nav-item #apply:active {
     font-size: 1.1rem;
   }
-  .navbar .nav-menu .nav-item .nav-link:hover img, .navbar .nav-menu .nav-item #apply:hover img {
+  .navbar .nav-menu .nav-item .nav-link:hover img, .navbar .nav-menu .nav-item #apply:hover img, .navbar .nav-menu .nav-item .nav-link:active img, .navbar .nav-menu .nav-item #apply:active img {
     height: 32px;
   }
 }
 @media only screen and (max-width: 1080px) {
-  .navbar .nav-menu .nav-item .nav-link:hover, .navbar .nav-menu .nav-item #apply:hover {
+  .navbar .nav-menu .nav-item .nav-link:hover, .navbar .nav-menu .nav-item #apply:hover, .navbar .nav-menu .nav-item .nav-link:active, .navbar .nav-menu .nav-item #apply:active {
     font-size: 0.8rem;
   }
-  .navbar .nav-menu .nav-item .nav-link:hover img, .navbar .nav-menu .nav-item #apply:hover img {
+  .navbar .nav-menu .nav-item .nav-link:hover img, .navbar .nav-menu .nav-item #apply:hover img, .navbar .nav-menu .nav-item .nav-link:active img, .navbar .nav-menu .nav-item #apply:active img {
     height: 27px;
   }
 }
