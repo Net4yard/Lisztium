@@ -64,16 +64,17 @@ html {
       margin: 2.5rem 0;
 
       .nav-link {
-        img{
-          height: 35px;
-          vertical-align: middle;
-          margin-right: 5px;
-        }
         font-size: 1.3rem;
         font-weight: 400;
         color: white;
         margin-right: 20px;
         transition: all 0.3s;
+        img{
+          height: 35px;
+          vertical-align: middle;
+          margin-right: 5px;
+        }
+
 
         @media only screen and (max-width: 1440px) {
           font-size: 1rem;
@@ -91,14 +92,16 @@ html {
 
 
 
-        &:hover {
+        &:hover,
+        &:active {
           color: $main-seventh-color;
           font-size: 1.4rem;
+          transition: all 0.3s;
           img{
             height: 37px;
             transition: all 0.3s;
           }
-          transition: all 0.3s;
+
 
           @media only screen and (max-width: 1440px) {
             font-size: 1.1rem;

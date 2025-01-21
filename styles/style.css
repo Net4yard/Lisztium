@@ -168,6 +168,9 @@
 .section-4 {
   max-height: 1500px;
   overflow-y: hidden;
+  max-width: 1680px;
+  align-items: center;
+  margin: auto;
 }
 .section-4 ul {
   list-style-type: circle !important;
@@ -201,12 +204,12 @@
   animation: slideInUp 1.5s ease-out forwards;
   animation-delay: 0s;
 }
-.section-4 .orangebox p {
-  padding: 50px;
-}
 .section-4 .orangebox.visible {
   transform: translateY(0);
   opacity: 1;
+}
+.section-4 .orangebox p {
+  padding: 50px;
 }
 .section-4 .orangebox .plane_left {
   margin-top: -50px;
@@ -215,8 +218,7 @@
   background: linear-gradient(to right, #79c7c1, #7286c0);
   align-items: center;
   margin: auto;
-  min-height: 60vh;
-  height: auto;
+  height: 40vh;
   width: 60%;
   margin-top: 50px;
   border-radius: 10px;
@@ -227,16 +229,16 @@
   animation: slideInUp 1.5s ease-out forwards;
   animation-delay: 0s;
 }
+.section-4 .bluebox.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
 .section-4 .bluebox h3 {
   margin-bottom: 30px;
 }
 .section-4 .bluebox li {
   padding: 20px;
   list-style: disc;
-}
-.section-4 .bluebox.visible {
-  transform: translateY(0);
-  opacity: 1;
 }
 .section-4 .smallbluebox {
   background: linear-gradient(to right, #79c7c1, #7286c0);
@@ -254,15 +256,15 @@
   animation: slideInUp 1.5s ease-out forwards;
   animation-delay: 0s;
 }
+.section-4 .smallbluebox.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
 .section-4 .smallbluebox h3 {
   padding: 10px;
 }
 .section-4 .smallbluebox p {
   padding: 20px;
-}
-.section-4 .smallbluebox.visible {
-  transform: translateY(0);
-  opacity: 1;
 }
 @keyframes slideInUp {
   0% {
@@ -322,6 +324,7 @@
 }
 .section-5 .whitebox {
   width: 90%;
+  max-width: 1920px;
   height: 80vh;
   background: white;
   margin: auto;
@@ -329,9 +332,9 @@
   border-radius: 10px;
   margin-top: 100px;
   margin-bottom: 100px;
-  mask: linear-gradient(to top, #fff 600px, transparent 600px), linear-gradient(to bottom, #fff -10%, transparent -10%), linear-gradient(to left, #fff 400px, transparent 400px), linear-gradient(to right, #fff 400px, transparent 400px), radial-gradient(circle 50px at 50% 50%, black 100%, transparent 100%);
+  mask: linear-gradient(to top, #fff 50%, transparent 40%), linear-gradient(to bottom, #fff -10%, transparent -10%), linear-gradient(to left, #fff 40%, transparent 400px), linear-gradient(to right, #fff 10%, transparent 10%), radial-gradient(circle 50px at 20% 50%, black 100%, transparent 100%);
   mask-repeat: no-repeat;
-  -webkit-mask: linear-gradient(to top, #fff 625px, transparent 625px), linear-gradient(to bottom, #fff -10%, transparent -10%), linear-gradient(to left, #fff 400px, transparent 400px), linear-gradient(to right, #fff 400px, transparent 400px);
+  -webkit-mask: linear-gradient(to top, #fff 90%, transparent 90%), linear-gradient(to bottom, #fff -95%, transparent -95%), linear-gradient(to left, #fff 40%, transparent 40%), linear-gradient(to right, #fff 40%, transparent 40%);
 }
 .section-5 .whitebox .card_container {
   width: 90%;
@@ -398,6 +401,7 @@
   display: inline-flex;
   margin-top: 10px;
   text-align: center;
+  margin: auto;
 }
 .section-6 .card_container .card li {
   list-style: disc;

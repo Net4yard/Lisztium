@@ -37,3 +37,10 @@ columns.forEach((item) => {
   // Címsor színe az első szín
   title.style.color = randomColorPair[0];
 });
+
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+  if (link.href === window.location.href) {
+    link.classList.add('active');
+  }
+});
