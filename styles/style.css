@@ -240,6 +240,11 @@
   padding: 20px;
   list-style: disc;
 }
+@media only screen and (max-width: 1440px) {
+  .section-4 .bluebox {
+    height: 60vh;
+  }
+}
 .section-4 .smallbluebox {
   background: linear-gradient(to right, #79c7c1, #7286c0);
   align-items: center;
@@ -388,6 +393,7 @@
   margin-right: 40%;
   border-radius: 10px;
   padding-top: 5px;
+  margin-bottom: 10px;
 }
 .section-6 .card_container {
   display: flex; /* Flexbox használata a gyerek elemek sorba rendezéséhez */
