@@ -23,4 +23,20 @@
   }
 }
 
+.section-4 .section-4-div {
+  max-width: 1440px;
+}
+.section-4 .section-4-div .box {
+  width: 60%;
+  height: 30vh;
+  border-radius: 10px;
+  background: linear-gradient(to right, #79c7c1, #7286c0);
+  align-items: center;
+  margin: auto;
+  margin-bottom: 40px;
+}
+.section-4 .section-4-div .box p {
+  padding: 10px;
+}
+
 /*# sourceMappingURL=gallery.css.map */
