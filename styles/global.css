@@ -1,3 +1,4 @@
+@charset "UTF-8";
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -21,18 +22,88 @@ body {
   overflow-x: hidden;
 }
 
-.section-1 {
-  min-height: 700px;
+#scrollToTopButton {
+  max-width: 100%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #019788;
+  box-shadow: 0px 4px 10px rgba(73, 45, 22, 0.801);
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+  transition: all 0.5s ease-in-out;
+}
+#scrollToTopButton svg {
+  width: 25px;
+  height: 25px;
+}
+
+#scrollToTopButton.show {
+  display: block;
+}
+
+.section-1 .section-1-div {
+  margin-top: 5vh;
+}
+.section-1 .section-1-div .container {
+  width: 70%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  margin: auto;
+}
+.section-1 .section-1-div .container img {
+  width: 100%;
+  padding: 20px;
+}
+.section-1 .section-1-div .container .wrapper {
+  width: 100;
+  display: flex;
+  animation: slide 10s infinite;
+}
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  55% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-200%);
+  }
+  80% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(-300%);
+  }
 }
 
 .section-2 {
   background: linear-gradient(to right, #019788, #7286c0);
   height: auto;
   position: relative;
-  margin: auto;
 }
 .section-2 .section-2-div {
   max-width: 1920px;
+  align-items: center;
+  margin: auto;
 }
 .section-2 .section-2-div .row {
   display: flex;
@@ -58,7 +129,12 @@ body {
 }
 @media only screen and (max-width: 720px) {
   .section-2 .section-2-div .row {
-    display: block;
+    display: flex; /* Maradjon flexbox */
+    flex-direction: column; /* Oszlop elrendezés */
+    justify-content: center; /* Középre igazítás függőlegesen */
+    align-items: center; /* Középre igazítás vízszintesen */
+    margin: auto;
+    width: 90%; /* Szélesség kicsit rugalmasabbá tétele */
   }
 }
 .section-2 .section-2-div .row:after {

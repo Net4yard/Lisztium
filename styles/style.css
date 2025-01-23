@@ -17,56 +17,6 @@
   border-top-right-radius: 0;
 }
 
-body {
-  overflow-x: hidden;
-}
-
-.section-1 {
-  min-height: 700px;
-}
-
-.section-2 {
-  background: linear-gradient(to right, #019788, #7286c0);
-  height: auto;
-  position: relative;
-  margin: auto;
-}
-.section-2 .section-2-div {
-  max-width: 1920px;
-}
-.section-2 .section-2-div .row {
-  display: flex;
-  position: relative;
-  margin: auto;
-  width: 80%;
-}
-.section-2 .section-2-div .row .column_left {
-  flex: 20%;
-  width: 40%;
-}
-.section-2 .section-2-div .row .column_left img {
-  width: 100%;
-  height: auto;
-}
-.section-2 .section-2-div .row .column_right {
-  flex: 80%;
-  width: 60%;
-  color: #fff;
-  text-align: center;
-  padding-top: 5vh;
-  padding-bottom: 5vh;
-}
-@media only screen and (max-width: 720px) {
-  .section-2 .section-2-div .row {
-    display: block;
-  }
-}
-.section-2 .section-2-div .row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 .section-3 {
   height: auto;
   margin-bottom: 150px;
@@ -102,6 +52,35 @@ body {
   margin-top: 5vh;
   margin-left: 5vh;
 }
+@media only screen and (max-width: 720px) {
+  .section-3 .greenline {
+    background: transparent;
+    border: 1px solid grey;
+    border-radius: 10px;
+    width: 90%;
+    color: #000;
+    flex-direction: column; /* Elemek egymás alá helyezése */
+    align-items: center;
+    margin: auto;
+    margin-top: 35vh;
+    height: 85%;
+    padding-top: 20px;
+  }
+  .section-3 .greenline .shortgreenline {
+    width: 125%;
+    transform: translate(-7%, -75%);
+    position: fixed;
+    height: 25vh;
+  }
+  .section-3 .greenline .piano {
+    width: 70%;
+    padding-top: 10vh;
+    padding-bottom: 1vh;
+    text-align: center;
+    margin: auto;
+    height: 80%;
+  }
+}
 .section-3 .purpleline {
   margin-top: 20vh;
   background: linear-gradient(to right, #51b3d5, #7286c0);
@@ -136,6 +115,35 @@ body {
   margin-top: 5vh;
   margin-left: 10vh;
 }
+@media only screen and (max-width: 720px) {
+  .section-3 .purpleline {
+    background: transparent;
+    border: 1px solid grey;
+    border-radius: 10px;
+    width: 90%;
+    color: #000;
+    flex-direction: column; /* Elemek egymás alá helyezése */
+    align-items: center;
+    margin: auto;
+    margin-top: 35vh;
+    height: 85%;
+    padding-top: 20px;
+  }
+  .section-3 .purpleline .shortpurpleline {
+    width: 125%;
+    transform: translate(7%, -75%);
+    position: fixed;
+    height: 25vh;
+  }
+  .section-3 .purpleline .violin {
+    width: 70%;
+    padding-top: 10vh;
+    padding-bottom: 1vh;
+    text-align: center;
+    margin: auto;
+    height: 80%;
+  }
+}
 @keyframes slideInLeft {
   0% {
     transform: translateX(-100%);
@@ -160,9 +168,25 @@ body {
 .section-4 {
   max-height: 1500px;
   overflow-y: hidden;
+  max-width: 1680px;
+  align-items: center;
+  margin: auto;
 }
 .section-4 ul {
   list-style-type: circle !important;
+}
+.section-4 .plane_left, .section-4 .orangebox .plane_left {
+  left: 0;
+  width: 10vh;
+  height: auto;
+  position: fixed;
+}
+.section-4 .plane_right {
+  right: 0;
+  width: 15vh;
+  height: auto;
+  position: fixed;
+  transform: scaleX(-1); /* A kép vízszintesen tükrözve lesz */
 }
 .section-4 .orangebox {
   align-items: center;
@@ -180,19 +204,21 @@ body {
   animation: slideInUp 1.5s ease-out forwards;
   animation-delay: 0s;
 }
-.section-4 .orangebox p {
-  padding: 50px;
-}
 .section-4 .orangebox.visible {
   transform: translateY(0);
   opacity: 1;
+}
+.section-4 .orangebox p {
+  padding: 50px;
+}
+.section-4 .orangebox .plane_left {
+  margin-top: -50px;
 }
 .section-4 .bluebox {
   background: linear-gradient(to right, #79c7c1, #7286c0);
   align-items: center;
   margin: auto;
-  min-height: 60vh;
-  height: auto;
+  height: 40vh;
   width: 60%;
   margin-top: 50px;
   border-radius: 10px;
@@ -203,6 +229,10 @@ body {
   animation: slideInUp 1.5s ease-out forwards;
   animation-delay: 0s;
 }
+.section-4 .bluebox.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
 .section-4 .bluebox h3 {
   margin-bottom: 30px;
 }
@@ -210,9 +240,10 @@ body {
   padding: 20px;
   list-style: disc;
 }
-.section-4 .bluebox.visible {
-  transform: translateY(0);
-  opacity: 1;
+@media only screen and (max-width: 1440px) {
+  .section-4 .bluebox {
+    height: 60vh;
+  }
 }
 .section-4 .smallbluebox {
   background: linear-gradient(to right, #79c7c1, #7286c0);
@@ -230,15 +261,15 @@ body {
   animation: slideInUp 1.5s ease-out forwards;
   animation-delay: 0s;
 }
+.section-4 .smallbluebox.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
 .section-4 .smallbluebox h3 {
   padding: 10px;
 }
 .section-4 .smallbluebox p {
   padding: 20px;
-}
-.section-4 .smallbluebox.visible {
-  transform: translateY(0);
-  opacity: 1;
 }
 @keyframes slideInUp {
   0% {
@@ -248,6 +279,39 @@ body {
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .section-4 .orangebox {
+    width: 90%;
+  }
+  .section-4 .orangebox p {
+    padding: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .section-4 .bluebox {
+    width: 90%;
+  }
+  .section-4 .bluebox h3 {
+    text-align: center;
+  }
+  .section-4 .bluebox li {
+    padding: 5px;
+  }
+  .section-4 .smallbluebox {
+    width: 90%;
+  }
+  .section-4 .smallbluebox h3 {
+    padding-top: 45px;
+  }
+  .section-4 .smallbluebox p {
+    padding: 10px;
+    padding-bottom: 25px;
+  }
+  .section-4 .smallbluebox .plane_left {
+    margin-bottom: 50px;
+    width: 75px;
   }
 }
 
@@ -265,6 +329,7 @@ body {
 }
 .section-5 .whitebox {
   width: 90%;
+  max-width: 1920px;
   height: 80vh;
   background: white;
   margin: auto;
@@ -272,9 +337,9 @@ body {
   border-radius: 10px;
   margin-top: 100px;
   margin-bottom: 100px;
-  mask: linear-gradient(to top, #fff 600px, transparent 600px), linear-gradient(to bottom, #fff -10%, transparent -10%), linear-gradient(to left, #fff 400px, transparent 400px), linear-gradient(to right, #fff 400px, transparent 400px), radial-gradient(circle 50px at 50% 50%, black 100%, transparent 100%);
+  mask: linear-gradient(to top, #fff 50%, transparent 40%), linear-gradient(to bottom, #fff -10%, transparent -10%), linear-gradient(to left, #fff 40%, transparent 400px), linear-gradient(to right, #fff 10%, transparent 10%), radial-gradient(circle 50px at 20% 50%, black 100%, transparent 100%);
   mask-repeat: no-repeat;
-  -webkit-mask: linear-gradient(to top, #fff 625px, transparent 625px), linear-gradient(to bottom, #fff -10%, transparent -10%), linear-gradient(to left, #fff 400px, transparent 400px), linear-gradient(to right, #fff 400px, transparent 400px);
+  -webkit-mask: linear-gradient(to top, #fff 90%, transparent 90%), linear-gradient(to bottom, #fff -95%, transparent -95%), linear-gradient(to left, #fff 40%, transparent 40%), linear-gradient(to right, #fff 40%, transparent 40%);
 }
 .section-5 .whitebox .card_container {
   width: 90%;
@@ -300,12 +365,26 @@ body {
 .section-5 .whitebox .card_container .card .bottom-half {
   height: 50%;
 }
+@media only screen and (max-width: 720px) {
+  .section-5 h2 {
+    margin-bottom: -75px;
+  }
+  .section-5 .whitebox {
+    height: auto;
+  }
+  .section-5 .whitebox .card_container {
+    height: 1500px;
+    align-items: center;
+    margin: auto;
+  }
+}
 
 .section-6 {
   min-height: 600px;
   height: auto;
   align-items: center;
   margin: auto;
+  width: 90%;
 }
 .section-6 h2 {
   text-align: center;
@@ -314,6 +393,7 @@ body {
   margin-right: 40%;
   border-radius: 10px;
   padding-top: 5px;
+  margin-bottom: 10px;
 }
 .section-6 .card_container {
   display: flex; /* Flexbox használata a gyerek elemek sorba rendezéséhez */
@@ -321,11 +401,13 @@ body {
   align-items: center; /* Középre igazítás függőlegesen */
   margin: auto;
   gap: 20px;
+  width: 90%;
 }
 .section-6 .card_container .card {
   display: inline-flex;
   margin-top: 10px;
   text-align: center;
+  margin: auto;
 }
 .section-6 .card_container .card li {
   list-style: disc;
@@ -373,12 +455,12 @@ body {
   height: 52vh;
   transition: all 0.3s;
 }
-@media (max-width: 720px) {
+@media only screen and (max-width: 720px) {
   .section-6 .card_container .card {
     flex-direction: column;
     gap: 10px;
     min-height: auto;
-    margin-bottom: 35vh;
+    margin-bottom: 10vh;
   }
   .section-6 .card_container .card h2 {
     margin-bottom: 20px;

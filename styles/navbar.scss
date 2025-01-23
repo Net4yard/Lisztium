@@ -37,7 +37,7 @@ html {
   float: right;
   width: 100%;
   z-index: 999;
-  box-shadow: 15px 1px 20px black;
+  box-shadow: 0px 1px 20px black;
 
   .nav-menu {
     display: flex;
@@ -64,16 +64,17 @@ html {
       margin: 2.5rem 0;
 
       .nav-link {
-        img{
-          height: 35px;
-          vertical-align: middle;
-          margin-right: 5px;
-        }
         font-size: 1.3rem;
         font-weight: 400;
         color: white;
         margin-right: 20px;
         transition: all 0.3s;
+        img{
+          height: 35px;
+          vertical-align: middle;
+          margin-right: 5px;
+        }
+
 
         @media only screen and (max-width: 1440px) {
           font-size: 1rem;
@@ -91,14 +92,16 @@ html {
 
 
 
-        &:hover {
+        &:hover,
+        &:active {
           color: $main-seventh-color;
           font-size: 1.4rem;
+          transition: all 0.3s;
           img{
             height: 37px;
             transition: all 0.3s;
           }
-          transition: all 0.3s;
+
 
           @media only screen and (max-width: 1440px) {
             font-size: 1.1rem;
@@ -134,26 +137,37 @@ html {
     }
 
     .bar:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
+      transform: translateY(9.5px) rotate(45deg);
+      margin-top: 8px;
     }
 
     .bar:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
+      transform: translateY(-9.5px) rotate(-45deg);
+      margin-top: 8px;
     }
   }
 
   @media only screen and (max-width: 850px) {
-    display: block;
+    position: absolute;
+    display: flex;
     cursor: pointer;
+    left: 10px;
   }
 
-  .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    transition: all 0.3s ease-in-out;
-    background-color: #101010;
+  .bar_container{
+    background-color: white;
+    border-radius: 5px;
+    width: 5vh;
+    height: 5vh;
+    .bar {
+      display: flex;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      transition: all 0.3s ease-in-out;
+      background-color: #101010;
+      transform: translateY(4px)
+    }
   }
 }
 

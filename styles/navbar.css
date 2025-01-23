@@ -30,7 +30,7 @@ html a {
   float: right;
   width: 100%;
   z-index: 999;
-  box-shadow: 15px 1px 20px black;
+  box-shadow: 0px 1px 20px black;
 }
 .navbar .nav-menu {
   display: flex;
@@ -85,28 +85,28 @@ html a {
     height: 25px;
   }
 }
-.navbar .nav-menu .nav-item .nav-link:hover, .navbar .nav-menu .nav-item #apply:hover {
+.navbar .nav-menu .nav-item .nav-link:hover, .navbar .nav-menu .nav-item #apply:hover, .navbar .nav-menu .nav-item .nav-link:active, .navbar .nav-menu .nav-item #apply:active {
   color: #f2a859;
   font-size: 1.4rem;
   transition: all 0.3s;
 }
-.navbar .nav-menu .nav-item .nav-link:hover img, .navbar .nav-menu .nav-item #apply:hover img {
+.navbar .nav-menu .nav-item .nav-link:hover img, .navbar .nav-menu .nav-item #apply:hover img, .navbar .nav-menu .nav-item .nav-link:active img, .navbar .nav-menu .nav-item #apply:active img {
   height: 37px;
   transition: all 0.3s;
 }
 @media only screen and (max-width: 1440px) {
-  .navbar .nav-menu .nav-item .nav-link:hover, .navbar .nav-menu .nav-item #apply:hover {
+  .navbar .nav-menu .nav-item .nav-link:hover, .navbar .nav-menu .nav-item #apply:hover, .navbar .nav-menu .nav-item .nav-link:active, .navbar .nav-menu .nav-item #apply:active {
     font-size: 1.1rem;
   }
-  .navbar .nav-menu .nav-item .nav-link:hover img, .navbar .nav-menu .nav-item #apply:hover img {
+  .navbar .nav-menu .nav-item .nav-link:hover img, .navbar .nav-menu .nav-item #apply:hover img, .navbar .nav-menu .nav-item .nav-link:active img, .navbar .nav-menu .nav-item #apply:active img {
     height: 32px;
   }
 }
 @media only screen and (max-width: 1080px) {
-  .navbar .nav-menu .nav-item .nav-link:hover, .navbar .nav-menu .nav-item #apply:hover {
+  .navbar .nav-menu .nav-item .nav-link:hover, .navbar .nav-menu .nav-item #apply:hover, .navbar .nav-menu .nav-item .nav-link:active, .navbar .nav-menu .nav-item #apply:active {
     font-size: 0.8rem;
   }
-  .navbar .nav-menu .nav-item .nav-link:hover img, .navbar .nav-menu .nav-item #apply:hover img {
+  .navbar .nav-menu .nav-item .nav-link:hover img, .navbar .nav-menu .nav-item #apply:hover img, .navbar .nav-menu .nav-item .nav-link:active img, .navbar .nav-menu .nav-item #apply:active img {
     height: 27px;
   }
 }
@@ -123,24 +123,35 @@ html a {
   opacity: 0;
 }
 .hamburger.active .bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+  transform: translateY(9.5px) rotate(45deg);
+  margin-top: 8px;
 }
 .hamburger.active .bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-9.5px) rotate(-45deg);
+  margin-top: 8px;
 }
 @media only screen and (max-width: 850px) {
   .hamburger {
-    display: block;
+    position: absolute;
+    display: flex;
     cursor: pointer;
+    left: 10px;
   }
 }
-.hamburger .bar {
-  display: block;
+.hamburger .bar_container {
+  background-color: white;
+  border-radius: 5px;
+  width: 5vh;
+  height: 5vh;
+}
+.hamburger .bar_container .bar {
+  display: flex;
   width: 25px;
   height: 3px;
   margin: 5px auto;
   transition: all 0.3s ease-in-out;
   background-color: #101010;
+  transform: translateY(4px);
 }
 
 #apply {

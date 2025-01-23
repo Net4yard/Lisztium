@@ -12,41 +12,77 @@
     <title>Lisztium</title>
   </head>
   <body>
+    <button id="scrollToTopButton">
+        <svg
+          fill="#ffffff"
+          version="1.1"
+          id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 330 330"
+          xml:space="preserve"
+          stroke="#ffffff"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              id="XMLID_224_"
+              d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394 l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393 C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z"
+            ></path>
+          </g>
+        </svg>
+      </button>
     <header class="header">
         <nav class="navbar">
             <div href="index.html" class="nav-logo"></div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link"><img src="assets/images/index.svg" alt="Index"/>Kezdőlap</a>
+                    <a href="index.html" class="nav-link"><img src="assets/images/index.svg" alt="Home"/>Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a href="about.html" class="nav-link active"><img src="assets/images/about.svg" alt="About"/>About us</a>
                 </li>
                 <li class="nav-item">
-                    <a href="about.html" class="nav-link"><img src="assets/images/about.svg" alt="About"/>Rólunk</a>
+                    <a href="services.html" class="nav-link"><img src="assets/images/services.svg" alt="Services"/>Services</a>
                 </li>
                 <li class="nav-item">
-                    <a href="services.html" class="nav-link"><img src="assets/images/services.svg" alt="Services"/>Szolgáltatások</a>
+                    <a href="index.html" class="nav-link"><img src="assets/images/event.svg" alt="Events"/>Events</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link"><img src="assets/images/event.svg" alt="Events"/>Események</a>
+                    <a href="gallery.html" class="nav-link"><img src="assets/images/gallery.svg" alt="Gallery"/>Gallery</a>
                 </li>
                 <li class="nav-item">
-                    <a href="gallery.html" class="nav-link"><img src="assets/images/gallery.svg" alt="Gallery"/>Galéria</a>
+                    <a href="apply.html" class="nav-link" id="apply"><img src="assets/images/apply.svg" alt="Apply"/>Application</a>
                 </li>
                 <li class="nav-item">
-                    <a href="apply.html" class="nav-link" id="apply"><img src="assets/images/apply.svg" alt="Apply"/>Jelentkezz</a>
-                </li>
-                <li class="nav-item">
-                    <a href="apply.html" class="nav-link"><img src="assets/images/japan-flag.svg" alt="Japan"/></a>
+                    <a href="jp/index_jp.html" class="nav-link"><img src="assets/images/japan-flag.svg" alt="Japan"/></a>
                 </li>
             </ul>
             <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <div class="bar_container">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
         </nav>
     </header>
     <section class="section-1">
-
+        <div class="section-1-div">
+            <div class="container">
+                <div class="wrapper">
+                    <img src="assets/images/DSC_0456-images-61.jpg">
+                    <img src="assets/images/IMG_5840.jpg">
+                    <img src="assets/images/IMG_5851.jpg">
+                    <img src="assets/images/DSC_0456-images-61.jpg">
+                </div>
+            </div>
+        </div>
     </section>
     <section class="section-2">
         <div class="section-2-div">
@@ -55,9 +91,9 @@
                     <img src="assets/images/Lisztkukac.png">
                 </div>
                 <div class="column_right">
-                    <h4>Üdvözlünk a Lisztkukacok zenei kurzuson!</h4>
+                    <h4>Welcome to the home of Lisztium masterclasses!</h4>
                     <p>
-                        Lorem ipsum odor amet, consectetuer adipiscing elit. Viverra fusce venenatis et libero; interdum aliquam risus. Pulvinar molestie scelerisque finibus elit urna faucibus dignissim. Ac ex ornare habitasse sociosqu praesent per. Platea fringilla risus ipsum ipsum cursus id parturient. Hendrerit nisi penatibus leo litora vestibulum nisi augue lacinia. Eget enim parturient hendrerit montes nam velit facilisis. Nisi justo vulputate per at vel netus facilisis.
+                        Ez a kurzus azoknak szól, akik szeretnék elmélyíteni tudásukat a zenében, függetlenül attól, hogy kezdő vagy már tapasztaltabbak. A Lisztium egy olyan közösséget alkot, ahol a zene iránti szenvedély és a tanulás iránti vágy találkozik, hogy egyesítse a japán és a magyar kultúrát a zenén keresztül.
                     </p>
                 </div>
             </div>
@@ -70,28 +106,22 @@
             </div>
             <div class="piano">
                 <h4>Zongora szakkör egyetemistáknak</h4>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-                    Aenean commodo ligula eget dolor. Aenean massa. 
-                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
-                    Nulla consequat massa quis enim. 
-                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. 
-                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. 
-                    Integer tincidunt. 
+                <p>A Lisztium szakkör lehetőséget ad minden egyetemistának,
+                    hogy felfedezze a zongorázás örömeit, akár kezdőként,
+                    Akár már zenei alapismeretekkel. Vidám, inspiráló órákon
+                    tanulhatsz, miközben a zene világába mélyedhetsz el, és új
+                    kihívásokkal találkozhatsz.
                 </p>
             </div>
         </div>
         <div class="purpleline">
             <div class="violin">
                 <h4>Hegedű szakkör tiniknek</h4>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-                    Aenean commodo ligula eget dolor. Aenean massa. 
-                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
-                    Nulla consequat massa quis enim. 
-                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. 
-                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. 
-                    Integer tincidunt. 
+                <p>Érdekel a hegedűzés világa? Csatlakozz hozzánk, ás tanulj
+                    meg játszani kedvenc klasszikus vagy modern dallamaidat
+                    barátságos, inspiráló környezetben! Kezdők és haladók
+                    számára is nyitottak vagyunk. Fedezd fel, mire vagy képes
+                    Téged is vár a zene varázsa!
                 </p>
             </div>
             <div class="shortpurpleline">
@@ -110,6 +140,7 @@
                 In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. 
                 Integer tincidunt. 
             </p>
+            <img class="plane_left" src="assets/images/plane.png">
         </div>
         <div class="bluebox">
             <h3>Mit kínálunk?</h3>
@@ -123,8 +154,10 @@
                 <li>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. 
                     Integer tincidunt. </li>
             </ul>
+            <img class="plane_right" src="assets/images/plane.png">
         </div>
         <div class="smallbluebox">
+            <img class="plane_left" src="assets/images/plane.png">
             <h3>Miért válassz minket?</h3>
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
                 Aenean commodo ligula eget dolor. Aenean massa. 
@@ -141,24 +174,32 @@
         <div class="semiovalbottom"></div>
         <h2>Események</h2>
         <div class="whitebox">
-            <div class="card_container">
-                <div class="card">
-                    <div class="top-half"></div>
-                    <div class="bottom-half"></div>
+                <div class="card_container">
+                    <div class="card">
+                        <div class="top-half"></div>
+                        <div class="bottom-half">
+                            <p>hahaha</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="top-half"></div>
+                        <div class="bottom-half">
+                            <p>jeeeee</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="top-half"></div>
+                        <div class="bottom-half">
+                            <p>ah</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="top-half"></div>
+                        <div class="bottom-half">
+                            <p>szexidani</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="top-half"></div>
-                    <div class="bottom-half"></div>
-                </div>
-                <div class="card">
-                    <div class="top-half"></div>
-                    <div class="bottom-half"></div>
-                </div>
-                <div class="card">
-                    <div class="top-half"></div>
-                    <div class="bottom-half"></div>
-                </div>
-            </div>
         </div>
         <div class="semiovaltop"></div>
     </section>
@@ -197,5 +238,5 @@
     </footer>
   </body>
   <script src="assets/scripts/hamburger.js"></script>
-  <script src="assets/scripts/script.js"></script>
+  <script src="assets/scripts/script.js" defer></script>
 </html>

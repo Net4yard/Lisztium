@@ -33,3 +33,21 @@ $main-eighth-color: #79c7c1;
           }
     }
 }
+
+.section-4{
+    .section-4-div{
+        max-width: 1440px;
+        .box{
+            width: 60%;
+            height: 30vh;
+            border-radius: 10px;
+            background: linear-gradient(to right, $main-eighth-color, $main-secondary-color);
+            align-items: center;
+            margin: auto;
+            margin-bottom: 40px;
+            p{
+                padding: 10px;
+            }
+        }
+    }
+}
