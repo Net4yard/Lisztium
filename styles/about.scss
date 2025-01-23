@@ -16,8 +16,8 @@ $main-eighth-color: #79c7c1;
             background: linear-gradient(to right, $main-eighth-color, $main-secondary-color);
             text-align: center;
             border-radius: 10px;
-            margin-left: 40%;
-            margin-right: 40%;
+            margin-left: 30%;
+            margin-right: 30%;
             margin-top: 50px;
             margin-bottom: 50px;
         }
@@ -34,10 +34,13 @@ $main-eighth-color: #79c7c1;
             .columns{
                 display: flex; /* Egy sor elemeinek elrendezése */
                 flex-direction: row; /* Elemek egymás mellett vízszintesen */
-                width: 70%; /* A teljes szélességet használja */
+                width: 80%; /* A teljes szélességet használja */
+                align-items: center;
+                margin: auto;
+                justify-content: center;
                 .leftbox, .rightbox{
-                    width: 60%;
-                    height: 15vh;
+                    width: 70vh;
+                    height: 25vh;
                     border-radius: 10px;
                     margin-top: 7vh;
                     z-index: -1;
@@ -57,6 +60,12 @@ $main-eighth-color: #79c7c1;
                     height: 300px;
                     border-radius: 50%;
                     box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+                    display: flex; /* Flexbox aktiválása */
+                    justify-content: center; /* Vízszintes középre igazítás */
+                    align-items: center; /* Függőleges középre igazítás */
+                    img{
+                        width: 90%;
+                    }
                 } 
                 
                 .title {
@@ -84,15 +93,17 @@ $main-eighth-color: #79c7c1;
                 align-items: center; /* Középre igazítás */
                 width: 70%; /* A teljes szélességet használja */
                 .leftbox, .rightbox{
-                    width: 60%;
-                    height: 15vh;
+                    width: 50vh !important;
+                    height: 40vh;
                     border-radius: 10px;
-                    margin-top: 7vh;
                     z-index: -1;
                     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
                     width: 70%; /* Szélesebb doboz */
-                transform: translateX(0); /* Nincs oldalra tolás */
-                margin-top: -30px; /* Doboz belógása a körbe */
+                    transform: translateX(0); /* Nincs oldalra tolás */
+                    margin-top: -30px; /* Doboz belógása a körbe */
+                    h5{
+                        padding-top: 100px;
+                    }
                 }
 
                 .circle {
@@ -101,6 +112,12 @@ $main-eighth-color: #79c7c1;
                     border-radius: 50%;
                     box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
                     margin-bottom: -50px; /* Kör belógása a doboz mögé */
+                    display: flex; /* Flexbox aktiválása */
+                    justify-content: center; /* Vízszintes középre igazítás */
+                    align-items: center; /* Függőleges középre igazítás */
+                    img{
+                        width: 90%;
+                    }
                 } 
                 
                 .title {
@@ -118,8 +135,8 @@ $main-eighth-color: #79c7c1;
             h1{
                 text-align: center;
                 border-radius: 10px;
-                margin-left: 60%;
-                margin-right: 60%;
+                margin-left: 20%;
+                margin-right: 20%;
                 margin-top: 50px;
                 margin-bottom: 50px;
             }
