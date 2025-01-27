@@ -46,22 +46,26 @@ html {
     @media only screen and (max-width: 850px) {
       position: fixed;
       left: -100%;
-      top: 5rem;
       flex-direction: column;
+      top: 5vh;
       width: 100%;
       border-radius: 5px;
       text-align: center;
       transition: 0.3s;
       box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
       background: linear-gradient(to right, $main-color, $main-secondary-color);
-    }
+      a{
+        font-size: 1.3rem;
+      }
+      }
 
     &.active {
       left: 0;
+
     }
 
     .nav-item {
-      margin: 2.5rem 0;
+      margin: 1rem 0;
 
       .nav-link {
         font-size: 1.3rem;
@@ -90,10 +94,17 @@ html {
           }
         }
 
+        @media only screen and (max-width: 850px) {
+          font-size: 1.3rem;
+          img{
+            height: 35px;
+          }
+        }
+
 
 
         &:hover,
-        &:active {
+        &:active{
           color: $main-seventh-color;
           font-size: 1.4rem;
           transition: all 0.3s;
@@ -113,6 +124,13 @@ html {
             font-size: 0.8rem;
             img{
               height: 27px;
+            }
+          }
+
+          @media only screen and (max-width: 850px) {
+            font-size: 1.4rem;
+            img{
+              height: 37px;
             }
           }
         }
