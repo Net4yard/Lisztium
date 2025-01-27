@@ -142,12 +142,12 @@ html a {
   opacity: 0;
 }
 .hamburger.active .bar:nth-child(1) {
-  transform: translateY(9.5px) rotate(45deg);
-  margin-top: 8px;
+  transform: translateY(1.3vh) rotate(45deg);
+  margin-top: 1vh;
 }
 .hamburger.active .bar:nth-child(3) {
-  transform: translateY(-9.5px) rotate(-45deg);
-  margin-top: 8px;
+  transform: translateY(-1.3vh) rotate(-45deg);
+  margin-top: 1vh;
 }
 @media only screen and (max-width: 850px) {
   .hamburger {
@@ -166,11 +166,11 @@ html a {
 .hamburger .bar_container .bar {
   display: flex;
   width: 25px;
-  height: 3px;
+  height: 0.3vh;
   margin: 5px auto;
   transition: all 0.3s ease-in-out;
   background-color: #101010;
-  transform: translateY(4px);
+  margin-top: 1vh;
 }
 
 #apply {
