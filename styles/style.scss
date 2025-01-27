@@ -384,8 +384,8 @@ $main-eighth-color: #79c7c1;
       mask-repeat: no-repeat;
 
       -webkit-mask: 
-        linear-gradient(to top, #fff 90%, transparent 90%),
-        linear-gradient(to bottom, #fff -95%, transparent -95%),
+        linear-gradient(to top, #fff 95%, transparent 95%),
+        linear-gradient(to bottom, #fff -97%, transparent -97%),
         linear-gradient(to left, #fff 40%, transparent 40%),
         linear-gradient(to right, #fff 40%, transparent 40%);
 
@@ -413,6 +413,8 @@ $main-eighth-color: #79c7c1;
                 
                   .bottom-half {
                     height: 50%; // Az elem alsó fele
+                    padding: 5px;
+                    color: #000;
                   }
             }
             
@@ -425,6 +427,10 @@ $main-eighth-color: #79c7c1;
         }
         .whitebox{
             height: auto;
+
+            -webkit-mask: 
+        linear-gradient(to top, #fff 100%, transparent 100%);
+
             .card_container{
                 height: 1500px;
                 align-items: center;
