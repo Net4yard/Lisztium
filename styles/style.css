@@ -182,10 +182,10 @@
   position: fixed;
 }
 .section-4 .plane_right {
-  right: 0;
+  margin-left: 80%;
   width: 15vh;
   height: auto;
-  position: fixed;
+  position: relative;
   transform: scaleX(-1); /* A kép vízszintesen tükrözve lesz */
 }
 .section-4 .orangebox {
@@ -218,8 +218,8 @@
   background: linear-gradient(to right, #79c7c1, #7286c0);
   align-items: center;
   margin: auto;
-  min-height: calc(100% + 5vh);
-  height: calc(100% + 15px) !important;
+  min-height: calc(110% + 5vh);
+  height: calc(110% + 5vh) !important;
   width: 60%;
   margin-top: 50px;
   border-radius: 10px;

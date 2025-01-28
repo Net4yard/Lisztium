@@ -204,10 +204,10 @@ $main-eighth-color: #79c7c1;
     }
 
     .plane_right{
-        right: 0;
+        margin-left: 80%;
         width: 15vh;
         height: auto;
-        position: fixed;
+        position: relative;
         transform: scaleX(-1); /* A kép vízszintesen tükrözve lesz */
     }
 
@@ -245,12 +245,13 @@ $main-eighth-color: #79c7c1;
         background: linear-gradient(to right, $main-eighth-color, $main-secondary-color);
         align-items: center;
         margin: auto;
-        min-height: calc(100% + 5vh);
-        height: calc(100% + 15px) !important;
+        min-height: calc(110% + 5vh);
+        height: calc(110% + 5vh) !important;
         width: 60%;
         margin-top: 50px;
         border-radius: 10px;
         padding: 50px;
+
 
         transform: translateY(10%);
         opacity: 0;
