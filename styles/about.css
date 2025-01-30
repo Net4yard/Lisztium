@@ -4,6 +4,7 @@
   align-items: center;
   margin: auto;
   text-align: justify;
+  transition: all 0.3;
 }
 .section-3 .section-3-div h1 {
   background: linear-gradient(to right, #79c7c1, #7286c0);
@@ -15,6 +16,11 @@
   margin-bottom: 50px;
 }
 .section-3 .section-3-div a {
+  width: 90%;
+}
+.section-3 .section-3-div .profile {
+  pointer-events: auto; /* De a gomb megmarad kattinthatónak */
+  position: relative;
   align-items: center;
   margin: auto;
   background-color: #019788;
@@ -52,15 +58,16 @@
   z-index: -1;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
   color: grey;
-  transform: translateY(100px);
+  vertical-align: middle;
+  pointer-events: none; /* Kikapcsolja az egér-interakciókat az egész dobozra */
 }
 .section-3 .section-3-div .container850above .columns .leftbox {
-  transform: translate(20%, -3vh); /* Belógás jobbról */
+  transform: translateX(20%); /* Belógás jobbról */
   padding-left: 5%;
   padding-right: 18%;
 }
 .section-3 .section-3-div .container850above .columns .rightbox {
-  transform: translate(-20%, -3vh); /* Belógás balról */
+  transform: translateX(-20%); /* Belógás balról */
   padding-left: 18%;
   padding-right: 5%;
 }
@@ -74,6 +81,7 @@
   display: flex; /* Flexbox aktiválása */
   justify-content: center; /* Vízszintes középre igazítás */
   align-items: center; /* Függőleges középre igazítás */
+  transform: translateY(3vh);
 }
 .section-3 .section-3-div .container850above .columns .circle img {
   width: 90%;
