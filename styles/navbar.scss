@@ -61,7 +61,6 @@ html {
 
     &.active {
       left: 0;
-
     }
 
     .nav-item {
@@ -78,7 +77,6 @@ html {
           vertical-align: middle;
           margin-right: 5px;
         }
-
 
         @media only screen and (max-width: 1440px) {
           font-size: 1rem;
@@ -100,8 +98,6 @@ html {
             height: 35px;
           }
         }
-
-
 
         &:hover,
         &:active{

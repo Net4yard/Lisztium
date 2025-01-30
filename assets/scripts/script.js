@@ -34,7 +34,7 @@ columns.forEach((item) => {
   // Kör színe
   circle.style.background = `radial-gradient(circle, ${randomColorPair[0]}, ${randomColorPair[1]})`;
 
-  // Címsor színe az első szín
+  // Címsor színe
   title.style.color = randomColorPair[0];
 });
 

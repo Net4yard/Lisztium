@@ -23,6 +23,19 @@ $main-eighth-color: #79c7c1;
             margin-bottom: 50px;
         }
 
+                                                    
+        a{
+            align-items: center;
+            margin: auto;
+            background-color: #019788;
+            padding: 10px;
+            width: 150px;
+            text-align: center;
+            border-radius: 10px;
+            color: #fff;
+            display: block; /* Kitölti az egész gombot */
+        }
+
         .container850above{   
             display: flex; /* Flexbox alapértelmezett használata */
             flex-wrap: wrap; /* Elemek új sorba kerülnek, ha nem férnek el */
@@ -32,6 +45,7 @@ $main-eighth-color: #79c7c1;
             width: 90%; /* 90%-os szélességet használja */
             gap: 20px; /* Elemek közötti távolság */
             margin-bottom: 10px;
+
             .columns{
                 display: flex; /* Egy sor elemeinek elrendezése */
                 flex-direction: row; /* Elemek egymás mellett vízszintesen */
@@ -39,24 +53,27 @@ $main-eighth-color: #79c7c1;
                 align-items: center;
                 margin: auto;
                 justify-content: center;
+                margin-bottom: 50px;
+
                 .leftbox, .rightbox{
                     width: 70vh;
                     height: 25vh;
                     border-radius: 10px;
-                    margin-top: 7vh;
+                    margin-top: 6vh;
                     z-index: -1;
                     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
                     color: grey;
+                    transform: translateY(100px);
                 }
     
                 .leftbox {
-                    transform: translateX(20%); /* Belógás jobbról */
+                    transform: translate(20%, -3vh); /* Belógás jobbról */
                     padding-left: 5%;
                     padding-right: 18%;
                 }
                 
                 .rightbox {
-                    transform: translateX(-20%); /* Belógás balról */
+                    transform: translate(-20%, -3vh); /* Belógás balról */
                     padding-left: 18%;
                     padding-right: 5%;
                 }
