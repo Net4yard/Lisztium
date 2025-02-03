@@ -47,6 +47,7 @@ body{
   display: none;
   z-index: 999;
   transition: all 0.5s ease-in-out;
+  overflow: hidden;
 
   svg {
     width: 25px;
@@ -84,32 +85,40 @@ body{
             transform: translateX(0);
           }
 
-          25%{
+          10%{
             transform: translateX(0);
+          }
+
+          15%{
+            transform: translateX(-100%);
           }
 
           30%{
             transform: translateX(-100%);
           }
 
+          35%{
+            transform: translateX(-200%);
+          }
+
+          45%{
+            transform: translateX(-200%);
+          }
+
           50%{
-            transform: translateX(-100%);
-          }
-
-          55%{
-            transform: translateX(-200%);
-          }
-
-          75%{
-            transform: translateX(-200%);
-          }
-
-          80%{
             transform: translateX(-300%);
+          }
+
+          60%{
+            transform: translateX(-300%);
+          }
+
+          65%{
+            transform: translateX(-400%);
           }
 
           100%{
-            transform: translateX(-300%);
+            transform: translateX(-400%);
           }
         }
       }

@@ -204,10 +204,10 @@ $main-eighth-color: #79c7c1;
     }
 
     .plane_right{
-        right: 0;
+        margin-left: 80%;
         width: 15vh;
         height: auto;
-        position: fixed;
+        position: relative;
         transform: scaleX(-1); /* A kép vízszintesen tükrözve lesz */
     }
 
@@ -245,11 +245,13 @@ $main-eighth-color: #79c7c1;
         background: linear-gradient(to right, $main-eighth-color, $main-secondary-color);
         align-items: center;
         margin: auto;
-        height: 40vh;
+        min-height: calc(110% + 5vh);
+        height: calc(110% + 5vh) !important;
         width: 60%;
         margin-top: 50px;
         border-radius: 10px;
         padding: 50px;
+
 
         transform: translateY(10%);
         opacity: 0;
@@ -271,17 +273,14 @@ $main-eighth-color: #79c7c1;
             padding: 20px;
             list-style: disc;
         }
-        @media only screen and (max-width: 1440px) {
-            height: 60vh;
-        }
     }
 
     .smallbluebox{
         background: linear-gradient(to right, $main-eighth-color, $main-secondary-color);
         align-items: center;
         margin: auto;
-        min-height: 25vh;
-        height: auto;
+        min-height: 100%;
+        height: 100% !important;
         width: 70%;
         margin-top: 50px;
         border-radius: 10px;
@@ -354,7 +353,8 @@ $main-eighth-color: #79c7c1;
 
 .section-5{
     background: linear-gradient(to right, $main-color, $main-secondary-color);
-    height: auto;
+    max-height: 1000vh;
+        min-height: auto;
 
     h2{
         padding-top: 50px;
@@ -368,13 +368,15 @@ $main-eighth-color: #79c7c1;
     .whitebox{
         width: 90%;
         max-width: 1920px;
-        height: 80vh;
+        min-height: 100%;
+        height: 100% !important;
         background: white;
         margin: auto;
         align-items: center;
         border-radius: 10px;
         margin-top: 100px;
-        margin-bottom: 100px;  
+        margin-bottom: 100px; 
+
         mask: 
         linear-gradient(to top, #fff 50%, transparent 40%),
         linear-gradient(to bottom, #fff -10%, transparent -10%),
@@ -384,17 +386,22 @@ $main-eighth-color: #79c7c1;
       mask-repeat: no-repeat;
 
       -webkit-mask: 
-        linear-gradient(to top, #fff 90%, transparent 90%),
-        linear-gradient(to bottom, #fff -95%, transparent -95%),
+        linear-gradient(to top, #fff calc(100% - 5vh), transparent calc(100% - 5vh)),
+        linear-gradient(to bottom, #fff -97%, transparent -97%),
         linear-gradient(to left, #fff 40%, transparent 40%),
         linear-gradient(to right, #fff 40%, transparent 40%);
 
         .card_container{
             width: 90%;
-            height: 70vh;
+            min-height: 100%;
+            height: 100% !important;
             align-items: center;
             margin: auto;
             transform: translateY(8vh);
+            position: relative;
+            display: flex; 
+            flex-wrap: wrap; // Törje a sorokat
+            padding-bottom: 100px;
 
             .card{
                 height: 65vh;
@@ -404,6 +411,7 @@ $main-eighth-color: #79c7c1;
                 margin: 15px;
                 display: inline-flex;
                 flex-direction: column; // A gyerek elemeket egymás alá helyezi
+                margin-bottom: 10px;
 
                 .top-half {
                     height: 50%; // Az elem felső fele
@@ -413,6 +421,8 @@ $main-eighth-color: #79c7c1;
                 
                   .bottom-half {
                     height: 50%; // Az elem alsó fele
+                    padding: 5px;
+                    color: #000;
                   }
             }
             
@@ -424,13 +434,17 @@ $main-eighth-color: #79c7c1;
             margin-bottom: -75px;
         }
         .whitebox{
-            height: auto;
+            -webkit-mask: 
+                linear-gradient(to top, #fff 100%, transparent 100%);
+
             .card_container{
-                height: 1500px;
                 align-items: center;
                 margin: auto;
+
                 .card{
-                    
+                    justify-content: center;
+                    margin: auto;
+                    margin-top: 15px;
                 }
             }
         }

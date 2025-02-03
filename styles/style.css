@@ -182,10 +182,10 @@
   position: fixed;
 }
 .section-4 .plane_right {
-  right: 0;
+  margin-left: 80%;
   width: 15vh;
   height: auto;
-  position: fixed;
+  position: relative;
   transform: scaleX(-1); /* A kép vízszintesen tükrözve lesz */
 }
 .section-4 .orangebox {
@@ -218,7 +218,8 @@
   background: linear-gradient(to right, #79c7c1, #7286c0);
   align-items: center;
   margin: auto;
-  height: 40vh;
+  min-height: calc(110% + 5vh);
+  height: calc(110% + 5vh) !important;
   width: 60%;
   margin-top: 50px;
   border-radius: 10px;
@@ -240,17 +241,12 @@
   padding: 20px;
   list-style: disc;
 }
-@media only screen and (max-width: 1440px) {
-  .section-4 .bluebox {
-    height: 60vh;
-  }
-}
 .section-4 .smallbluebox {
   background: linear-gradient(to right, #79c7c1, #7286c0);
   align-items: center;
   margin: auto;
-  min-height: 25vh;
-  height: auto;
+  min-height: 100%;
+  height: 100% !important;
   width: 70%;
   margin-top: 50px;
   border-radius: 10px;
@@ -317,7 +313,8 @@
 
 .section-5 {
   background: linear-gradient(to right, #019788, #7286c0);
-  height: auto;
+  max-height: 1000vh;
+  min-height: auto;
 }
 .section-5 h2 {
   padding-top: 50px;
@@ -330,7 +327,8 @@
 .section-5 .whitebox {
   width: 90%;
   max-width: 1920px;
-  height: 80vh;
+  min-height: 100%;
+  height: 100% !important;
   background: white;
   margin: auto;
   align-items: center;
@@ -339,14 +337,19 @@
   margin-bottom: 100px;
   mask: linear-gradient(to top, #fff 50%, transparent 40%), linear-gradient(to bottom, #fff -10%, transparent -10%), linear-gradient(to left, #fff 40%, transparent 400px), linear-gradient(to right, #fff 10%, transparent 10%), radial-gradient(circle 50px at 20% 50%, black 100%, transparent 100%);
   mask-repeat: no-repeat;
-  -webkit-mask: linear-gradient(to top, #fff 90%, transparent 90%), linear-gradient(to bottom, #fff -95%, transparent -95%), linear-gradient(to left, #fff 40%, transparent 40%), linear-gradient(to right, #fff 40%, transparent 40%);
+  -webkit-mask: linear-gradient(to top, #fff calc(100% - 5vh), transparent calc(100% - 5vh)), linear-gradient(to bottom, #fff -97%, transparent -97%), linear-gradient(to left, #fff 40%, transparent 40%), linear-gradient(to right, #fff 40%, transparent 40%);
 }
 .section-5 .whitebox .card_container {
   width: 90%;
-  height: 70vh;
+  min-height: 100%;
+  height: 100% !important;
   align-items: center;
   margin: auto;
   transform: translateY(8vh);
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 100px;
 }
 .section-5 .whitebox .card_container .card {
   height: 65vh;
@@ -356,6 +359,7 @@
   margin: 15px;
   display: inline-flex;
   flex-direction: column;
+  margin-bottom: 10px;
 }
 .section-5 .whitebox .card_container .card .top-half {
   height: 50%;
@@ -364,18 +368,24 @@
 }
 .section-5 .whitebox .card_container .card .bottom-half {
   height: 50%;
+  padding: 5px;
+  color: #000;
 }
 @media only screen and (max-width: 720px) {
   .section-5 h2 {
     margin-bottom: -75px;
   }
   .section-5 .whitebox {
-    height: auto;
+    -webkit-mask: linear-gradient(to top, #fff 100%, transparent 100%);
   }
   .section-5 .whitebox .card_container {
-    height: 1500px;
     align-items: center;
     margin: auto;
+  }
+  .section-5 .whitebox .card_container .card {
+    justify-content: center;
+    margin: auto;
+    margin-top: 15px;
   }
 }
 

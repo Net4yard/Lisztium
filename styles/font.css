@@ -32,7 +32,7 @@ html h5 {
 html h6 {
   font-size: 1.25rem !important;
 }
-html p {
+html p, html ul {
   font-size: 1rem !important;
 }
 @media screen and (max-width: 1440px) {
@@ -62,7 +62,7 @@ html p {
   html h6 {
     font-size: 1.125rem !important;
   }
-  html p {
+  html p, html ul {
     font-size: 0.9375rem !important;
   }
 }
@@ -93,7 +93,7 @@ html p {
   html h6 {
     font-size: 1rem !important;
   }
-  html p {
+  html p, html ul {
     font-size: 0.875rem !important;
   }
 }
@@ -124,7 +124,7 @@ html p {
   html h6 {
     font-size: 1rem !important;
   }
-  html p {
+  html p, html ul {
     font-size: 0.8125rem !important;
   }
 }
@@ -155,7 +155,7 @@ html p {
   html h6 {
     font-size: 1rem !important;
   }
-  html p {
+  html p, html ul {
     font-size: 0.75rem !important;
   }
 }
@@ -186,7 +186,7 @@ html p {
   html h6 {
     font-size: 0.875rem !important;
   }
-  html p {
+  html p, html ul {
     font-size: 0.75rem !important;
   }
 }

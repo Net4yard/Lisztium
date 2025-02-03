@@ -34,7 +34,7 @@ columns.forEach((item) => {
   // Kör színe
   circle.style.background = `radial-gradient(circle, ${randomColorPair[0]}, ${randomColorPair[1]})`;
 
-  // Címsor színe az első szín
+  // Címsor színe
   title.style.color = randomColorPair[0];
 });
 
@@ -43,4 +43,19 @@ navLinks.forEach(link => {
   if (link.href === window.location.href) {
     link.classList.add('active');
   }
+});
+
+$(function() {
+  var slides = $('.card_container ul').children().length;
+  var slideWidth = $('.card_container').width();
+  var min = 0;
+  var max = -((slides - 1) * slideWidth);
+
+  $(".card_container ul").width(slides*slideWidth).draggable({
+      axis: 'x',
+      drag: function (event, ui) {
+      if (ui.position.left > min) ui.position.left = min;
+          if (ui.position.left < max) ui.position.left = max;
+      }
+  });
 });
