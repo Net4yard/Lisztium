@@ -116,17 +116,17 @@ $main-eighth-color: #79c7c1;
             display: flex; /* Flexbox alapértelmezett használata */
             flex-wrap: wrap; /* Elemek új sorba kerülnek, ha nem férnek el */
             justify-content: space-around; /* Elemek közötti térköz */
-            width: 90%; /* 90%-os szélességet használja */
+            width: 80%; /* 90%-os szélességet használja */
             gap: 20px; /* Elemek közötti távolság */
             margin-bottom: 10px;
+            align-items: center;
+            margin:auto;
 
             h1{
                 text-align: center;
                 border-radius: 10px;
                 margin-left: 30%;
                 margin-right: 30%;
-                margin-top: 50px;
-                margin-bottom: 50px;
             }
             
             .columns{
@@ -137,9 +137,10 @@ $main-eighth-color: #79c7c1;
                 width: 80%; /* A teljes szélességet használja */
                 
                 .leftbox, .rightbox{
+                    justify-content: center;
                     align-items: center;
                     margin: auto;
-                    width: 120% !important;
+                    width: 100% !important;
                     height: 40vh;
                     border-radius: 10px;
                     z-index: -1;
@@ -150,7 +151,6 @@ $main-eighth-color: #79c7c1;
                     padding-left: 10%;
                     padding-right: 10%;
                     p{
-                        padding-top: 150px;
                         padding-bottom: 25px;
                     }
                 }
@@ -160,7 +160,7 @@ $main-eighth-color: #79c7c1;
                     height: 300px;
                     border-radius: 50%;
                     box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
-                    margin-bottom: -50px; /* Kör belógása a doboz mögé */
+                    margin-bottom: -10px; /* Kör belógása a doboz mögé */
                     display: flex; /* Flexbox aktiválása */
                     justify-content: center; /* Vízszintes középre igazítás */
                     align-items: center; /* Függőleges középre igazítás */
@@ -169,11 +169,12 @@ $main-eighth-color: #79c7c1;
                         width: 90%;
                         align-items: center; /* Függőleges középre igazítás */
                         margin: auto;
+                        justify-content: center; /* Vízszintes középre igazítás */
                     }
                 } 
                 
                 .title {
-                    margin-top: 10px;
+                    margin-top: 150px;
                     text-align: center;
                 }
             }
