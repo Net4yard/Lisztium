@@ -59,3 +59,33 @@ $(function() {
       }
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const notesContainer = document.querySelector(".background-notes");
+  const notes = ["♪", "♫", "♬", "♩", "♭"]; // Használható hangjegy karakterek
+
+  function createNote() {
+    const note = document.createElement("span");
+    note.classList.add("note");
+    note.textContent = notes[Math.floor(Math.random() * notes.length)]; // Véletlenszerű hangjegy kiválasztása
+
+    // Véletlenszerű kezdőpozíció (balról jobbra)
+    note.style.left = Math.random() * 100 + "vw";
+    note.style.animationDuration = 2 + Math.random() * 20 + "s"; // Sebesség
+    note.style.fontSize = 20 + Math.random() * 20 + "px"; // Véletlenszerű méret
+
+    // Véletlenszerű forgásirány
+    const rotationSpeed = Math.random() * 360; // 0 és 360 fok között
+    note.style.transform = `rotate(${rotationSpeed}deg)`;
+
+    notesContainer.appendChild(note);
+
+    // Hangjegy eltávolítása animáció végén
+    setTimeout(() => {
+      note.remove();
+    }, 5000);
+  }
+
+  // Hangjegyek generálása időközönként
+  setInterval(createNote, 500);
+});
