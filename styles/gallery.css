@@ -23,11 +23,9 @@
   }
 }
 
-.section-4 .section-4-div {
-  max-width: 1440px;
-}
 .section-4 .section-4-div .box {
-  width: 60%;
+  max-width: 1280px;
+  width: 40%;
   height: 30vh;
   border-radius: 10px;
   background: linear-gradient(to right, #79c7c1, #7286c0);
@@ -37,6 +35,17 @@
 }
 .section-4 .section-4-div .box p {
   padding: 10px;
+}
+@media (max-width: 1440px) {
+  .section-4 .section-4-div .box {
+    max-width: 1440px;
+    width: 60%;
+  }
+}
+@media (max-width: 720px) {
+  .section-4 .section-4-div .box {
+    width: 90%;
+  }
 }
 
 /*# sourceMappingURL=gallery.css.map */

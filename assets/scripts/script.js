@@ -34,7 +34,7 @@ columns.forEach((item) => {
   // Kör színe
   circle.style.background = `radial-gradient(circle, ${randomColorPair[0]}, ${randomColorPair[1]})`;
 
-  // Címsor színe az első szín
+  // Címsor színe
   title.style.color = randomColorPair[0];
 });
 
@@ -43,4 +43,49 @@ navLinks.forEach(link => {
   if (link.href === window.location.href) {
     link.classList.add('active');
   }
+});
+
+$(function() {
+  var slides = $('.card_container ul').children().length;
+  var slideWidth = $('.card_container').width();
+  var min = 0;
+  var max = -((slides - 1) * slideWidth);
+
+  $(".card_container ul").width(slides*slideWidth).draggable({
+      axis: 'x',
+      drag: function (event, ui) {
+      if (ui.position.left > min) ui.position.left = min;
+          if (ui.position.left < max) ui.position.left = max;
+      }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const notesContainer = document.querySelector(".background-notes");
+  const notes = ["♪", "♫", "♬", "♩", "♭"]; // Használható hangjegy karakterek
+
+  function createNote() {
+    const note = document.createElement("span");
+    note.classList.add("note");
+    note.textContent = notes[Math.floor(Math.random() * notes.length)]; // Véletlenszerű hangjegy kiválasztása
+
+    // Véletlenszerű kezdőpozíció (balról jobbra)
+    note.style.left = Math.random() * 100 + "vw";
+    note.style.animationDuration = 2 + Math.random() * 20 + "s"; // Sebesség
+    note.style.fontSize = 20 + Math.random() * 20 + "px"; // Véletlenszerű méret
+
+    // Véletlenszerű forgásirány
+    const rotationSpeed = Math.random() * 360; // 0 és 360 fok között
+    note.style.transform = `rotate(${rotationSpeed}deg)`;
+
+    notesContainer.appendChild(note);
+
+    // Hangjegy eltávolítása animáció végén
+    setTimeout(() => {
+      note.remove();
+    }, 5000);
+  }
+
+  // Hangjegyek generálása időközönként
+  setInterval(createNote, 500);
 });

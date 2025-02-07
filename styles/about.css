@@ -3,6 +3,8 @@
   max-width: 1920px;
   align-items: center;
   margin: auto;
+  text-align: justify;
+  transition: all 0.3;
 }
 .section-3 .section-3-div h1 {
   background: linear-gradient(to right, #79c7c1, #7286c0);
@@ -12,6 +14,22 @@
   margin-right: 30%;
   margin-top: 50px;
   margin-bottom: 50px;
+}
+.section-3 .section-3-div a {
+  width: 90%;
+}
+.section-3 .section-3-div .profile {
+  pointer-events: auto; /* De a gomb megmarad kattinthatónak */
+  position: relative;
+  align-items: center;
+  margin: auto;
+  background-color: #019788;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+  border-radius: 10px;
+  color: #fff;
+  display: block; /* Kitölti az egész gombot */
 }
 .section-3 .section-3-div .container850above {
   display: flex; /* Flexbox alapértelmezett használata */
@@ -30,32 +48,44 @@
   align-items: center;
   margin: auto;
   justify-content: center;
+  margin-bottom: 50px;
 }
 .section-3 .section-3-div .container850above .columns .leftbox, .section-3 .section-3-div .container850above .columns .rightbox {
   width: 70vh;
   height: 25vh;
   border-radius: 10px;
-  margin-top: 7vh;
+  margin-top: 6vh;
   z-index: -1;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  color: grey;
+  vertical-align: middle;
+  pointer-events: none; /* Kikapcsolja az egér-interakciókat az egész dobozra */
 }
 .section-3 .section-3-div .container850above .columns .leftbox {
   transform: translateX(20%); /* Belógás jobbról */
+  padding-left: 5%;
+  padding-right: 18%;
 }
 .section-3 .section-3-div .container850above .columns .rightbox {
   transform: translateX(-20%); /* Belógás balról */
+  padding-left: 18%;
+  padding-right: 5%;
 }
 .section-3 .section-3-div .container850above .columns .circle {
-  width: 300px;
-  height: 300px;
+  width: min(30vw, 250px);
+  height: min(30vw, 250px);
+  min-width: auto;
+  min-height: auto;
   border-radius: 50%;
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
   display: flex; /* Flexbox aktiválása */
   justify-content: center; /* Vízszintes középre igazítás */
   align-items: center; /* Függőleges középre igazítás */
+  transform: translateY(3vh);
 }
 .section-3 .section-3-div .container850above .columns .circle img {
   width: 90%;
+  object-fit: cover;
 }
 .section-3 .section-3-div .container850above .columns .title {
   margin-top: 10px;
@@ -70,61 +100,67 @@
   display: flex; /* Flexbox alapértelmezett használata */
   flex-wrap: wrap; /* Elemek új sorba kerülnek, ha nem férnek el */
   justify-content: space-around; /* Elemek közötti térköz */
-  align-items: center; /* Vertikális igazítás középre */
-  margin: auto;
-  width: 90%; /* 90%-os szélességet használja */
+  width: 80%; /* 90%-os szélességet használja */
   gap: 20px; /* Elemek közötti távolság */
   margin-bottom: 10px;
+  align-items: center;
+  margin: auto;
+}
+.section-3 .section-3-div .container850below h1 {
+  text-align: center;
+  border-radius: 10px;
+  margin-left: 30%;
+  margin-right: 30%;
 }
 .section-3 .section-3-div .container850below .columns {
   display: flex; /* Egy sor elemeinek elrendezése */
   flex-direction: column; /* Elemek egymás alatt */
-  align-items: center; /* Középre igazítás */
-  width: 70%; /* A teljes szélességet használja */
+  align-items: center;
+  margin: auto;
+  width: 80%; /* A teljes szélességet használja */
 }
 .section-3 .section-3-div .container850below .columns .leftbox, .section-3 .section-3-div .container850below .columns .rightbox {
-  width: 50vh !important;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100% !important;
   height: 40vh;
   border-radius: 10px;
   z-index: -1;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-  width: 70%; /* Szélesebb doboz */
-  transform: translateX(0); /* Nincs oldalra tolás */
-  margin-top: -30px; /* Doboz belógása a körbe */
+  margin-top: -150px; /* Doboz belógása a körbe */
+  margin-bottom: 50px;
+  color: grey;
+  padding-left: 10%;
+  padding-right: 10%;
 }
-.section-3 .section-3-div .container850below .columns .leftbox h5, .section-3 .section-3-div .container850below .columns .rightbox h5 {
-  padding-top: 100px;
+.section-3 .section-3-div .container850below .columns .leftbox p, .section-3 .section-3-div .container850below .columns .rightbox p {
+  padding-bottom: 25px;
 }
 .section-3 .section-3-div .container850below .columns .circle {
   width: 300px;
   height: 300px;
   border-radius: 50%;
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
-  margin-bottom: -50px; /* Kör belógása a doboz mögé */
+  margin-bottom: -10px; /* Kör belógása a doboz mögé */
   display: flex; /* Flexbox aktiválása */
   justify-content: center; /* Vízszintes középre igazítás */
   align-items: center; /* Függőleges középre igazítás */
+  margin: auto;
 }
 .section-3 .section-3-div .container850below .columns .circle img {
   width: 90%;
+  align-items: center; /* Függőleges középre igazítás */
+  margin: auto;
+  justify-content: center; /* Vízszintes középre igazítás */
 }
 .section-3 .section-3-div .container850below .columns .title {
-  margin-top: 10px;
+  margin-top: 150px;
   text-align: center;
 }
 @media only screen and (min-width: 851px) {
   .section-3 .section-3-div .container850below {
     display: none;
-  }
-}
-@media only screen and (max-width: 850px) {
-  .section-3 .section-3-div h1 {
-    text-align: center;
-    border-radius: 10px;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 50px;
-    margin-bottom: 50px;
   }
 }
 
