@@ -86,22 +86,20 @@ $main-eighth-color: #79c7c1;
     }
 
     .section-4-div{
-        max-width: 1920px;
         display: flex;
-        flex-direction: row;
+        flex-wrap: wrap; /* Ha nincs elég hely, új sorba tör */
+        justify-content: center; /* Középre igazítás */
+        gap: 20px; /* Távolság az elemek között */
+        max-width: 1920px; /* Ha kell, állítsd be a kívánt szélességet */
         width: 100%;
-        align-items: center;
         margin: auto;
         padding: 30px;
-        vertical-align: middle;
 
         .section-4-container{
-            width: 95%;
-            align-items: center;
-            margin: auto;
-            flex-direction: column;
-            padding: 10px;
+            margin: 15px;
             text-align: center;
+            width: calc(33.33% - 50px); /* Három oszlop elosztása */
+            min-width: 300px; /* Ne legyen túl kicsi */
         }
 
     }
