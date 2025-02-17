@@ -475,18 +475,19 @@ $main-eighth-color: #79c7c1;
         align-items: center; /* Középre igazítás függőlegesen */
         margin: auto;
         gap: 20px;
-        width: 90%;
+
 
         .card{
             display: inline-flex;
             margin-top: 10px;
             text-align: center;
-            margin: auto;
 
             li{
                 list-style: disc;
                 text-align: left;
-                margin-left: 50px;
+                margin: 20px;
+                margin-right: 90% !important;
+                max-width: 5% !important; /* Nem engedi a teljes szélességet kihasználni */
             }
 
             h4{
@@ -499,10 +500,11 @@ $main-eighth-color: #79c7c1;
 
             .side_card_left{
                 width: 35vh;
-                height: 40vh;
+                min-height: 40vh;
+                height: auto;
                 background: linear-gradient(to bottom right, $main-color, $main-secondary-color);
                 border-radius: 10px;
-                margin-top: 100px;
+                margin-top: 70px;
                 transition: all 0.3s;
             }
         
@@ -518,22 +520,21 @@ $main-eighth-color: #79c7c1;
     
             .side_card_right{
                 width: 35vh;
-                height: 40vh;
+                min-height: 40vh;
+                height: auto;
                 background: linear-gradient(to top right, $main-fouth-color, $main-eighth-color);
                 border-radius: 10px;
-                margin-top: 100px;
+                margin-top: 70px;
                 transition: all 0.3s;
             }
 
             .side_card_left:hover, .side_card_right:hover {
-                width: 37vh;
-                height: 42vh;
+                transform: scale(1.05);
                 transition: all 0.3s;
             }
 
             .middle_card:hover{
-                width: 37vh;
-                height: 52vh;
+                transform: scale(1.05);
                 transition: all 0.3s;
             }
 
