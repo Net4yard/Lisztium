@@ -89,3 +89,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // Hangjegyek generálása időközönként
   setInterval(createNote, 500);
 });
+
+function openLightbox(img) {
+  let lightbox = document.getElementById("lightbox");
+  let lightboxImg = document.getElementById("lightbox-img");
+  
+  lightboxImg.src = img.src;
+  lightbox.style.display = "flex";
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}

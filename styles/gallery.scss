@@ -19,18 +19,55 @@ $main-eighth-color: #79c7c1;
         margin-right: 15%;
       
         img {
-          width: 100%;
-          height: auto;
-          object-fit: cover; // A képek méretének igazítása
+            width: 200px; /* Egységes méret */
+            height: 150px;
+            object-fit: cover; /* Kép arányának megtartása, vágással */
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            :hover {
+                transform: scale(1.1);
+            }
+        }
+
+        .gallery-img {
+            width: 200px; /* Egységes méret */
+            height: 150px;
+            object-fit: cover; /* Kép arányának megtartása, vágással */
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            :hover {
+                transform: scale(1.1);
+            }
+        }
+        
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
         }
 
         @media (max-width: 1440px) {
-              grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-          }
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
           
-          @media (max-width: 720px) {
-              grid-template-columns: 1fr; // Egy oszlop
-          }
+        @media (max-width: 720px) {
+            grid-template-columns: 1fr; // Egy oszlop
+        }
     }
 }
 
