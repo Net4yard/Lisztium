@@ -481,14 +481,16 @@ $main-eighth-color: #79c7c1;
             display: inline-flex;
             margin-top: 10px;
             text-align: center;
-
-            li{
+            ul{
+                max-width: 90% !important; /* Nem engedi a teljes szélességet kihasználni */
+                li{
                 list-style: disc;
                 text-align: left;
                 margin: 20px;
                 margin-right: 90% !important;
-                max-width: 5% !important; /* Nem engedi a teljes szélességet kihasználni */
+                }
             }
+
 
             h4{
                 padding-top: 25px;
@@ -504,7 +506,7 @@ $main-eighth-color: #79c7c1;
                 height: auto;
                 background: linear-gradient(to bottom right, $main-color, $main-secondary-color);
                 border-radius: 10px;
-                margin-top: 70px;
+                margin-top: 80px;
                 transition: all 0.3s;
             }
         
@@ -515,6 +517,7 @@ $main-eighth-color: #79c7c1;
                 border-radius: 10px;
                 margin-left: 10px;
                 margin-right: 10px;
+                margin-top: 10px;
                 transition: all 0.3s;
             }
     
@@ -524,18 +527,25 @@ $main-eighth-color: #79c7c1;
                 height: auto;
                 background: linear-gradient(to top right, $main-fouth-color, $main-eighth-color);
                 border-radius: 10px;
-                margin-top: 70px;
+                margin-top: 80px;
                 transition: all 0.3s;
+
             }
 
             .side_card_left:hover, .side_card_right:hover {
                 transform: scale(1.05);
                 transition: all 0.3s;
+                .overlay {
+                    background: rgba(0, 0, 0, 0.6);
+                }
             }
 
             .middle_card:hover{
                 transform: scale(1.05);
                 transition: all 0.3s;
+                .overlay {
+                    background: rgba(0, 0, 0, 0.6);
+                }
             }
 
             @media only screen and (max-width: 720px) {

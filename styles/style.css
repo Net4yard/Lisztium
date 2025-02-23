@@ -417,12 +417,14 @@
   margin-top: 10px;
   text-align: center;
 }
-.section-6 .card_container .card li {
+.section-6 .card_container .card ul {
+  max-width: 90% !important; /* Nem engedi a teljes szélességet kihasználni */
+}
+.section-6 .card_container .card ul li {
   list-style: disc;
   text-align: left;
   margin: 20px;
   margin-right: 90% !important;
-  max-width: 5% !important; /* Nem engedi a teljes szélességet kihasználni */
 }
 .section-6 .card_container .card h4 {
   padding-top: 25px;
@@ -436,7 +438,7 @@
   height: auto;
   background: linear-gradient(to bottom right, #019788, #7286c0);
   border-radius: 10px;
-  margin-top: 70px;
+  margin-top: 80px;
   transition: all 0.3s;
 }
 .section-6 .card_container .card .middle_card {
@@ -446,6 +448,7 @@
   border-radius: 10px;
   margin-left: 10px;
   margin-right: 10px;
+  margin-top: 10px;
   transition: all 0.3s;
 }
 .section-6 .card_container .card .side_card_right {
@@ -454,16 +457,22 @@
   height: auto;
   background: linear-gradient(to top right, #51b3d5, #79c7c1);
   border-radius: 10px;
-  margin-top: 70px;
+  margin-top: 80px;
   transition: all 0.3s;
 }
 .section-6 .card_container .card .side_card_left:hover, .section-6 .card_container .card .side_card_right:hover {
   transform: scale(1.05);
   transition: all 0.3s;
 }
+.section-6 .card_container .card .side_card_left:hover .overlay, .section-6 .card_container .card .side_card_right:hover .overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
 .section-6 .card_container .card .middle_card:hover {
   transform: scale(1.05);
   transition: all 0.3s;
+}
+.section-6 .card_container .card .middle_card:hover .overlay {
+  background: rgba(0, 0, 0, 0.6);
 }
 @media only screen and (max-width: 720px) {
   .section-6 .card_container .card {

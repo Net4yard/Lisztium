@@ -102,6 +102,8 @@
     flex-direction: column;
   }
   .section-4 .section-4-div .section-4-container {
+    align-items: center;
+    margin: auto;
     width: 100%;
     padding: 2px;
   }
