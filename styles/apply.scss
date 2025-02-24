@@ -40,6 +40,13 @@ $main-eighth-color: #79c7c1;
             transform: translateY(-5vh);
             border-radius: 200px 0 0 200px;
             margin-right: 0;
+            img{
+                height: 45vh;
+                min-height: auto;
+                width: auto;
+                transform: translateY(-5vh);
+                float: right;
+            }
         }
           
         .violin {
@@ -49,7 +56,7 @@ $main-eighth-color: #79c7c1;
             margin-left: 10vh;
         }
 
-        @media only screen and (max-width: 720px) {
+        @media only screen and (max-width: 850px) {
             background: transparent;
             border: 1px solid grey;
             border-radius: 10px;
@@ -67,6 +74,13 @@ $main-eighth-color: #79c7c1;
                 transform: translate(7%, -75%);
                 position: fixed;
                 height: 25vh;
+                img{
+                    height: 30vh;
+                    width: auto;
+                    transform: translateY(-5vh);
+                    align-items: center;
+                    margin-right: 100px;
+                }
             }
               
             .violin {

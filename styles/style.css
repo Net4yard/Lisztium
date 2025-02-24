@@ -22,10 +22,10 @@
   margin-bottom: 150px;
 }
 .section-3 .greenline {
-  margin-top: 20vh;
+  margin-top: 100px;
   background: linear-gradient(to right, #019788, #8ee7a4);
   width: 95%;
-  height: 30vh;
+  height: 250px;
   border-radius: 0 200px 200px 0;
   display: flex;
   /* Kezdőállapot: eltolás és átlátszóság */
@@ -42,9 +42,18 @@
 .section-3 .greenline .shortgreenline {
   background: linear-gradient(to right, #8ee7a4, #019788);
   width: 50%;
-  height: 40vh;
+  height: 350px;
   transform: translateY(-5vh);
   border-radius: 0 200px 200px 0;
+}
+.section-3 .greenline .shortgreenline img {
+  height: 391px;
+  width: auto;
+  transform: translateY(-5vh);
+  float: right;
+  margin-right: 1px;
+  border-top-right-radius: 150px; /* Csak a jobb alsó sarok lesz lekerekítve */
+  border-bottom-right-radius: 150px; /* Csak a jobb alsó sarok lesz lekerekítve */
 }
 .section-3 .greenline .piano {
   width: 45%;
@@ -52,7 +61,7 @@
   margin-top: 5vh;
   margin-left: 5vh;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 850px) {
   .section-3 .greenline {
     background: transparent;
     border: 1px solid grey;
@@ -72,6 +81,15 @@
     position: fixed;
     height: 25vh;
   }
+  .section-3 .greenline .shortgreenline img {
+    height: 30vh;
+    width: auto;
+    transform: translateY(-5vh);
+    float: right;
+    margin-right: 1px;
+    border-top-right-radius: 100px; /* Csak a jobb alsó sarok lesz lekerekítve */
+    border-bottom-right-radius: 75px; /* Csak a jobb alsó sarok lesz lekerekítve */
+  }
   .section-3 .greenline .piano {
     width: 70%;
     padding-top: 10vh;
@@ -82,10 +100,10 @@
   }
 }
 .section-3 .purpleline {
-  margin-top: 20vh;
+  margin-top: 100px;
   background: linear-gradient(to right, #51b3d5, #7286c0);
   width: 95%;
-  height: 30vh;
+  height: 250px;
   border-radius: 200px 0 0 200px;
   display: flex;
   margin-left: auto;
@@ -104,10 +122,17 @@
 .section-3 .purpleline .shortpurpleline {
   background: linear-gradient(to right, #b659dc, #019788);
   width: 50%;
-  height: 40vh;
+  height: 350px;
   transform: translateY(-5vh);
   border-radius: 200px 0 0 200px;
   margin-right: 0;
+}
+.section-3 .purpleline .shortpurpleline img {
+  height: 391px;
+  width: auto;
+  transform: translateY(-5vh);
+  float: right;
+  margin-right: 1px;
 }
 .section-3 .purpleline .violin {
   width: 45%;
@@ -115,7 +140,7 @@
   margin-top: 5vh;
   margin-left: 10vh;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 850px) {
   .section-3 .purpleline {
     background: transparent;
     border: 1px solid grey;
@@ -134,6 +159,13 @@
     transform: translate(7%, -75%);
     position: fixed;
     height: 25vh;
+  }
+  .section-3 .purpleline .shortpurpleline img {
+    height: 30vh;
+    width: auto;
+    transform: translateY(-5vh);
+    margin-right: 250px !important;
+    margin-right: 1px;
   }
   .section-3 .purpleline .violin {
     width: 70%;

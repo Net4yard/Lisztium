@@ -30,10 +30,10 @@ $main-eighth-color: #79c7c1;
     margin-bottom: 150px;
 
     .greenline{
-        margin-top: 20vh;
+        margin-top: 100px;
         background: linear-gradient(to right, $main-color, $main-third-color);
         width: 95%;
-        height: 30vh;
+        height: 250px;
         border-radius: 0 200px 200px 0;
         display: flex;
          /* Kezdőállapot: eltolás és átlátszóság */
@@ -52,9 +52,18 @@ $main-eighth-color: #79c7c1;
         .shortgreenline{
             background: linear-gradient(to right, $main-third-color, $main-color);
             width: 50%;
-            height: 40vh;
+            height: 350px;
             transform: translateY(-5vh);
             border-radius: 0 200px 200px 0;
+            img{
+                height: 391px;
+                width: auto;
+                transform: translateY(-5vh);
+                float: right;
+                margin-right: 1px;
+                border-top-right-radius: 150px; /* Csak a jobb alsó sarok lesz lekerekítve */
+                border-bottom-right-radius: 150px; /* Csak a jobb alsó sarok lesz lekerekítve */
+            }
         }
           
         .piano {
@@ -64,7 +73,7 @@ $main-eighth-color: #79c7c1;
             margin-left: 5vh;
         }
 
-        @media only screen and (max-width: 720px) {
+        @media only screen and (max-width: 850px) {
             background: transparent;
             border: 1px solid grey;
             border-radius: 10px;
@@ -82,6 +91,15 @@ $main-eighth-color: #79c7c1;
                 transform: translate(-7%, -75%);
                 position: fixed;
                 height: 25vh;
+                img{
+                    height: 30vh;
+                    width: auto;
+                    transform: translateY(-5vh);
+                    float: right;
+                    margin-right: 1px;
+                    border-top-right-radius: 100px; /* Csak a jobb alsó sarok lesz lekerekítve */
+                    border-bottom-right-radius: 75px; /* Csak a jobb alsó sarok lesz lekerekítve */
+                }
             }
               
             .piano {
@@ -96,10 +114,10 @@ $main-eighth-color: #79c7c1;
     }
 
     .purpleline{
-        margin-top: 20vh;
+        margin-top: 100px;
         background: linear-gradient(to right, $main-fouth-color, $main-secondary-color);
         width: 95%;
-        height: 30vh;
+        height: 250px;
         border-radius: 200px 0 0 200px;
         display: flex;
         margin-left: auto;
@@ -120,10 +138,17 @@ $main-eighth-color: #79c7c1;
         .shortpurpleline{
             background: linear-gradient(to right, $main-fifth-color, $main-color);
             width: 50%;
-            height: 40vh;
+            height: 350px;
             transform: translateY(-5vh);
             border-radius: 200px 0 0 200px;
             margin-right: 0;
+            img{
+                height: 391px;
+                width: auto;
+                transform: translateY(-5vh);
+                float: right;
+                margin-right: 1px;
+            }
         }
           
         .violin {
@@ -133,7 +158,7 @@ $main-eighth-color: #79c7c1;
             margin-left: 10vh;
         }
 
-        @media only screen and (max-width: 720px) {
+        @media only screen and (max-width: 850px) {
             background: transparent;
             border: 1px solid grey;
             border-radius: 10px;
@@ -151,6 +176,13 @@ $main-eighth-color: #79c7c1;
                 transform: translate(7%, -75%);
                 position: fixed;
                 height: 25vh;
+                img{
+                    height: 30vh;
+                    width: auto;
+                    transform: translateY(-5vh);
+                    margin-right: 250px !important;
+                    margin-right: 1px;
+                }
             }
               
             .violin {

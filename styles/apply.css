@@ -31,13 +31,20 @@
   border-radius: 200px 0 0 200px;
   margin-right: 0;
 }
+.section-3 .purpleline .shortpurpleline img {
+  height: 45vh;
+  min-height: auto;
+  width: auto;
+  transform: translateY(-5vh);
+  float: right;
+}
 .section-3 .purpleline .violin {
   width: 45%;
   text-align: center;
   margin-top: 5vh;
   margin-left: 10vh;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 850px) {
   .section-3 .purpleline {
     background: transparent;
     border: 1px solid grey;
@@ -56,6 +63,13 @@
     transform: translate(7%, -75%);
     position: fixed;
     height: 25vh;
+  }
+  .section-3 .purpleline .shortpurpleline img {
+    height: 30vh;
+    width: auto;
+    transform: translateY(-5vh);
+    align-items: center;
+    margin-right: 100px;
   }
   .section-3 .purpleline .violin {
     width: 70%;
