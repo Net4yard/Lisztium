@@ -90,14 +90,37 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(createNote, 500);
 });
 
-function openLightbox(img) {
-  let lightbox = document.getElementById("lightbox");
-  let lightboxImg = document.getElementById("lightbox-img");
-  
-  lightboxImg.src = img.src;
-  lightbox.style.display = "flex";
-}
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".gallery-img").forEach(function (img) {
+      img.addEventListener("click", function () {
+          openLightbox(this.src, this.alt);
+      });
+  });
+});
 
-function closeLightbox() {
-  document.getElementById("lightbox").style.display = "none";
-}
+document.addEventListener("DOMContentLoaded", function () {
+  var lightbox = document.getElementById("lightbox");
+  var lightboxImg = document.getElementById("lightboxImage");
+  var caption = document.getElementById("lightboxCaption");
+  var closeBtn = document.querySelector(".close");
+
+  document.querySelectorAll(".gallery-img").forEach(function (img) {
+      img.addEventListener("click", function () {
+          lightbox.style.display = "block";
+          lightboxImg.src = this.src;
+          caption.innerHTML = this.alt;
+      });
+  });
+
+  // Lightbox bezárás gombra kattintva
+  closeBtn.addEventListener("click", function () {
+      lightbox.style.display = "none";
+  });
+
+  // Lightbox háttérre kattintva bezárás
+  lightbox.addEventListener("click", function (event) {
+      if (event.target === lightbox) {
+          lightbox.style.display = "none";
+      }
+  });
+});

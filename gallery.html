@@ -11,9 +11,6 @@
 
     <title>Lisztium</title>
   </head>
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <img id="lightbox-img" class="lightbox-content">
-  </div>
   <body>
     <button id="scrollToTopButton">
         <svg
@@ -118,14 +115,10 @@
             <img src="assets/images/Gábor_2.jpg" alt="Image 9" class="gallery-img" onclick="openLightbox(this)">
             <img src="assets/images/Haruka.JPG" alt="Image 10" class="gallery-img" onclick="openLightbox(this)">
             <img src="assets/images/Gábor_3.jpg" alt="Image 11" class="gallery-img" onclick="openLightbox(this)">
-        </div>
-    </section>
-    <section class="section-4">
-        <div class="section-4-div">
-            <div class="box">
-                <p>
-                    SZöveeeeeg
-                </p>
+            <div id="lightbox">
+                <span class="close" onclick="closeLightbox()">&times;</span>
+                <img class="lightbox-content" id="lightboxImage">
+                <div id="lightboxCaption"></div>
             </div>
         </div>
     </section>
@@ -135,6 +128,8 @@
         </div>
     </footer>
   </body>
-  <script src="assets/scripts/hamburger.js"></script>
-  <script src="assets/scripts/script.js"></script>
+  <script src="assets/scripts/hamburger.js" defer></script>
+  <script src="assets/scripts/script.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </html>
