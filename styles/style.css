@@ -1,4 +1,8 @@
 @charset "UTF-8";
+body {
+  overflow-x: hidden !important;
+}
+
 .semiovaltop {
   background-color: white;
   width: 100%;
@@ -20,6 +24,7 @@
 .section-3 {
   height: auto;
   margin-bottom: 150px;
+  overflow-x: hidden !important;
 }
 .section-3 .greenline {
   margin-top: 100px;
@@ -200,6 +205,7 @@
 .section-4 {
   max-height: 1500px;
   overflow-y: hidden;
+  overflow-x: hidden;
   max-width: 1680px;
   align-items: center;
   margin: auto;
@@ -219,6 +225,7 @@
   height: auto;
   position: relative;
   transform: scaleX(-1); /* A kép vízszintesen tükrözve lesz */
+  overflow-x: hidden !important;
 }
 .section-4 .orangebox {
   align-items: center;

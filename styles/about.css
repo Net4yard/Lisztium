@@ -51,9 +51,8 @@
   margin-bottom: 50px;
 }
 .section-3 .section-3-div .container850above .columns .leftbox, .section-3 .section-3-div .container850above .columns .rightbox {
-  width: 70vh;
-  height: auto;
-  min-height: 25vh;
+  width: 600px;
+  height: 250;
   border-radius: 10px;
   margin-top: 6vh;
   z-index: -1;
@@ -125,6 +124,7 @@
   align-items: center;
   margin: auto;
   width: 100% !important;
+  max-width: 330px !important;
   height: auto;
   border-radius: 10px;
   z-index: -1;
