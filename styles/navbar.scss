@@ -193,3 +193,16 @@ html {
     color: $main-secondary-color !important;
   }
 }
+
+#cart-count {
+  background: red;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 3px 3px;
+  position: relative;
+  top: 8px;
+  right: 12px;
+  display: none; /* Alapból elrejtve, ha nincs termék */
+}

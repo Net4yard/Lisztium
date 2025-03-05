@@ -22,9 +22,7 @@ body {
 }
 
 .section-3 {
-  height: auto;
   margin-bottom: 150px;
-  overflow-x: hidden !important;
 }
 .section-3 .greenline {
   margin-top: 100px;

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles/font.css" />
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/navbar.css" />
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/services.css" />
     <link rel="stylesheet" href="styles/footer.css" />
 
     <title>Lisztium</title>
@@ -60,6 +60,12 @@
                     <a href="apply.html" class="nav-link" id="apply"><img src="assets/images/apply.svg" alt="Apply"/>Application</a>
                 </li>
                 <li class="nav-item">
+                    <a href="cart.html" class="nav-link">
+                        <img src="assets/images/icons8-shopping-cart-100.png" alt="Cart"/>
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="jp/services_jp.html" class="nav-link"><img src="assets/images/japan-flag.svg" alt="Japan"/></a>
                 </li>
             </ul>
@@ -102,12 +108,52 @@
             </div>
         </div>
     </section>
+    <section class="section-3">
+        <h1 class="product">Zeneoktató kurzusok</h1>
+        <div class="section-3-div">
+            <div id="products">
+                <div class="product" data-id="1" data-name="Audition for Active participant" data-price="8000">
+                    <h5>Audition for Active participant</h5>
+                    <h6>8000¥</h6>
+                    <button onclick="addToCart(1, 'Audition for Active participant', 8000)">Kosárba</button>
+                </div>
+                <div class="product" data-id="2" data-name="Passive participants standard" data-price="20000">
+                    <h5>Passive participants standard</h5>
+                    <h6>20000¥</h6>
+                    <button onclick="addToCart(2, 'Passive participants standard', 20000)">Kosárba</button>
+                </div>
+                <div class="product" data-id="3" data-name="Passive participants U25" data-price="10000">
+                    <h5>Passive participants U25</h5>
+                    <h6>10000¥</h6>
+                    <button onclick="addToCart(3, 'Passive participants U25', 10000)">Kosárba</button>
+                </div>
+                <div class="product" data-id="4" data-name="Consultation on studying in Hungary" data-price="4000">
+                    <h5>Consultation on studying in Hungary</h5>
+                    <h6>4000¥</h6>
+                    <button onclick="addToCart(3, 'Consultation on studying in Hungary', 4000)">Kosárba</button>
+                </div>
+            </div>
+        </div>
+        <div class="cart" onclick="showCart()">
+            Kosár <span id="cart-count">0</span>
+        </div>
+    
+        <div id="cart-modal" style="display:none;">
+            <h2>Kosár</h2>
+            <ul id="cart-items"></ul>
+            <p>Összesen: <span id="cart-total">0</span> Ft</p>
+            <button onclick="checkout()">Fizetés</button>
+            <button onclick="hideCart()">Bezár</button>
+        </div>
+    </section>
     <footer>     
         <div class="bottom">
             <p>Ezt a weboldalt a <a href="https://www.net4yard.com">Net4Yard</a> csapata készítette.</p>
         </div>
     </footer>
   </body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <script src="assets/scripts/hamburger.js"></script>
-  <script src="assets/scripts/script.js"></script>
+  <script src="assets/scripts/script.js" defer></script>
 </html>

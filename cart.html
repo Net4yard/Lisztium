@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles/font.css" />
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/navbar.css" />
-    <link rel="stylesheet" href="styles/profile.css" />
+    <link rel="stylesheet" href="styles/cart.css" />
     <link rel="stylesheet" href="styles/footer.css" />
 
     <title>Lisztium</title>
@@ -66,7 +66,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                    <a href="jp/haruka_jp.html" class="nav-link"><img src="assets/images/japan-flag.svg" alt="Japan"/></a>
+                    <a href="jp/index_jp.html" class="nav-link"><img src="assets/images/japan-flag.svg" alt="Japan"/></a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -80,48 +80,24 @@
     </header>
     <section class="section-3">
       <div class="section-3-div">
-        <div class="section-3-left">
-          <img src="assets/images/Haruka_2.jpeg">
-        </div>
-        <div class="section-3-right">
-          <h1>Haruka Nagao</h1>
-          <p>
-            <br>
-            Haruka Nagao earned her bachelorʼs, masterʼs and doctoral degrees at the Tokyo University of the Arts, and also studied at the Graz University of Music and Performing Arts, and she has completed her viola master's program at the Liszt Music Academy, in Budapest. 
-            <br><br>
-            Over the course of her artistic career, she has won awards at numerous competitions, won the first prize in the Japan Music Competition, she won prizes in the Long-Thibaud International Music Competition, the Sendai International Music Competition, etc. In addition to her triumphs at competitions, she has also regularly received various awards and recognitions for her work, including the Shizuoka Prefecture Cultural Encouragement Award, the Ageo City Honor Award, and the Matsukata Hall Music Award. 
-            <br><br>
-            She won the 1st prize in the Carl Flesch International Violin Competition, where she also won a special prize for her Mozart performance. She has performed with domestic and international orchestras such as L'orchestre National de Radio France, Hydon Orchestra, Omaha Symphony Orchestra, Kodály Symphony Orchestra, Tokyo Symphony Orchestra, Tokyo Philharmonic Orchestra, and Japan Philharmonic Orchestra.
-            <br><br>
-            She played F.Vacchi's Violin Concerto at Carnegie Hall in New York, USA. She is the 1st concertmaster of the Hungarian State Opera Orchestra. In parallel with her performing career, she is also teaching at the Liszt Academy.
-            <br>
-            </p>
+        <h1>Kosár tartalma</h1>
+        <div class="container">
+          <div id="cart-container">
+              <ul id="cart-items"></ul>
+              <p id="total-price">Összesen: 0 ¥</p>
+              <button id="checkout-button">Fizetés Barionnal</button>
+          </div>
         </div>
       </div>
     </section>
-    <section class="section-4">
-      <div class="section-4-div">
-        <div class="section-4-container">
-          <iframe width="400" height="225" src="https://www.youtube.com/embed/WCcxZ2NdkSg?si=OLh0yRoe6R5RQrZV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-          <h6>Haruka Nagao (Japan) - Stage 1 - International H. Wieniawski Violin Competition STERE</h6>
+    <footer>     
+        <div class="bottom">
+            <p>Ezt a weboldalt a <a href="https://www.net4yard.com">Net4Yard</a> csapata készítette.</p>
         </div>
-        <div class="section-4-container">
-          <iframe width="400" height="225" src="https://www.youtube.com/embed/4D7xSdfw4L0?si=_SbsWwSl5aBBa2b3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-          <h6>Mozart Sinfonia Concertante 1/3 Alexandre Dimcevski, Nagao Haruka</h6>
-        </div>
-      </div>
-    </section>
+    </footer>
   </body>
-  <footer>     
-    <div class="bottom">
-        <p>Ezt a weboldalt a <a href="https://www.net4yard.com">Net4Yard</a> csapata készítette.</p>
-    </div>
-</footer>
-</body>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-<script src="assets/scripts/hamburger.js"></script>
-<script src="assets/scripts/script.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="assets/scripts/hamburger.js"></script>
+  <script src="assets/scripts/script.js" defer></script>
 </html>
