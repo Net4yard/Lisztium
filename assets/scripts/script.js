@@ -226,13 +226,13 @@ function loadCart() {
       const li = document.createElement("li");
       li.innerHTML = `
           ${item.name} - ${item.price} ¥
-          <button onclick="removeFromCart(${index})">Törlés</button>
+          <button onclick="removeFromCart(${index})">Remove</button>
       `;
       cartContainer.appendChild(li);
       totalPrice += item.price;
   });
 
-  totalPriceElement.textContent = `Összesen: ${totalPrice} ¥`;
+  totalPriceElement.textContent = `Total: ${totalPrice} ¥`;
 }
 
 function removeFromCart(index) {
