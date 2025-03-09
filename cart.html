@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles/font.css" />
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/navbar.css" />
-    <link rel="stylesheet" href="styles/gallery.css" />
+    <link rel="stylesheet" href="styles/cart.css" />
     <link rel="stylesheet" href="styles/footer.css" />
 
     <title>Lisztium</title>
@@ -60,13 +60,13 @@
                     <a href="apply.html" class="nav-link" id="apply"><img src="assets/images/apply.svg" alt="Apply"/>Application</a>
                 </li>
                 <li class="nav-item">
-                    <a href="cart.html" class="nav-link">
-                        <img src="assets/images/icons8-shopping-cart-100.png" alt="Cart"/>
-                        <span id="cart-count">0</span>
-                    </a>
+                  <a href="cart.html" class="nav-link">
+                      <img src="assets/images/icons8-shopping-cart-100.png" alt="Cart"/>
+                      <span id="cart-count">0</span>
+                  </a>
                 </li>
                 <li class="nav-item">
-                    <a href="jp/gallery_jp.html" class="nav-link"><img src="assets/images/japan-flag.svg" alt="Japan"/></a>
+                    <a href="jp/index_jp.html" class="nav-link"><img src="assets/images/japan-flag.svg" alt="Japan"/></a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -78,55 +78,17 @@
             </div>
         </nav>
     </header>
-    <section class="section-1">
-        <div class="section-1-div">
-            <div class="container">
-                <div class="wrapper">
-                    <img src="assets/images/IMG_5840.jpg">
-                    <img src="assets/images/Haruka.JPG">
-                    <img src="assets/images/DSC_0456-images-61.jpg">
-                    <img src="assets/images/veca1.jpg">
-                    <img src="assets/images/IMG_5851.jpg">
-                    <img src="assets/images/Gábor_4.jpg">
-                    <img src="assets/images/IMG_5840.jpg">
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="section-2">
-        <div class="section-2-div">
-            <div class="row">
-                <div class="column_left">
-                    <img src="assets/images/Lisztkukac.png">
-                </div>
-                <div class="column_right">
-                    <h4>Welcome to the home of Lisztium masterclasses!</h4>
-                    <p>
-                        Feel free to browse our media content from our earlier events
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
     <section class="section-3">
-        <div class="section-3-div">
-            <img src="assets/images/DSC_4879.jpg" alt="Image 1" class="gallery-img" onclick="openLightbox(this)">
-            <img src="assets/images/IMG_5840.jpg" alt="Image 2" class="gallery-img" onclick="openLightbox(this)">
-            <img src="assets/images/Gábor_4.jpg" alt="Image 3" class="gallery-img" onclick="openLightbox(this)">
-            <img src="assets/images/DSC_0456-images-61.jpg" alt="Image 4" class="gallery-img" onclick="openLightbox(this)">
-            <img src="assets/images/IMG_5851.jpg" alt="Image 5" class="gallery-img" onclick="openLightbox(this)">
-            <img src="assets/images/Haruka_2.jpeg" alt="Image 6" class="gallery-img" onclick="openLightbox(this)">
-            <img src="assets/images/DSC_5014 1.jpg" alt="Image 7" class="gallery-img" onclick="openLightbox(this)">
-            <img src="assets/images/veca1.jpg" alt="Image 8" class="gallery-img" onclick="openLightbox(this)">
-            <img src="assets/images/Gábor_2.jpg" alt="Image 9" class="gallery-img" onclick="openLightbox(this)">
-            <img src="assets/images/Haruka.JPG" alt="Image 10" class="gallery-img" onclick="openLightbox(this)">
-            <img src="assets/images/Gábor_3.jpg" alt="Image 11" class="gallery-img" onclick="openLightbox(this)">
-            <div id="lightbox">
-                <span class="close" onclick="closeLightbox()">&times;</span>
-                <img class="lightbox-content" id="lightboxImage">
-                <div id="lightboxCaption"></div>
-            </div>
+      <div class="section-3-div">
+        <h1>Shopping cart</h1>
+        <div class="container">
+          <div id="cart-container">
+              <ul id="cart-items"></ul>
+              <p id="total-price">Total: 0 ¥</p>
+              <button id="checkout-button">Checkout</button>
+          </div>
         </div>
+      </div>
     </section>
     <footer>     
         <div class="bottom">

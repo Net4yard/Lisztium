@@ -1,4 +1,8 @@
 @charset "UTF-8";
+body {
+  overflow-x: hidden !important;
+}
+
 .semiovaltop {
   background-color: white;
   width: 100%;
@@ -18,14 +22,13 @@
 }
 
 .section-3 {
-  height: auto;
   margin-bottom: 150px;
 }
 .section-3 .greenline {
-  margin-top: 20vh;
+  margin-top: 100px;
   background: linear-gradient(to right, #019788, #8ee7a4);
   width: 95%;
-  height: 30vh;
+  height: 250px;
   border-radius: 0 200px 200px 0;
   display: flex;
   /* Kezdőállapot: eltolás és átlátszóság */
@@ -42,9 +45,18 @@
 .section-3 .greenline .shortgreenline {
   background: linear-gradient(to right, #8ee7a4, #019788);
   width: 50%;
-  height: 40vh;
+  height: 350px;
   transform: translateY(-5vh);
   border-radius: 0 200px 200px 0;
+}
+.section-3 .greenline .shortgreenline img {
+  height: 391px;
+  width: auto;
+  transform: translateY(-5vh);
+  float: right;
+  margin-right: 1px;
+  border-top-right-radius: 150px; /* Csak a jobb alsó sarok lesz lekerekítve */
+  border-bottom-right-radius: 150px; /* Csak a jobb alsó sarok lesz lekerekítve */
 }
 .section-3 .greenline .piano {
   width: 45%;
@@ -52,7 +64,7 @@
   margin-top: 5vh;
   margin-left: 5vh;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 850px) {
   .section-3 .greenline {
     background: transparent;
     border: 1px solid grey;
@@ -72,6 +84,15 @@
     position: fixed;
     height: 25vh;
   }
+  .section-3 .greenline .shortgreenline img {
+    height: 30vh;
+    width: auto;
+    transform: translateY(-5vh);
+    float: right;
+    margin-right: 1px;
+    border-top-right-radius: 100px; /* Csak a jobb alsó sarok lesz lekerekítve */
+    border-bottom-right-radius: 75px; /* Csak a jobb alsó sarok lesz lekerekítve */
+  }
   .section-3 .greenline .piano {
     width: 70%;
     padding-top: 10vh;
@@ -82,10 +103,10 @@
   }
 }
 .section-3 .purpleline {
-  margin-top: 20vh;
+  margin-top: 100px;
   background: linear-gradient(to right, #51b3d5, #7286c0);
   width: 95%;
-  height: 30vh;
+  height: 250px;
   border-radius: 200px 0 0 200px;
   display: flex;
   margin-left: auto;
@@ -104,10 +125,17 @@
 .section-3 .purpleline .shortpurpleline {
   background: linear-gradient(to right, #b659dc, #019788);
   width: 50%;
-  height: 40vh;
+  height: 350px;
   transform: translateY(-5vh);
   border-radius: 200px 0 0 200px;
   margin-right: 0;
+}
+.section-3 .purpleline .shortpurpleline img {
+  height: 391px;
+  width: auto;
+  transform: translateY(-5vh);
+  float: right;
+  margin-right: 1px;
 }
 .section-3 .purpleline .violin {
   width: 45%;
@@ -115,7 +143,7 @@
   margin-top: 5vh;
   margin-left: 10vh;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 850px) {
   .section-3 .purpleline {
     background: transparent;
     border: 1px solid grey;
@@ -134,6 +162,13 @@
     transform: translate(7%, -75%);
     position: fixed;
     height: 25vh;
+  }
+  .section-3 .purpleline .shortpurpleline img {
+    height: 30vh;
+    width: auto;
+    transform: translateY(-5vh);
+    margin-right: 250px !important;
+    margin-right: 1px;
   }
   .section-3 .purpleline .violin {
     width: 70%;
@@ -168,6 +203,7 @@
 .section-4 {
   max-height: 1500px;
   overflow-y: hidden;
+  overflow-x: hidden;
   max-width: 1680px;
   align-items: center;
   margin: auto;
@@ -187,6 +223,7 @@
   height: auto;
   position: relative;
   transform: scaleX(-1); /* A kép vízszintesen tükrözve lesz */
+  overflow-x: hidden !important;
 }
 .section-4 .orangebox {
   align-items: center;
@@ -411,18 +448,20 @@
   align-items: center; /* Középre igazítás függőlegesen */
   margin: auto;
   gap: 20px;
-  width: 90%;
 }
 .section-6 .card_container .card {
   display: inline-flex;
   margin-top: 10px;
   text-align: center;
-  margin: auto;
 }
-.section-6 .card_container .card li {
+.section-6 .card_container .card ul {
+  max-width: 90% !important; /* Nem engedi a teljes szélességet kihasználni */
+}
+.section-6 .card_container .card ul li {
   list-style: disc;
   text-align: left;
-  margin-left: 50px;
+  margin: 20px;
+  margin-right: 90% !important;
 }
 .section-6 .card_container .card h4 {
   padding-top: 25px;
@@ -432,10 +471,11 @@
 }
 .section-6 .card_container .card .side_card_left {
   width: 35vh;
-  height: 40vh;
+  min-height: 40vh;
+  height: auto;
   background: linear-gradient(to bottom right, #019788, #7286c0);
   border-radius: 10px;
-  margin-top: 100px;
+  margin-top: 80px;
   transition: all 0.3s;
 }
 .section-6 .card_container .card .middle_card {
@@ -445,25 +485,31 @@
   border-radius: 10px;
   margin-left: 10px;
   margin-right: 10px;
+  margin-top: 10px;
   transition: all 0.3s;
 }
 .section-6 .card_container .card .side_card_right {
   width: 35vh;
-  height: 40vh;
+  min-height: 40vh;
+  height: auto;
   background: linear-gradient(to top right, #51b3d5, #79c7c1);
   border-radius: 10px;
-  margin-top: 100px;
+  margin-top: 80px;
   transition: all 0.3s;
 }
 .section-6 .card_container .card .side_card_left:hover, .section-6 .card_container .card .side_card_right:hover {
-  width: 37vh;
-  height: 42vh;
+  transform: scale(1.05);
   transition: all 0.3s;
 }
+.section-6 .card_container .card .side_card_left:hover .overlay, .section-6 .card_container .card .side_card_right:hover .overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
 .section-6 .card_container .card .middle_card:hover {
-  width: 37vh;
-  height: 52vh;
+  transform: scale(1.05);
   transition: all 0.3s;
+}
+.section-6 .card_container .card .middle_card:hover .overlay {
+  background: rgba(0, 0, 0, 0.6);
 }
 @media only screen and (max-width: 720px) {
   .section-6 .card_container .card {

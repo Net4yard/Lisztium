@@ -40,6 +40,13 @@ $main-eighth-color: #79c7c1;
             transform: translateY(-5vh);
             border-radius: 200px 0 0 200px;
             margin-right: 0;
+            img{
+                height: 45vh;
+                min-height: auto;
+                width: auto;
+                transform: translateY(-5vh);
+                float: right;
+            }
         }
           
         .violin {
@@ -49,7 +56,7 @@ $main-eighth-color: #79c7c1;
             margin-left: 10vh;
         }
 
-        @media only screen and (max-width: 720px) {
+        @media only screen and (max-width: 850px) {
             background: transparent;
             border: 1px solid grey;
             border-radius: 10px;
@@ -67,6 +74,13 @@ $main-eighth-color: #79c7c1;
                 transform: translate(7%, -75%);
                 position: fixed;
                 height: 25vh;
+                img{
+                    height: 30vh;
+                    width: auto;
+                    transform: translateY(-5vh);
+                    align-items: center;
+                    margin-right: 100px;
+                }
             }
               
             .violin {
@@ -93,7 +107,6 @@ $main-eighth-color: #79c7c1;
 }
 
 .section-4{
-    max-height: 1500px;
     overflow-y: hidden;
     max-width: 1680px;
     align-items: center;
@@ -158,6 +171,7 @@ $main-eighth-color: #79c7c1;
         margin-top: 50px;
         border-radius: 10px;
         padding: 50px;
+        font-weight: normal;
 
         transform: translateY(10%);
         opacity: 0;
@@ -174,6 +188,10 @@ $main-eighth-color: #79c7c1;
 
         h3{
             margin-bottom: 30px;
+            font-weight: normal;
+        }
+        h4, h5{
+            font-weight: normal;
         }
         li{
             padding: 20px;

@@ -12,25 +12,115 @@ $main-eighth-color: #79c7c1;
     .section-3-div{
         max-width: 1920px;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); // Oszlopok dinamikus száma
-        gap: 10px; // Távolság a képek között
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); // Oszlopok dinamikus száma
+        gap: 5px; // Távolság a képek között
         padding: 20px;
         margin-left: 15%;
         margin-right: 15%;
+        :hover {
+            transform: scale(1.1);
+        }
       
         img {
-          width: 100%;
-          height: auto;
-          object-fit: cover; // A képek méretének igazítása
+            width: 100%; /* Egységes méret */
+            height: 100%;
+            object-fit: cover; /* Kép arányának megtartása, vágással */
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-img {
+            width: 200px; /* Egységes méret */
+            height: 195px;
+            object-fit: cover; /* Kép arányának megtartása, vágással */
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        /* Stílus a képre, amely megnyitja a lightboxot */
+        #lightboxTrigger {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            :hover {
+                opacity: 0.7;
+            }
+        }
+        
+        /* A Modal (háttér) */
+        #lightbox {
+            display: none; /* Alapból rejtve */
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        /* Modal Tartalma (Kép) */
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            width: 100%;
+            max-width: 700px;
+            height: 100%;
+            transform: scale(0.7);
+        }
+        
+        /* Kép felirat */
+        #lightboxCaption {
+            margin: auto;
+            display: block;
+            width: 100%;
+            text-align: center;
+            color: #ccc;
+            padding: 10px;
+            height: auto;
+        }
+        
+        /* Animáció - Zoom effect */
+        .lightbox-content, #lightboxCaption {
+            animation-duration: 0.6s;
+        }
+        
+        @keyframes zoom {
+            from { transform: scale(0) }
+            to { transform: scale(1) }
+        }
+        
+        /* Bezáró gomb */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            :hover, :focus {
+                color: #bbb;
+                text-decoration: none;
+                cursor: pointer;
+            }
         }
 
         @media (max-width: 1440px) {
-              grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-          }
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
           
-          @media (max-width: 720px) {
-              grid-template-columns: 1fr; // Egy oszlop
-          }
+        @media (max-width: 720px) {
+            grid-template-columns: 1fr; // Egy oszlop
+        }
+    }
+    @media (max-width: 720px) {
+        align-items: center;
+        margin: auto;
     }
 }
 
