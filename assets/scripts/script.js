@@ -90,14 +90,192 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(createNote, 500);
 });
 
-function openLightbox(img) {
-  let lightbox = document.getElementById("lightbox");
-  let lightboxImg = document.getElementById("lightbox-img");
-  
-  lightboxImg.src = img.src;
-  lightbox.style.display = "flex";
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".gallery-img").forEach(function (img) {
+      img.addEventListener("click", function () {
+          openLightbox(this.src, this.alt);
+      });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  var lightbox = document.getElementById("lightbox");
+  var lightboxImg = document.getElementById("lightboxImage");
+  var caption = document.getElementById("lightboxCaption");
+  var closeBtn = document.querySelector(".close");
+
+  document.querySelectorAll(".gallery-img").forEach(function (img) {
+      img.addEventListener("click", function () {
+          lightbox.style.display = "block";
+          lightboxImg.src = this.src;
+          caption.innerHTML = this.alt;
+      });
+  });
+
+  // Lightbox bezárás gombra kattintva
+  closeBtn.addEventListener("click", function () {
+      lightbox.style.display = "none";
+  });
+
+  // Lightbox háttérre kattintva bezárás
+  lightbox.addEventListener("click", function (event) {
+      if (event.target === lightbox) {
+          lightbox.style.display = "none";
+      }
+  });
+});
+
+let cart = [];
+
+function updateCartCount() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || []; // Ha nincs kosár, legyen üres tömb
+  let cartCount = document.getElementById("cart-count");
+
+  if (cart.length > 0) {
+      cartCount.innerText = cart.length;
+      cartCount.style.display = "inline-block"; // Megjelenítés, ha van termék
+  } else {
+      cartCount.style.display = "none"; // Ha üres, elrejtés
+  }
 }
 
-function closeLightbox() {
-  document.getElementById("lightbox").style.display = "none";
+// Termék hozzáadása a kosárhoz
+function addToCart(id, name, price) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || []; // Ha nincs kosár, hozzunk létre egyet
+  cart.push({ id, name, price });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
 }
+
+// Oldalbetöltéskor frissítse a kosár ikonját
+document.addEventListener("DOMContentLoaded", updateCartCount);
+
+function updateCart() {
+    document.getElementById("cart-count").innerText = cart.length;
+}
+
+function showCart() {
+    const cartList = document.getElementById("cart-items");
+    cartList.innerHTML = "";
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        total += item.price;
+        let li = document.createElement("li");
+        li.innerText = `${item.name} - ${item.price} ¥`;
+        cartList.appendChild(li);
+    });
+
+    document.getElementById("cart-total").innerText = total;
+    document.getElementById("cart-modal").style.display = "block";
+}
+
+function hideCart() {
+    document.getElementById("cart-modal").style.display = "none";
+}
+
+async function checkout() {
+    const response = await fetch("/create-barion-payment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ cart })
+    });
+    const data = await response.json();
+    window.location.href = data.paymentUrl;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  let cardContainer = document.querySelector(".card_container ul");
+
+  let isDragging = false;
+  let startPosition = 0;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+
+  cardContainer.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      startPosition = e.clientX - currentTranslate;
+  });
+
+  cardContainer.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      let currentPosition = e.clientX - startPosition;
+      cardContainer.style.transform = `translateX(${currentPosition}px)`;
+  });
+
+  cardContainer.addEventListener("mouseup", () => {
+      isDragging = false;
+      prevTranslate = currentTranslate;
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  loadCart();
+});
+
+function loadCart() {
+  const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartContainer = document.getElementById("cart-items");
+  const totalPriceElement = document.getElementById("total-price");
+  
+  cartContainer.innerHTML = ""; // Kiürítjük a listát, hogy ne duplikálódjon
+
+  let totalPrice = 0;
+  
+  cartItems.forEach((item, index) => {
+      const li = document.createElement("li");
+      li.innerHTML = `
+          ${item.name} - ${item.price} ¥
+          <button onclick="removeFromCart(${index})">Remove</button>
+      `;
+      cartContainer.appendChild(li);
+      totalPrice += item.price;
+  });
+
+  totalPriceElement.textContent = `Total: ${totalPrice} ¥`;
+}
+
+function removeFromCart(index) {
+  let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+  
+  // Keressük meg az adott elemet az UI-ban
+  const cartContainer = document.getElementById("cart-items");
+  const itemToRemove = cartContainer.children[index];
+
+  // Adjunk egy kis fade-out animációt
+  itemToRemove.style.transition = "opacity 0.3s";
+  itemToRemove.style.opacity = "0";
+
+  setTimeout(() => {
+      // Töröljük az elemet az adatokból
+      cartItems.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+
+      // Újratöltjük a listát
+      loadCart();
+  }, 300); // Kis késleltetés az animáció miatt
+}
+
+document.addEventListener("click", function (event) {
+  if (event.target.matches("button")) {
+      loadCart(); // Bármelyik gombra kattintva frissítjük a kosarat
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const products = document.querySelectorAll(".product");
+  const gradients = [
+      "linear-gradient(to right, #019788, #7286c0)",  // Rózsaszín átmenet
+      //"linear-gradient(to right, #8ee7a4, #f1be34)",  // Kékes átmenet
+      "linear-gradient(to right, #b659dc, #79c7c1)",  // Zöldes átmenet
+      //"linear-gradient(to right, #51b3d5, #f2a859)"   // Pirosas átmenet
+  ];
+
+  products.forEach(product => {
+      const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
+      product.style.background = randomGradient;
+      product.style.padding = "15px"; // Hogy jobban látszódjon a háttér
+      product.style.borderRadius = "10px";
+      product.style.marginBottom = "10px";
+  });
+});
