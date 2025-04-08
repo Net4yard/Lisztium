@@ -3,13 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Lisztiumは単なる音楽教育ではなく、情熱と創造性が出会うコミュニティです。鍵盤楽器、弦楽器、木管楽器、金管楽器の世界を探求し、音楽があなたの人生を豊かにするようにしましょう！">
     <link rel="stylesheet" href="../styles/font.css" />
     <link rel="stylesheet" href="../styles/global.css" />
     <link rel="stylesheet" href="../styles/navbar.css" />
     <link rel="stylesheet" href="../styles/services.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="icon" type="image/png" href="../assets/ico/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../assets/ico/favicon.svg" />
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/ico/apple-touch-icon.png" />
+    <link rel="manifest" href="../assets/ico/site.webmanifest" />
 
-    <title>Lisztium</title>
+    <title>Lisztium - 音楽と英語のマスタークラス：文化を結ぶ架け橋</title>
   </head>
   <body>
     <button id="scrollToTopButton">
@@ -60,6 +66,12 @@
                     <a href="apply_jp.html" class="nav-link" id="apply"><img src="../assets/images/apply.svg" alt="Apply"/>申し込み</a>
                 </li>
                 <li class="nav-item">
+                    <a href="cart_jp.html" class="nav-link">
+                        <img src="../assets/images/icons8-shopping-cart-100.png" alt="Cart"/>
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="../services.html" class="nav-link"><img src="../assets/images/uk-flag.svg" alt="English"/></a>
                 </li>
             </ul>
@@ -93,13 +105,62 @@
                 <div class="column_left">
                     <img src="../assets/images/Lisztkukac.png">
                 </div>
-                <div class="column_right">
-                    <h4>Lisztium マスタークラスへようこそ!</h4>
-                    <p>
-                        Ide meg jöhet a sok szöveg
-                    </p>
+                <div id="services">
+                    <h1>Lisztium マスタークラスへようこそ!</h1>
+                    <h4>第1日目：</h4>
+                    <h5>開講式、マスタークラス</h5>
+                    <h4>第2日目：</h4>
+                    <h5>マスタークラス、練習</h5>
+                    <h4>第3日目：</h4>
+                    <h5>マスタークラス、練習、ハンガリー留学相談 </h5>
+                    <h4>第4日目：</h4>
+                    <h5>マスタークラス、練習、リハーサル＋受講生によるクラスコンサート</h5>
+                    <h4>第5日目：</h4>
+                    <h5>マスタークラス、練習、修了式</h5>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="section-3">
+        <h1 class="product">Zeneoktató kurzusok</h1>
+        <div class="section-3-div">
+            <div id="products">
+                <div class="product" data-id="1" data-name="Audition for Active participant" data-price="8000">
+                    <h5>Audition for Active participant</h5>
+                    <h6>8000¥</h6>
+                    <p>As there is only a limited number of students, we can accommodate there is a screening round before one can apply for the Active participant package. The option for the Active participant package will only be to those who have passed the audition.</p>
+                    <button onclick="addToCart(1, 'Audition for Active participant', 8000)">Kosárba</button>
+                </div>
+                <div class="product" data-id="2" data-name="Passive participants standard" data-price="20000">
+                    <h5>Passive participants standard</h5>
+                    <h6>20000¥</h6>
+                    <p>May visit all the classes during the 5 days as a passive participant.</p>
+                    <button onclick="addToCart(2, 'Passive participants standard', 20000)">Kosárba</button>
+                </div>
+                <div class="product" data-id="3" data-name="Passive participants U25" data-price="10000">
+                    <h5>Passive participants U25</h5>
+                    <h6>10000¥</h6>
+                    <p>May visit all the classes during the 5 days as a passive participant for ages 25 and younger.</p>
+                    <button onclick="addToCart(3, 'Passive participants U25', 10000)">Kosárba</button>
+                </div>
+                <div class="product" data-id="4" data-name="Consultation on studying in Hungary" data-price="4000">
+                    <h5>Consultation on studying in Hungary</h5>
+                    <h6>4000¥</h6>
+                    <p>45-minute consultation on the basics of studying in Hungary and on applying to the Liszt Ferenc Academy of Music.</p>
+                    <button onclick="addToCart(3, 'Consultation on studying in Hungary', 4000)">Kosárba</button>
+                </div>
+            </div>
+        </div>
+        <div class="cart" onclick="showCart()">
+            Kosár <span id="cart-count">0</span>
+        </div>
+    
+        <div id="cart-modal" style="display:none;">
+            <h2>Kosár</h2>
+            <ul id="cart-items"></ul>
+            <p>Összesen: <span id="cart-total">0</span> Ft</p>
+            <button onclick="checkout()">Fizetés</button>
+            <button onclick="hideCart()">Bezár</button>
         </div>
     </section>
     <footer>     
@@ -108,6 +169,8 @@
         </div>
     </footer>
   </body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <script src="../assets/scripts/hamburger.js"></script>
   <script src="../assets/scripts/script.js"></script>
 </html>
