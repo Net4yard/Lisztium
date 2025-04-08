@@ -104,6 +104,10 @@ $main-eighth-color: #79c7c1;
           opacity: 1;
         }
       }
+      
+    @media only screen and (max-width: 1080px) { 
+        overflow: hidden;
+    }
 }
 
 .section-4{
