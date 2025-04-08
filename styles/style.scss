@@ -61,11 +61,14 @@ body{
             img{
                 height: 391px;
                 width: auto;
-                transform: translateY(-5vh);
+                transform: translateY(-4.2vh);
                 float: right;
                 margin-right: 1px;
                 border-top-right-radius: 150px; /* Csak a jobb alsó sarok lesz lekerekítve */
                 border-bottom-right-radius: 150px; /* Csak a jobb alsó sarok lesz lekerekítve */
+                @media only screen and (max-width: 1440px) {
+                    transform: translateY(-5vh);
+                }
             }
         }
           
@@ -144,13 +147,19 @@ body{
             height: 350px;
             transform: translateY(-5vh);
             border-radius: 200px 0 0 200px;
-            margin-right: 0;
+
             img{
                 height: 391px;
                 width: auto;
-                transform: translateY(-5vh);
+                transform: translateY(-4.2vh);
                 float: right;
                 margin-right: 1px;
+                @media only screen and (max-width: 1440px) {
+                    transform: translateY(-5vh);
+                }
+                @media only screen and (max-width: 1080px) {
+                    margin-right: -60px;
+                }
             }
         }
           
@@ -183,8 +192,7 @@ body{
                     height: 30vh;
                     width: auto;
                     transform: translateY(-5vh);
-                    margin-right: 250px !important;
-                    margin-right: 1px;
+                    margin-right: 60px;
                 }
             }
               
@@ -353,6 +361,9 @@ body{
           }
       }
       @media only screen and (max-width: 720px) {
+        img{
+            display: none;
+        }
         .orangebox{
             width: 90%;
             p{
