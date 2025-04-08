@@ -212,6 +212,11 @@ body {
     opacity: 1;
   }
 }
+@media only screen and (max-width: 850px) {
+  .section-3 {
+    overflow: hidden;
+  }
+}
 
 .section-4 {
   max-height: 1500px;
