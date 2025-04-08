@@ -94,7 +94,7 @@
                     <img src="../assets/images/Lisztkukac.png">
                 </div>
                 <div class="column_right">
-                    <h4>Lisztium マスタークラスへようこそ!</h4>
+                    <h1>Lisztium マスタークラスへようこそ!</h1>
                     <p>
                         過去のイベントの様子をご覧ください
                     </p>
@@ -104,12 +104,22 @@
     </section>
     <section class="section-3">
         <div class="section-3-div">
-            <img src="../assets/images/DSC_4879.jpg" alt="Image 1">
-            <img src="../assets/images/IMG_5840.jpg">
-            <img src="../assets/images/DSC_0456-images-61.jpg">
-            <img src="../assets/images/IMG_5851.jpg">
-            <img src="../assets/images/DSC_5014 1.jpg">
-            <img src="../assets/images/veca1.jpg">
+            <img src="../assets/images/DSC_4879.jpg" alt="Image 1" class="gallery-img" onclick="openLightbox(this)">
+            <img src="../assets/images/IMG_5840.jpg" alt="Image 2" class="gallery-img" onclick="openLightbox(this)">
+            <img src="../assets/images/Gábor_4.jpg" alt="Image 3" class="gallery-img" onclick="openLightbox(this)">
+            <img src="../assets/images/DSC_0456-images-61.jpg" alt="Image 4" class="gallery-img" onclick="openLightbox(this)">
+            <img src="../assets/images/IMG_5851.jpg" alt="Image 5" class="gallery-img" onclick="openLightbox(this)">
+            <img src="../assets/images/Haruka_2.jpeg" alt="Image 6" class="gallery-img" onclick="openLightbox(this)">
+            <img src="../assets/images/DSC_5014 1.jpg" alt="Image 7" class="gallery-img" onclick="openLightbox(this)">
+            <img src="../assets/images/veca1.jpg" alt="Image 8" class="gallery-img" onclick="openLightbox(this)">
+            <img src="../assets/images/Gábor_2.jpg" alt="Image 9" class="gallery-img" onclick="openLightbox(this)">
+            <img src="../assets/images/Haruka.JPG" alt="Image 10" class="gallery-img" onclick="openLightbox(this)">
+            <img src="../assets/images/Gábor_3.jpg" alt="Image 11" class="gallery-img" onclick="openLightbox(this)">
+            <div id="lightbox">
+                <span class="close" onclick="closeLightbox()">&times;</span>
+                <img class="lightbox-content" id="lightboxImage">
+                <div id="lightboxCaption"></div>
+            </div>
         </div>
     </section>
     <section class="section-4">
@@ -123,10 +133,12 @@
     </section>
     <footer>     
         <div class="bottom">
-            <p>Ezt a weboldalt a <a href="https://www.net4yard.com">Net4Yard</a> csapata készítette.</p>
+            <p><a href="https://www.net4yard.com">Net4Yard</a> - デジタル未来の創造者たち。</p>
         </div>
     </footer>
   </body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <script src="../assets/scripts/hamburger.js"></script>
   <script src="../assets/scripts/script.js"></script>
 </html>
