@@ -74,55 +74,38 @@ body{
       img{
         width: 100%;
         padding: 20px;
+        flex-shrink: 0;
       }
 
       .wrapper{
-        width: 100;
+        width: 100%; // 7 kép × 100%
         display: flex;
-        animation: slide 10s infinite;
+        animation: slide 40s infinite;
 
         @keyframes slide{
-          0% {
-            transform: translateX(0);
+          0%, 10% {
+            transform: translateX(0%);
           }
-          10% {
-              transform: translateX(0);
+          14.3%, 24.3% {
+            transform: translateX(-100%);
           }
-          15% {
-              transform: translateX(-100%);
+          28.6%, 38.6% {
+            transform: translateX(-200%);
           }
-          25% {
-              transform: translateX(-100%);
+          42.9%, 52.9% {
+            transform: translateX(-300%);
           }
-          30% {
-              transform: translateX(-200%);
+          57.2%, 67.2% {
+            transform: translateX(-400%);
           }
-          40% {
-              transform: translateX(-200%);
+          71.5%, 81.5% {
+            transform: translateX(-500%);
           }
-          45% {
-              transform: translateX(-300%);
+          85.8%, 94.8% {
+            transform: translateX(-600%); // 7. kép
           }
-          55% {
-              transform: translateX(-300%);
-          }
-          60% {
-              transform: translateX(-400%);
-          }
-          70% {
-              transform: translateX(-400%);
-          }
-          75% {
-              transform: translateX(-500%);
-          }
-          85% {
-              transform: translateX(-500%);
-          }
-          90% {
-              transform: translateX(-600%);
-          }
-          100% {
-              transform: translateX(-600%);
+          95%, 100% {
+            transform: translateX(-600%); // ugrás vissza az első képre
           }
         }
       }
@@ -161,6 +144,14 @@ body{
               text-align: center;
               padding-top: 5vh;
               padding-bottom: 5vh;
+              @media only screen and (max-width: 720px) {
+                width: 90%;
+                text-align: justify;
+                h1{
+                  text-align: center;
+                  margin-bottom: 25px;
+                }
+              }
           }
 
           #services {
@@ -186,7 +177,7 @@ body{
               justify-content: center; /* Középre igazítás függőlegesen */
               align-items: center; /* Középre igazítás vízszintesen */
               margin: auto;
-              width: 90%; /* Szélesség kicsit rugalmasabbá tétele */
+              width: 100%; /* Szélesség kicsit rugalmasabbá tétele */
             }
       }
 
