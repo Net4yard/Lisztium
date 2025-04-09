@@ -147,6 +147,16 @@ body {
   padding-top: 5vh;
   padding-bottom: 5vh;
 }
+@media only screen and (max-width: 720px) {
+  .section-2 .section-2-div .row .column_right {
+    width: 90%;
+    text-align: justify;
+  }
+  .section-2 .section-2-div .row .column_right h1 {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+}
 .section-2 .section-2-div .row #services {
   flex: 80%;
   width: 60%;
@@ -172,7 +182,7 @@ body {
     justify-content: center; /* Középre igazítás függőlegesen */
     align-items: center; /* Középre igazítás vízszintesen */
     margin: auto;
-    width: 90%; /* Szélesség kicsit rugalmasabbá tétele */
+    width: 100%; /* Szélesség kicsit rugalmasabbá tétele */
   }
 }
 .section-2 .section-2-div .row:after {

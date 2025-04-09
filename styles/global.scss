@@ -161,6 +161,14 @@ body{
               text-align: center;
               padding-top: 5vh;
               padding-bottom: 5vh;
+              @media only screen and (max-width: 720px) {
+                width: 90%;
+                text-align: justify;
+                h1{
+                  text-align: center;
+                  margin-bottom: 25px;
+                }
+              }
           }
 
           #services {
@@ -186,7 +194,7 @@ body{
               justify-content: center; /* Középre igazítás függőlegesen */
               align-items: center; /* Középre igazítás vízszintesen */
               margin: auto;
-              width: 90%; /* Szélesség kicsit rugalmasabbá tétele */
+              width: 100%; /* Szélesség kicsit rugalmasabbá tétele */
             }
       }
 
