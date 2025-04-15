@@ -1,36 +1,101 @@
-.section-3 h1 {
+@charset "UTF-8";
+.section-3 {
+  overflow-y: hidden;
+  max-width: 1680px;
   align-items: center;
   margin: auto;
-  text-align: center;
-  background: linear-gradient(to right bottom, #79c7c1, #b659dc);
-  width: 50%;
+}
+.section-3 ul {
+  list-style-type: circle !important;
+}
+.section-3 .orangebox {
+  align-items: center;
+  margin: auto;
+  background: linear-gradient(to right, #f1be34, #f2a859);
+  min-height: 15vh;
+  height: auto;
+  width: 80%;
+  max-width: 700px;
   border-radius: 10px;
-  margin-top: 10px;
-}
-.section-3 .section-3-div .product {
-  width: 90%;
+  text-align: center;
+  transform: translateY(10%);
+  opacity: 0;
+  margin-top: 30px;
+  margin-bottom: 30px;
   padding: 10px;
+  /* Animáció alkalmazása */
+  animation: slideInUp 1.5s ease-out forwards;
+  animation-delay: 0s;
+}
+.section-3 .orangebox button {
+  background-color: #f2a859;
+  border-color: white;
+  width: 100px;
+  height: 40px;
+  border-radius: 50px;
+  font-size: 20px;
+  margin-top: 5px;
+}
+.section-3 .orangebox.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+.section-3 .bluebox {
+  background: linear-gradient(to right, #79c7c1, #7286c0);
   align-items: center;
   margin: auto;
-  border-radius: 30px;
-  max-width: 500px;
-  margin-top: 10px;
+  min-height: 100%;
+  height: 100% !important;
+  width: 60%;
+  margin-top: 50px;
+  border-radius: 10px;
+  padding: 20px;
+  font-weight: normal;
+  transform: translateY(10%);
+  opacity: 0;
+  /* Animáció alkalmazása */
+  animation: slideInUp 1.5s ease-out forwards;
+  animation-delay: 0s;
 }
-.section-3 .section-3-div .product button {
-  width: auto;
-  height: 30px;
-  border-radius: 30px;
-  background-color: lightgrey;
-  color: black;
-  padding: 15px;
-  vertical-align: middle;
-  margin: auto;
-  align-items: center;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
+.section-3 .bluebox.visible {
+  transform: translateY(0);
+  opacity: 1;
 }
-.section-3 .section-3-div .product button:hover {
-  transform: scale(1.05);
+.section-3 .bluebox h3 {
+  margin-bottom: 30px;
+}
+.section-3 .bluebox h5 {
+  font-weight: normal;
+}
+.section-3 .bluebox li {
+  padding: 20px;
+  list-style: disc;
+}
+@media only screen and (max-width: 1440px) {
+  .section-3 .bluebox {
+    height: 110vh;
+  }
+}
+@keyframes slideInUp {
+  0% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 1080px) {
+  .section-3 .bluebox {
+    width: 90%;
+  }
+  .section-3 .bluebox h3 {
+    text-align: center;
+  }
+  .section-3 .bluebox li {
+    padding: 5px;
+  }
 }
 
 /*# sourceMappingURL=services.css.map */
