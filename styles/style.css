@@ -24,11 +24,14 @@ body {
 .section-3 {
   margin-bottom: 150px;
 }
+.section-3 h4 {
+  margin-top: -15px;
+}
 .section-3 .greenline {
   margin-top: 100px;
   background: linear-gradient(to right, #019788, #8ee7a4);
-  width: 95%;
-  height: 250px;
+  width: 100%;
+  height: 280px;
   border-radius: 0 200px 200px 0;
   display: flex;
   /* Kezdőállapot: eltolás és átlátszóság */
@@ -44,7 +47,7 @@ body {
 }
 .section-3 .greenline .shortgreenline {
   background: linear-gradient(to right, #8ee7a4, #019788);
-  width: 50%;
+  width: 40%;
   height: 350px;
   transform: translateY(-5vh);
   border-radius: 0 200px 200px 0;
@@ -110,8 +113,8 @@ body {
 .section-3 .purpleline {
   margin-top: 100px;
   background: linear-gradient(to right, #51b3d5, #7286c0);
-  width: 95%;
-  height: 250px;
+  width: 100%;
+  height: 280px;
   border-radius: 200px 0 0 200px;
   display: flex;
   margin-left: auto;
@@ -129,10 +132,11 @@ body {
 }
 .section-3 .purpleline .shortpurpleline {
   background: linear-gradient(to right, #b659dc, #019788);
-  width: 50%;
+  width: 40%;
   height: 350px;
   transform: translateY(-5vh);
   border-radius: 200px 0 0 200px;
+  margin-left: 200px;
 }
 .section-3 .purpleline .shortpurpleline img {
   height: 391px;
@@ -152,7 +156,7 @@ body {
   }
 }
 .section-3 .purpleline .violin {
-  width: 45%;
+  width: 65%;
   text-align: center;
   margin-top: 5vh;
   margin-left: 10vh;
@@ -184,7 +188,7 @@ body {
     margin-right: 60px;
   }
   .section-3 .purpleline .violin {
-    width: 70%;
+    width: 60%;
     padding-top: 10vh;
     padding-bottom: 1vh;
     text-align: center;
@@ -422,6 +426,12 @@ body {
 .section-5 .whitebox .card_container .card .top-half {
   height: 50%;
   background-color: #f2a859;
+  border-radius: 10px;
+}
+.section-5 .whitebox .card_container .card .top-half img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
   border-radius: 10px;
 }
 .section-5 .whitebox .card_container .card .bottom-half {
