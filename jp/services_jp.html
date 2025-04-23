@@ -54,7 +54,7 @@
                     <a href="about_jp.html" class="nav-link active"><img src="../assets/images/about.svg" alt="About"/>私たちについて</a>
                 </li>
                 <li class="nav-item">
-                    <a href="services_jp.html" class="nav-link"><img src="../assets/images/services.svg" alt="Services"/>スケジュール</a>
+                    <a href="services_jp.html" class="nav-link"><img src="../assets/images/services.svg" alt="Services"/>日程と活動</a>
                 </li>
                 <li class="nav-item">
                     <a href="index_jp.html" class="nav-link"><img src="../assets/images/event.svg" alt="Events"/>イベント</a>
@@ -122,47 +122,33 @@
         </div>
     </section>
     <section class="section-3">
-        <h1 class="product">音楽教育コース</h1>
-        <div class="section-3-div">
-            <div id="products">
-                <div class="product" data-id="1" data-name="Audition for Active participant" data-price="8000">
-                    <h5>実技参加者オーディション：</h5>
-                    <h6>8000¥</h6>
-                    <p>定員に限りがあるため、実技参加者パッケージへのお申し込みには事前審査があります。実技参加者パッケージは、オーディションに合格された方のみ選択可能です。</p>
-                    <button onclick="addToCart(1, 'Audition for Active participant', 8000)">カートに追加</button>
-                </div>
-                <div class="product" data-id="2" data-name="Passive participants standard" data-price="20000">
-                    <h5>聴講参加者（一般）：</h5>
-                    <h6>20000¥</h6>
-                    <p>5日間、全てのクラスを聴講できます。</p>
-                    <button onclick="addToCart(2, 'Passive participants standard', 20000)">カートに追加</button>
-                </div>
-                <div class="product" data-id="3" data-name="Passive participants U25" data-price="10000">
-                    <h5>聴講参加者（25歳以下）：</h5>
-                    <h6>10000¥</h6>
-                    <p>25歳以下の方を対象とし、5日間、全てのクラスを聴講できます。</p>
-                    <button onclick="addToCart(3, 'Passive participants U25', 10000)">カートに追加</button>
-                </div>
-                <div class="product" data-id="4" data-name="Consultation on studying in Hungary" data-price="4000">
-                    <h5>ハンガリー留学相談：</h5>
-                    <h6>4000¥</h6>
-                    <p>ハンガリーでの留学基礎情報およびリスト・フェレンツ音楽院への出願について45分の相談が可能です。</p>
-                    <button onclick="addToCart(3, 'Consultation on studying in Hungary', 4000)">カートに追加</button>
-                </div>
-            </div>
+        <div class="bluebox">
+            <h3>パッケージ：</h3>
+            <h4>実技参加者オーディション： </h4>
+            <h5>定員に限りがあるため、実技参加者パッケージへのお申し込みには事前審査があります。実技参加者パッケージは、オーディションに合格された方のみ選択可能です。</h5>
+            <h4>実技参加者：</h4>
+            <h5> 5日間で教授による60分の個人レッスンを2回受講できます。</h5>
+            <h4>聴講参加者（一般）： </h4>
+            <h5>5日間、全てのクラスを聴講できます。</h5>
+            <h4>ピアノ伴奏：</h4>
+            <h5>60分のレッスン1回分のピアノ伴奏オプション。1回分（60分）または2回分のレッスンから選択可能。2回分をご希望の場合は、ピアノ伴奏を2回分お選びください</h5>
+            <h4>聴講参加者（25歳以下）： </h4>
+            <h5>25歳以下の方を対象とし、5日間、全てのクラスを聴講できます。</h5>
+            <h4>練習室利用（オプション）： </h4>
+            <h5>会場の教室で60分の練習が可能です。5日間中、複数回利用可能です。</h5>
+            <h4>ハンガリー留学相談： </h4>
+            <h5>： ハンガリーでの留学基礎情報およびリスト・フェレンツ音楽院への出願について45分の相談が可能です。</h5>
+            <h4>1日聴講券（一般）： </h4>
+            <h5>当日、会場での聴講が可能です。当日会場での現金払いのみとなります。</h5>
+            <h4>1日聴講券（25歳以下）： </h4>
+            <h5>25歳以下の方を対象とし、当日、会場での聴講が可能です。当日会場での現金払いのみとなります。</h5>
         </div>
-        <div class="cart" onclick="showCart()">
-            カート <span id="cart-count">0</span>
+        <div class="orangebox">
+            <h6>ご参加にご興味がありますか？<br>ぜひお申し込みください。後ほどこちらからご連絡いたします。</h6>
+            <a href="apply.html">
+                <button>申し込む</button>
+            </a>
         </div>
-    
-        <div id="cart-modal" style="display:none;">
-            <h2>カート</h2>
-            <ul id="cart-items"></ul>
-            <p>合計: <span id="cart-total">0</span> ¥</p>
-            <button onclick="checkout()">支払い</button>
-            <button onclick="hideCart()">閉じる</button>
-        </div>
-    </section>
     <footer>     
         <div class="bottom">
             <p><a href="https://www.net4yard.com">Net4Yard</a> - デジタル未来の創造者たち。</p>
