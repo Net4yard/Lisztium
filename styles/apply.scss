@@ -119,6 +119,82 @@ $main-eighth-color: #79c7c1;
         list-style-type: circle !important;
     }
 
+    .application-form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: #f9f9f9;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      
+        h2 {
+          text-align: center;
+          margin-bottom: 1.5rem;
+          font-size: 1.8rem;
+          color: #333;
+        }
+      
+        label {
+          display: block;
+          margin-top: 1rem;
+          margin-bottom: 0.5rem;
+          font-weight: bold;
+          color: #555;
+        }
+      
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+          width: 100%;
+          padding: 0.7rem;
+          margin-bottom: 1rem;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          font-size: 1rem;
+          background: #fff;
+        }
+      
+        textarea {
+          resize: none; // <<< itt fixáljuk a textarea-t, ne lehessen méretezni
+        }
+      
+        .checkbox-group {
+          margin-top: 2rem;
+      
+          label {
+            font-weight: normal;
+            display: block;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: #666;
+          }
+      
+          input[type="checkbox"] {
+            margin-right: 0.5rem;
+            transform: scale(1.2);
+          }
+        }
+      
+        .submit-btn {
+          display: block;
+          width: 100%;
+          background-color: #0070f3;
+          color: white;
+          font-size: 1.2rem;
+          padding: 0.8rem;
+          border: none;
+          border-radius: 8px;
+          margin-top: 2rem;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+      
+          &:hover {
+            background-color: #005bb5;
+          }
+        }
+      }
+
     .orangebox{
         align-items: center;
         margin: auto;
