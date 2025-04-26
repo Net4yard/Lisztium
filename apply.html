@@ -131,6 +131,51 @@
                 <h5>Freely chosen piano piece or pieces with a length of 10-15 minutes </h5></br>
             </div>
         </div>
+        <form class="application-form" action="send.php" method="POST" onsubmit="return validateForm()">
+            <h2>Application Form</h2>
+        
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        
+            <label for="furigana">フリガナ:</label>
+            <input type="text" id="furigana" name="furigana" required>
+        
+            <label for="email">E-mail address:</label>
+            <input type="email" id="email" name="email" required>
+        
+            <label for="instrument">Instrument:</label>
+            <select id="instrument" name="instrument" required>
+                <option value="">-- Please select --</option>
+                <option value="Piano">Piano</option>
+                <option value="Violin">Violin</option>
+                <option value="Flute">Flute</option>
+                <option value="Clarinet">Clarinet</option>
+            </select>
+        
+            <label for="plusone">Optional plus one class:</label>
+            <select id="plusone" name="plusone" required>
+                <option value="">-- Please select --</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age" required>
+        
+            <label for="school">Current school/institution:</label>
+            <input type="text" id="school" name="school">
+        
+            <label for="videolinks">Video links for audition:</label>
+            <textarea id="videolinks" name="videolinks" rows="5"></textarea>
+        
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="consent1"> I hereby consent to the processing of my personal information by the Organizers for the sake of organizing the master class in accordance with Privacy Policy Guideline.</label>
+                <label><input type="checkbox" name="consent2" required> I hereby consent to the taking and usage of photos made during the master class by the Organizers in accordance with the Privacy Policy Guideline.</label>
+                <label><input type="checkbox" name="consent3"> I hereby declare that I have read, understood and accept the Privacy Policy Guideline for this event.</label>
+            </div>
+        
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>   
     </section>
     <section class="section-3">
         <div class="section-3-div">

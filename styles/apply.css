@@ -105,6 +105,72 @@
 .section-4 ul {
   list-style-type: circle !important;
 }
+.section-4 .application-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.section-4 .application-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+.section-4 .application-form label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #555;
+}
+.section-4 .application-form input[type=text],
+.section-4 .application-form input[type=email],
+.section-4 .application-form select,
+.section-4 .application-form textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fff;
+}
+.section-4 .application-form textarea {
+  resize: none;
+}
+.section-4 .application-form .checkbox-group {
+  margin-top: 2rem;
+}
+.section-4 .application-form .checkbox-group label {
+  font-weight: normal;
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+.section-4 .application-form .checkbox-group input[type=checkbox] {
+  margin-right: 0.5rem;
+  transform: scale(1.2);
+}
+.section-4 .application-form .submit-btn {
+  display: block;
+  width: 100%;
+  background-color: #0070f3;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.section-4 .application-form .submit-btn:hover {
+  background-color: #005bb5;
+}
 .section-4 .orangebox {
   align-items: center;
   margin: auto;

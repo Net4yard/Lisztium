@@ -279,3 +279,47 @@ document.addEventListener("DOMContentLoaded", function () {
       product.style.marginBottom = "10px";
   });
 });
+
+document.getElementById('applicationForm').addEventListener('submit', function(event) {
+  const email = document.getElementById('email').value;
+  const age = document.getElementById('age').value;
+  const consentPhotos = document.querySelector('input[name="consent-photos"]');
+  let errors = [];
+
+  // Email must contain @
+  if (!email.includes('@')) {
+    errors.push('Please enter a valid email address.');
+  }
+
+  // Age must be a number between 1 and 150
+  if (!/^\d+$/.test(age)) {
+    errors.push('Age must be a valid number.');
+  } else if (parseInt(age) <= 0 || parseInt(age) > 150) {
+    errors.push('Please enter a realistic age (1-150).');
+  }
+
+  // 2. checkbox kötelező
+  if (!consentPhotos.checked) {
+    errors.push('You must agree to the photo usage policy.');
+  }
+
+  if (errors.length > 0) {
+    event.preventDefault();
+    alert(errors.join('\n'));
+  }
+});
+
+function validateForm() {
+  const email = document.getElementById("email").value;
+  const age = document.getElementById("age").value;
+
+  if (!email.includes("@")) {
+      alert("Please enter a valid email address.");
+      return false;
+  }
+  if (isNaN(age) || age < 1 || age > 150) {
+      alert("Please enter a valid age between 1 and 150.");
+      return false;
+  }
+  return true;
+}
