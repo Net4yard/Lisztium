@@ -1,23 +1,45 @@
 <?php
-// Set your email here (where the application will be sent)
-$to = 'szabolcs.szelenyi@net4yard.com'; // <<< IDE ÍRD A SAJÁT EMAIL CÍMED!
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-// Fetch form data
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
+// Hibakezelés bekapcsolása
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Ellenőrizzük, hogy POST kérés érkezett-e
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    die("<script>alert('Invalid request method.'); window.history.back();</script>");
+}
+
+// Form adatok validálása
+$required_fields = ['name', 'furigana', 'email', 'instrument', 'plusone', 'age', 'consent2'];
+foreach ($required_fields as $field) {
+    if (empty($_POST[$field])) {
+        die("<script>alert('Please fill all required fields.'); window.history.back();</script>");
+    }
+}
+
+// Adatok tisztítása
 $name = htmlspecialchars($_POST['name']);
 $furigana = htmlspecialchars($_POST['furigana']);
-$email = htmlspecialchars($_POST['email']);
+$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    die("<script>alert('Invalid email address.'); window.history.back();</script>");
+}
 $instrument = htmlspecialchars($_POST['instrument']);
 $plusone = htmlspecialchars($_POST['plusone']);
 $age = htmlspecialchars($_POST['age']);
-$school = htmlspecialchars($_POST['school']);
-$videolinks = htmlspecialchars($_POST['videolinks']);
-
-// Consent fields (checkboxes)
+$school = isset($_POST['school']) ? htmlspecialchars($_POST['school']) : 'N/A';
+$videolinks = isset($_POST['videolinks']) ? htmlspecialchars($_POST['videolinks']) : 'N/A';
 $consent1 = isset($_POST['consent1']) ? 'Yes' : 'No';
-$consent2 = isset($_POST['consent2']) ? 'Yes' : 'No'; // Ez volt kötelező
+$consent2 = isset($_POST['consent2']) ? 'Yes' : 'No';
 $consent3 = isset($_POST['consent3']) ? 'Yes' : 'No';
 
-// Email subject and message to YOU
+// Email tartalom
 $subject = "Application - {$name}";
 $message = "
 New Application Received:
@@ -37,34 +59,54 @@ Consents:
 - Privacy Policy Accepted: {$consent3}
 ";
 
-// Email headers
-$headers = "From: no-reply@net4yard.com\r\n"; // <<< Ezt is lehet majd cserélni saját domainre
-$headers .= "Reply-To: {$email}\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-
-// Send email to you
-$mail_sent = mail($to, $subject, $message, $headers);
-
-// Auto-reply to applicant
-$reply_subject = "Your application has been received";
-$reply_message = "Dear {$name},
-
-Thank you for your application to the Lisztium Masterclasses!
-We have successfully received your submission and will get back to you shortly.
-
-Best regards,
-Lisztium Masterclasses Team";
-
-$reply_headers = "From: no-reply@net4yard.com\r\n"; // <<< ugyanaz mint fent
-$reply_headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-
-// Send auto-reply
-$reply_sent = mail($email, $reply_subject, $reply_message, $reply_headers);
-
-// Redirect back or show message
-if ($mail_sent && $reply_sent) {
-    echo "<script>alert('Your application has been successfully submitted!'); window.location.href='thankyou.html';</script>";
-} else {
-    echo "<script>alert('There was an error sending your application. Please try again later.'); window.history.back();</script>";
+try {
+    // SMTP konfiguráció
+    $mail = new PHPMailer(true);
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'szabolcs.szelenyi@net4yard.com';
+    $mail->Password = 'paxrdmxwfxnfmebm';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
+    $mail->CharSet = 'UTF-8';
+    
+    // Fő e-mail (adminnak)
+    $mail->setFrom('szabolcs.szelenyi@net4yard.com', 'Lisztium');
+    $mail->addAddress('szabolcs.szelenyi@net4yard.com', 'Admin');
+    $mail->Subject = $subject;
+    $mail->Body = $message;
+    
+    if (!$mail->send()) {
+        throw new Exception('Admin email could not be sent.');
+    }
+    
+    // Auto-reply a felhasználónak
+    $reply = new PHPMailer(true);
+    $reply->isSMTP();
+    $reply->Host = 'smtp.gmail.com';
+    $reply->SMTPAuth = true;
+    $reply->Username = 'szabolcs.szelenyi@net4yard.com';
+    $reply->Password = 'paxrdmxwfxnfmebm';
+    $reply->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $reply->Port = 587;
+    $reply->CharSet = 'UTF-8';
+    
+    $reply->setFrom('szabolcs.szelenyi@net4yard.com', 'Lisztium');
+    $reply->addAddress($email, $name);
+    $reply->Subject = "Your application has been received";
+    $reply->Body = "Dear {$name},\n\nThank you for your application to the Lisztium Masterclasses!\nWe have successfully received your submission and will get back to you shortly.\n\nBest regards,\nLisztium Masterclasses Team";
+    
+    if (!$reply->send()) {
+        throw new Exception('Auto-reply could not be sent.');
+    }
+    
+    // Sikeres küldés
+    header('Location: thankyou.html');
+    exit();
+    
+} catch (Exception $e) {
+    error_log('Email error: ' . $e->getMessage());
+    echo "<script>alert('Error sending email. Please try again later.'); window.history.back();</script>";
 }
 ?>
