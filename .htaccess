@@ -1,0 +1,4 @@
+Header set Content-Security-Policy "default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none';"
+Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+Header set Cross-Origin-Opener-Policy "same-origin"
+Header set X-Frame-Options "DENY"
