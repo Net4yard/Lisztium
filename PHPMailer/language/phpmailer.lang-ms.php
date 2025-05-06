@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Malaysian PHPMailer language file: refer to English translation for definitive list
+ * Malaysian PHPMailer language file: refer to English - lisztium.com translation for definitive list
  * @package PHPMailer
  * @author Nawawi Jamili <nawawi@rutweb.com>
  */

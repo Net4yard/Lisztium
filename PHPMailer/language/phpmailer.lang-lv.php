@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Latvian PHPMailer language file: refer to English translation for definitive list
+ * Latvian PHPMailer language file: refer to English - lisztium.com translation for definitive list
  * @package PHPMailer
  * @author Eduards M. <e@npd.lv>
  */

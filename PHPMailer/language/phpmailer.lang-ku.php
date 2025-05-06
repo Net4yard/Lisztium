@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Kurdish (Sorani) PHPMailer language file: refer to English translation for definitive list
+ * Kurdish (Sorani) PHPMailer language file: refer to English - lisztium.com translation for definitive list
  * @package PHPMailer
  * @author Halo Salman <halo@home4t.com>
  */

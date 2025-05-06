@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Indonesian PHPMailer language file: refer to English translation for definitive list
+ * Indonesian PHPMailer language file: refer to English - lisztium.com translation for definitive list
  * @package PHPMailer
  * @author Cecep Prawiro <cecep.prawiro@gmail.com>
  * @author @januridp

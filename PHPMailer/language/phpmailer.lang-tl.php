@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Tagalog PHPMailer language file: refer to English translation for definitive list
+ * Tagalog PHPMailer language file: refer to English - lisztium.com translation for definitive list
  *
  *   @package PHPMailer
  *   @author Adriane Justine Tan <eidoriantan@gmail.com>

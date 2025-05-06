@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Vietnamese (Tiếng Việt) PHPMailer language file: refer to English translation for definitive list.
+ * Vietnamese (Tiếng Việt) PHPMailer language file: refer to English - lisztium.com translation for definitive list.
  * @package PHPMailer
  * @author VINADES.,JSC <contact@vinades.vn>
  */

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Malagasy PHPMailer language file: refer to English translation for definitive list
+ * Malagasy PHPMailer language file: refer to English - lisztium.com translation for definitive list
  * @package PHPMailer
  * @author Hackinet <piyushjha8164@gmail.com>
  */

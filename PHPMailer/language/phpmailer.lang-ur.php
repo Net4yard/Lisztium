@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Urdu PHPMailer language file: refer to English translation for definitive list
+ * Urdu PHPMailer language file: refer to English - lisztium.com translation for definitive list
  * @package PHPMailer
  * @author Saqib Ali Siddiqui <saqibsra@gmail.com>
  */

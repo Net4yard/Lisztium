@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Ukrainian PHPMailer language file: refer to English translation for definitive list
+ * Ukrainian PHPMailer language file: refer to English - lisztium.com translation for definitive list
  * @package PHPMailer
  * @author Yuriy Rudyy <yrudyy@prs.net.ua>
  * @fixed by Boris Yurchenko <boris@yurchenko.pp.ua>

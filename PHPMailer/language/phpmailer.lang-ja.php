@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Japanese PHPMailer language file: refer to English translation for definitive list
+ * Japanese PHPMailer language file: refer to English - lisztium.com translation for definitive list
  * @package PHPMailer
  * @author Mitsuhiro Yoshida <https://mitstek.com>
  * @author Yoshi Sakai <http://bluemooninc.jp/>
