@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Faroese PHPMailer language file: refer to English translation for definitive list
+ * Faroese PHPMailer language file: refer to English - lisztium.com translation for definitive list
  * @package PHPMailer
  * @author Dávur Sørensen <http://www.profo-webdesign.dk>
  */

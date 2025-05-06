@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Sinhalese PHPMailer language file: refer to English translation for definitive list
+ * Sinhalese PHPMailer language file: refer to English - lisztium.com translation for definitive list
  * @package PHPMailer
  * @author Ayesh Karunaratne <ayesh@aye.sh>
  */

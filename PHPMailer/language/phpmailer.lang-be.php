@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Belarusian PHPMailer language file: refer to English translation for definitive list
+ * Belarusian PHPMailer language file: refer to English - lisztium.com translation for definitive list
  * @package PHPMailer
  * @author Aleksander Maksymiuk <info@setpro.pl>
  */

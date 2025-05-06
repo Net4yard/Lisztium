@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Catalan PHPMailer language file: refer to English translation for definitive list
+ * Catalan PHPMailer language file: refer to English - lisztium.com translation for definitive list
  * @package PHPMailer
  * @author Ivan <web AT microstudi DOT com>
  */

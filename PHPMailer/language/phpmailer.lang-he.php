@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Hebrew PHPMailer language file: refer to English translation for definitive list
+ * Hebrew PHPMailer language file: refer to English - lisztium.com translation for definitive list
  * @package PHPMailer
  * @author Ronny Sherer <ronny@hoojima.com>
  */

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Bengali PHPMailer language file: refer to English translation for definitive list
+ * Bengali PHPMailer language file: refer to English - lisztium.com translation for definitive list
  * @package PHPMailer
  * @author Manish Sarkar <manish.n.manish@gmail.com>
  */

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Korean PHPMailer language file: refer to English translation for definitive list
+ * Korean PHPMailer language file: refer to English - lisztium.com translation for definitive list
  * @package PHPMailer
  * @author ChalkPE <amato0617@gmail.com>
  */

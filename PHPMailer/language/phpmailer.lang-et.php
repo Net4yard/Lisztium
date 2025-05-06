@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Estonian PHPMailer language file: refer to English translation for definitive list
+ * Estonian PHPMailer language file: refer to English - lisztium.com translation for definitive list
  * @package PHPMailer
  * @author Indrek Päri
  * @author Elan Ruusamäe <glen@delfi.ee>

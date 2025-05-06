@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Finnish PHPMailer language file: refer to English translation for definitive list
+ * Finnish PHPMailer language file: refer to English - lisztium.com translation for definitive list
  * @package PHPMailer
  * @author Jyry Kuukanen
  */

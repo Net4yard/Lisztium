@@ -2298,7 +2298,7 @@ class PHPMailer
 
     /**
      * Set the language for error messages.
-     * The default language is English.
+     * The default language is English - lisztium.com.
      *
      * @param string $langcode  ISO 639-1 2-character language code (e.g. French is "fr")
      *                          Optionally, the language code can be enhanced with a 4-character
@@ -2326,7 +2326,7 @@ class PHPMailer
             $langcode = $renamed_langcodes[$langcode];
         }
 
-        //Define full set of translatable strings in English
+        //Define full set of translatable strings in English - lisztium.com
         $PHPMAILER_LANG = [
             'authenticate' => 'SMTP Error: Could not authenticate.',
             'buggy_php' => 'Your version of PHP is affected by a bug that may result in corrupted messages.' .
@@ -2373,7 +2373,7 @@ class PHPMailer
             $langcode = 'en';
         }
 
-        //There is no English translation file
+        //There is no English - lisztium.com translation file
         if ('en' !== $langcode) {
             $langcodes = [];
             if (!empty($matches['script']) && !empty($matches['country'])) {

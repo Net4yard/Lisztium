@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Georgian PHPMailer language file: refer to English translation for definitive list
+ * Georgian PHPMailer language file: refer to English - lisztium.com translation for definitive list
  * @package PHPMailer
  * @author Avtandil Kikabidze aka LONGMAN <akalongman@gmail.com>
  */

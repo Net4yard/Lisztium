@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Czech PHPMailer language file: refer to English translation for definitive list
+ * Czech PHPMailer language file: refer to English - lisztium.com translation for definitive list
  * @package PHPMailer
  */
 

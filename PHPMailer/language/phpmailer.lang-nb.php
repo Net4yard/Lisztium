@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Norwegian Bokmål PHPMailer language file: refer to English translation for definitive list
+ * Norwegian Bokmål PHPMailer language file: refer to English - lisztium.com translation for definitive list
  * @package PHPMailer
  */
 

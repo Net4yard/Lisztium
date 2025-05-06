@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Galician PHPMailer language file: refer to English translation for definitive list
+ * Galician PHPMailer language file: refer to English - lisztium.com translation for definitive list
  * @package PHPMailer
  * @author by Donato Rouco <donatorouco@gmail.com>
  */
