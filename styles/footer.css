@@ -17,8 +17,11 @@ footer img {
 footer .links {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin: 25px;
   text-align: left;
+  padding: 25px;
+}
+footer .links ul li {
+  padding: 5px;
 }
 footer a {
   color: white;
@@ -27,6 +30,16 @@ footer .bottom {
   display: grid;
   align-items: end; /* Szöveg alulra igazítása */
   justify-items: center; /* Középre igazítás vízszintesen */
+}
+@media screen and (max-width: 100px) {
+  footer .links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 850px) {
+  footer .links {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 /*# sourceMappingURL=footer.css.map */
