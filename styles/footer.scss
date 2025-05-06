@@ -3,11 +3,26 @@ $main-secondary-color: #7286c0;
 
 footer{
     background: linear-gradient(to right, $main-color, $main-secondary-color);
-    height: 15vh;
+    height: auto;
     text-align: center;
     color: white;
     text-decoration: none;
     border-radius: 10px 10px 0 0;
+
+    img{
+        width: 40%;
+        height: auto;
+        align-items: center;
+        margin: auto;
+        justify-content: center;
+    }
+
+    .links{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 25px;
+        text-align: left;
+    }
 
     a{
         color: white;
@@ -17,6 +32,5 @@ footer{
         display: grid;
         align-items: end; /* Szöveg alulra igazítása */
         justify-items: center; /* Középre igazítás vízszintesen */
-        height: 14vh;
     }
 }
