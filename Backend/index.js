@@ -98,3 +98,6 @@ app.get("/cancel", (req, res) => res.send("Cancelled"));
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
+
+console.error = function() {}; // Letiltja az error üzeneteket
+console.warn = function() {};  // Letiltja a warning üzeneteket
