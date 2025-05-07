@@ -1,3 +1,6 @@
+console.error = function() {}; // Letiltja az error üzeneteket
+console.warn = function() {};  // Letiltja a warning üzeneteket
+
 const express = require("express");
 const app = express();
 const port = 8080;
@@ -99,5 +102,3 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
 
-console.error = function() {}; // Letiltja az error üzeneteket
-console.warn = function() {};  // Letiltja a warning üzeneteket

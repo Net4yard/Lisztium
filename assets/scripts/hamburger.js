@@ -16,6 +16,3 @@ function closeMenu() {
 hamburger.classList.remove("active");
 navMenu.classList.remove("active");
 }
-
-console.error = function() {}; // Letiltja az error üzeneteket
-console.warn = function() {};  // Letiltja a warning üzeneteket
