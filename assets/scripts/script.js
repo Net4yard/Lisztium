@@ -1,3 +1,6 @@
+console.error = function() {}; // Letiltja az error üzeneteket
+console.warn = function() {};  // Letiltja a warning üzeneteket
+
 const scrollToTopButton = document.getElementById("scrollToTopButton");
 
 window.addEventListener("scroll", function () {
@@ -323,6 +326,3 @@ function validateForm() {
   }
   return true;
 }
-
-console.error = function() {}; // Letiltja az error üzeneteket
-console.warn = function() {};  // Letiltja a warning üzeneteket
