@@ -132,7 +132,7 @@ body {
 }
 .section-3 .purpleline .shortpurpleline {
   background: linear-gradient(to right, #b659dc, #019788);
-  width: 40%;
+  width: 130% !important;
   height: 350px;
   transform: translateY(-5vh);
   border-radius: 200px 0 0 200px;
@@ -150,16 +150,29 @@ body {
     transform: translateY(-5vh);
   }
 }
-@media only screen and (max-width: 1080px) {
-  .section-3 .purpleline .shortpurpleline img {
-    margin-right: -60px;
-  }
-}
 .section-3 .purpleline .violin {
-  width: 65%;
   text-align: center;
   margin-top: 5vh;
-  margin-left: 10vh;
+  margin-left: 7vh;
+}
+@media only screen and (max-width: 1080px) {
+  .section-3 .purpleline .violin {
+    margin-left: 8vh;
+  }
+  .section-3 .purpleline .violin h4 {
+    width: 150% !important;
+  }
+  .section-3 .purpleline .violin p {
+    width: 150% !important;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .section-3 .purpleline .violin h4 {
+    width: 180% !important;
+  }
+  .section-3 .purpleline .violin p {
+    width: 180% !important;
+  }
 }
 @media only screen and (max-width: 850px) {
   .section-3 .purpleline {
@@ -176,24 +189,29 @@ body {
     padding-top: 20px;
   }
   .section-3 .purpleline .shortpurpleline {
-    width: 125%;
-    transform: translate(7%, -75%);
+    width: 140%;
+    transform: translateY(-75%);
     position: fixed;
     height: 25vh;
   }
   .section-3 .purpleline .shortpurpleline img {
     height: 30vh;
     width: auto;
-    transform: translateY(-5vh);
-    margin-right: 60px;
+    transform: translate(-80%, -5vh);
   }
   .section-3 .purpleline .violin {
-    width: 60%;
+    width: 100%;
     padding-top: 10vh;
     padding-bottom: 1vh;
     text-align: center;
     margin: auto;
     height: 80%;
+  }
+  .section-3 .purpleline .violin h4 {
+    width: 100% !important;
+  }
+  .section-3 .purpleline .violin p {
+    width: 100% !important;
   }
 }
 @keyframes slideInLeft {

@@ -123,6 +123,7 @@ $main-eighth-color: #79c7c1;
     width: 90%;
 
     .section-4-div{
+        width: 90%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
@@ -131,8 +132,15 @@ $main-eighth-color: #79c7c1;
             background-color: $main-fouth-color;
             max-width: 800px;
             border-radius: 10px;
-            padding: 10px;
+            padding: 15px;
             margin: 10px;
+        }
+        img{
+            width: 75%;
+            height: auto;
+            border-radius: 10px;
+            align-items: center !important;
+            margin: auto !important;
         }
     }
     @media only screen and (max-width: 1080px) {

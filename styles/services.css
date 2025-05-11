@@ -105,6 +105,7 @@
   width: 90%;
 }
 .section-4 .section-4-div {
+  width: 90%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
@@ -114,8 +115,15 @@
   background-color: #51b3d5;
   max-width: 800px;
   border-radius: 10px;
-  padding: 10px;
+  padding: 15px;
   margin: 10px;
+}
+.section-4 .section-4-div img {
+  width: 75%;
+  height: auto;
+  border-radius: 10px;
+  align-items: center !important;
+  margin: auto !important;
 }
 @media only screen and (max-width: 1080px) {
   .section-4 .section-4-div {

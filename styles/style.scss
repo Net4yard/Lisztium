@@ -131,6 +131,7 @@ body{
         display: flex;
         margin-left: auto;
         margin-right: 0;
+
                  /* Kezdőállapot: eltolás és átlátszóság */
                  transform: translateX(-100%);
                  opacity: 0;
@@ -146,7 +147,7 @@ body{
 
         .shortpurpleline{
             background: linear-gradient(to right, $main-fifth-color, $main-color);
-            width: 40%;
+            width: 130% !important;
             height: 350px;
             transform: translateY(-5vh);
             border-radius: 200px 0 0 200px;
@@ -161,17 +162,31 @@ body{
                 @media only screen and (max-width: 1440px) {
                     transform: translateY(-5vh);
                 }
-                @media only screen and (max-width: 1080px) {
-                    margin-right: -60px;
-                }
             }
         }
           
         .violin {
-            width: 65%;
             text-align: center;
             margin-top: 5vh;
-            margin-left: 10vh;
+            margin-left: 7vh;
+            @media only screen and (max-width: 1080px) {
+                margin-left: 8vh;
+                h4{
+                    width: 150% !important;
+                }
+                p{
+                    width: 150% !important;
+                }
+            }
+            @media only screen and (max-width: 900px) {
+                h4{
+                    width: 180% !important;
+                }
+                p{
+                    width: 180% !important;
+                }
+            }
+            
         }
 
         @media only screen and (max-width: 850px) {
@@ -188,25 +203,30 @@ body{
             padding-top: 20px;
             
             .shortpurpleline{
-                width: 125%;
-                transform: translate(7%, -75%);
+                width: 140%;
+                transform: translateY(-75%);
                 position: fixed;
                 height: 25vh;
                 img{
                     height: 30vh;
                     width: auto;
-                    transform: translateY(-5vh);
-                    margin-right: 60px;
+                    transform: translate(-80%, -5vh);
                 }
             }
               
             .violin {
-                width: 60%;
+                width: 100%;
                 padding-top: 10vh;
                 padding-bottom: 1vh;
                 text-align: center;
                 margin: auto;
                 height: 80%;
+                h4{
+                    width: 100% !important;
+                }
+                p{
+                    width: 100% !important;
+                }
             }
         }
     }
