@@ -92,7 +92,9 @@
           <div id="cart-container">
               <ul id="cart-items"></ul>
               <p id="total-price">合計: 0 ¥</p>
-              <button id="checkout-button">決済</button>
+              <form action="http://localhost:8080/pay" method="post">
+                <input type="submit" value="決済" />
+              </form>
           </div>
         </div>
       </div>

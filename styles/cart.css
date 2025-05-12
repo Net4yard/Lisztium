@@ -32,7 +32,7 @@
 .section-3 .section-3-div .container p {
   text-align: right;
 }
-.section-3 .section-3-div .container button {
+.section-3 .section-3-div .container input, .section-3 .section-3-div .container button {
   width: auto;
   height: 30px;
   border-radius: 30px;
@@ -45,7 +45,7 @@
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
-.section-3 .section-3-div .container button:hover {
+.section-3 .section-3-div .container input:hover, .section-3 .section-3-div .container button:hover {
   transform: scale(1.05);
 }
 
