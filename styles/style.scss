@@ -38,7 +38,7 @@ body{
     .greenline{
         margin-top: 100px;
         background: linear-gradient(to right, $main-color, $main-third-color);
-        width: 100%;
+        width: 90%;
         height: 280px;
         border-radius: 0 200px 200px 0;
         display: flex;
@@ -82,7 +82,7 @@ body{
             margin-left: 5vh;
         }
 
-        @media only screen and (max-width: 850px) {
+        @media only screen and (max-width: 1080px) {
             background: transparent;
             border: 1px solid grey;
             border-radius: 10px;
@@ -123,15 +123,14 @@ body{
     }
 
     .purpleline{
-        margin-top: 100px;
+        margin-top: 20vh;
         background: linear-gradient(to right, $main-fouth-color, $main-secondary-color);
-        width: 100%;
-        height: 280px;
+        width: 95%;
+        height: 30vh;
         border-radius: 200px 0 0 200px;
         display: flex;
         margin-left: auto;
         margin-right: 0;
-
                  /* Kezdőállapot: eltolás és átlátszóság */
                  transform: translateX(-100%);
                  opacity: 0;
@@ -147,49 +146,28 @@ body{
 
         .shortpurpleline{
             background: linear-gradient(to right, $main-fifth-color, $main-color);
-            width: 130% !important;
-            height: 350px;
+            width: 50%;
+            height: 40vh;
             transform: translateY(-5vh);
             border-radius: 200px 0 0 200px;
-            margin-left: 200px;
-
+            margin-right: 0;
             img{
-                height: 391px;
+                height: 45vh;
+                min-height: auto;
                 width: auto;
-                transform: translateY(-4.2vh);
+                transform: translateY(-5vh);
                 float: right;
-                margin-right: 1px;
-                @media only screen and (max-width: 1440px) {
-                    transform: translateY(-5vh);
-                }
             }
         }
           
         .violin {
+            width: 45%;
             text-align: center;
             margin-top: 5vh;
-            margin-left: 7vh;
-            @media only screen and (max-width: 1080px) {
-                margin-left: 8vh;
-                h4{
-                    width: 150% !important;
-                }
-                p{
-                    width: 150% !important;
-                }
-            }
-            @media only screen and (max-width: 900px) {
-                h4{
-                    width: 180% !important;
-                }
-                p{
-                    width: 180% !important;
-                }
-            }
-            
+            margin-left: 10vh;
         }
 
-        @media only screen and (max-width: 850px) {
+        @media only screen and (max-width: 1080px) {
             background: transparent;
             border: 1px solid grey;
             border-radius: 10px;
@@ -203,30 +181,26 @@ body{
             padding-top: 20px;
             
             .shortpurpleline{
-                width: 140%;
-                transform: translateY(-75%);
+                width: 125%;
+                transform: translate(7%, -75%);
                 position: fixed;
                 height: 25vh;
                 img{
                     height: 30vh;
                     width: auto;
-                    transform: translate(-80%, -5vh);
+                    transform: translateY(-5vh);
+                    align-items: center;
+                    margin-right: 100px;
                 }
             }
               
             .violin {
-                width: 100%;
+                width: 70%;
                 padding-top: 10vh;
                 padding-bottom: 1vh;
                 text-align: center;
                 margin: auto;
                 height: 80%;
-                h4{
-                    width: 100% !important;
-                }
-                p{
-                    width: 100% !important;
-                }
             }
         }
     }
@@ -252,7 +226,7 @@ body{
           opacity: 1;
         }
       }
-    @media only screen and (max-width: 850px) { 
+    @media only screen and (max-width: 1080px) { 
         overflow: hidden;
     }
 }
