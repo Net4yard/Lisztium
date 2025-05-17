@@ -533,18 +533,63 @@ body{
 
 }
 
-.section-6{
-    min-height: 100px;
-    height: auto;
-    align-items: center;
-    margin: auto;
-    width: 90%;
+.section-profiles {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 
-    .card_container{
-        display: flex; /* Flexbox használata a gyerek elemek sorba rendezéséhez */
-        justify-content: center; /* Középre igazítás vízszintesen */
-        align-items: center; /* Középre igazítás függőlegesen */
-        margin: auto;
-        gap: 20px;
+  .image-card {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+
+    .overlay-text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: all 0.3s ease;
+    }
+
+    &:hover {
+        opacity: 1 !important;
+
+      .overlay-text {
+            opacity: 1;
+            transform: translateY(0);
+      }
+    }
+  }
+
+  // Ha az egész containeren van hover, akkor minden image-card elsötétül:
+  &:hover {
+    .image-card {
+      opacity: 0.3;
+    }
+
+    // De amelyiken konkrétan hover van, az marad világos
+    .image-card:hover {
+      opacity: 1 !important;
+    }
+  }
+
+    @media only screen and (max-width: 900px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media only screen and (max-width: 500px) {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
