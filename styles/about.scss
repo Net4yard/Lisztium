@@ -18,10 +18,10 @@ $main-eighth-color: #79c7c1;
             background: linear-gradient(to right, $main-eighth-color, $main-secondary-color);
             text-align: center;
             border-radius: 10px;
-            margin-left: 30%;
-            margin-right: 30%;
+            width: 350px;
+            align-items: center;
+            margin: auto;
             margin-top: 50px;
-            margin-bottom: 50px;
         }
 
         a{

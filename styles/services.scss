@@ -136,6 +136,7 @@ $main-eighth-color: #79c7c1;
             margin: 10px;
         }
         img{
+            display: block;
             width: 75%;
             height: auto;
             border-radius: 10px;
@@ -143,16 +144,13 @@ $main-eighth-color: #79c7c1;
             margin: auto !important;
         }
     }
-    @media only screen and (max-width: 1080px) {
-        .section-4-div{
-            grid-template-columns: repeat(2, 1fr);
-
-        }
-    }
     @media only screen and (max-width: 720px) {
         .section-4-div{
             grid-template-columns: repeat(1, 1fr);
-
+            img{
+                align-items: center !important;
+                margin: auto !important;
+            }
         }
     }
 }
