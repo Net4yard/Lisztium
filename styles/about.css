@@ -10,10 +10,10 @@
   background: linear-gradient(to right, #79c7c1, #7286c0);
   text-align: center;
   border-radius: 10px;
-  margin-left: 30%;
-  margin-right: 30%;
+  width: 350px;
+  align-items: center;
+  margin: auto;
   margin-top: 50px;
-  margin-bottom: 50px;
 }
 .section-3 .section-3-div a {
   width: 90%;
