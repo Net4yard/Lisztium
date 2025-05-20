@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "lisztium",
+  "private_key_id": "5f6139cdf2a7812de9c70a92fd997083921f4904",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCliGwb/lZHzUu3\nL/5ZUOHah3sPnHGBGMLf7++5bbYRswgDPQBP64+d6+8T15wkIqRUWcBAD95tZ5kM\nALrBKa04G0NqpNW20wmkEsrj/vzxJp8i6xz9bNuo80F3RppVQI4F2OvYFD0cfje7\nvktfYO60LITafJ+iGSrwurHDBcxuRXYnFp865k96CiMIP7yyTdcHStykZx56KA5v\nJ6yZieQ0qVF+56wRg068RkiZmAWGaOqh+xAwUlSnVsOBK/awrvwYV+7KRSVCJT08\nR1dDukg21g1mRVkzoUW8ePIeUXXZ15aNgrlrqdYqNfPPCXuIWNwR0RqWrlri5lrN\nQ46zwBqrAgMBAAECggEAA2Jys2/T28v6zFgS30ikFY/HmF4ehAE5mtKRGD2CB4Kd\nm1NX+kpauWPlk4ZJDwQWUBM1txmb9qiznGc3alOr0wXbrwaHyCEwhUZNF7RS/6tG\nfbRI93WOWDoBEKtE5JFZVg1FZTmktjxub0xIxj55Iv32CXGa4fmZwypOECrCL077\n1HkbV57aT6qm1Z02kD7HTr/2WiiaCkGR/G/z3yICo52ZkQQk2OtE/9ppp5x+fE37\ngucYUzlWZTmfIdF1hTeejaZ49xYplRUl6G4Lq2nTnvgHr/I9xZGsQwH8q1G6JcYW\nCbA7OKImCjmOtgGyk1J4inuPSQmoA9Epvx5mjoPz4QKBgQDgUFN8rnIb95RgviXe\nz5cUQ9GXRjeLkFim6sxkpA2t1Fo2n/07G/ELnJwBjg/IuMR4ahIdyrOALjZS+8Iv\n7+YG7fW34xFaE3/W1hO1EnShSCNgLbWWTMzDHkZcBWHJWMBchoAinDtv8iGF3AXj\njRS1Bb6ingY4Bls4SbebwkrvTQKBgQC86nOyE0tUpvTmJ7Qybk1jtp9E9nUTg3wQ\nBF5HXpUXf5g9hfG6HgzttAc4I5NMss6C3HmGNGU1CMoE4QByLpvqOXij4gUNC7yE\nqjj2vNS88Q6ihudQT6D14QQIeYd3G2kHongZUdgcBbiMmYbr2K2iqXlLiOggSZiX\nYSFoc6cl1wKBgQC94MELJc/KBMVBLzR3a1oD+XSNjQ6vwTyJ7u+dsZEyuDK1UrDV\nPE3K+oLEfjC2RFFrbL5xIYjY1EV/8UTrtzMMYppBUqD5ktAAV67O9BRuAdaQL6Eq\n3U/nStVcR+ICwnHy4JfOtFlL5baizSDfAimpInfAx+uTuS22dBBMdSdhcQKBgDTu\n0GoWA+Z9PWN7vn7e7ypAUlIlaFqGXe2y+6OtucKyyrp6XGfU4bR83AT72tsDwt9h\n3V8gMTdx9gD19oUH0EIJxmbM/rNQFYtqkrl34XfrZzlc6VVUanpaiSHCw5U5Be3Q\ntSwLBa2cYMBsiCRvOv+30re6bagWVv4bhhvZQ/1TAoGAXVY6boM6lkX8+kz7HjvH\n6u5pRJ667ICLCExDyX8M85OhAqzmtyOC/fNfgtWKRsjd3ZJhsxXRlg0jBP8uxaAj\n9GKMX668+1uGOfFxSqqxukr5QgJF3FFysqR6sDIV3u4MsDL0GQ0QRHzktZyvsVKE\ne/ndhBg3enJlZirBIqMlUNg=\n-----END PRIVATE KEY-----\n",
+  "client_email": "lisztiumphp@lisztium.iam.gserviceaccount.com",
+  "client_id": "111296671921951492319",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/lisztiumphp%40lisztium.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
