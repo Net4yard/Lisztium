@@ -326,3 +326,31 @@ function validateForm() {
   }
   return true;
 }
+
+const sendEmail = async (emailData) => {
+  try {
+    const response = await fetch('https://lisztium-mailer-dot-second-kiln-431107-p9.oa.r.appspot.com/', { // Or your custom domain
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json', // Or 'application/x-www-form-urlencoded' depending on send.php
+      },
+      body: JSON.stringify(emailData), // Or new URLSearchParams(emailData)
+    });
+
+    const result = await response.json();
+
+    if (response.ok && result.status === 'success') {
+      console.log('Email sent successfully:', result.message);
+      // Handle success in your UI
+    } else {
+      console.error('Failed to send email:', result.message || response.statusText);
+      // Handle error in your UI
+    }
+  } catch (error) {
+    console.error('Error sending email request:', error);
+    // Handle network or other errors
+  }
+};
+
+// Example usage:
+// sendEmail({ to: 'test@example.com', subject: 'Hello from React', message: 'This is a test.' });
