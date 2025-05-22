@@ -370,7 +370,7 @@ consent3: ${consent3}
   try {
     // Send the email using the sendEmail function
     await sendEmail({
-      to: "szabolcs.szelenyi@net4yard.com",
+      to: "musicorestes@gmail.com",
       subject: "New Lisztium Application",
       message: message,
     });
