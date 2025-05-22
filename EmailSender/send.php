@@ -1,6 +1,5 @@
 <?php
-// It's good practice to add these headers, especially if your React app is on a different domain
-header("Access-Control-Allow-Origin: *"); // In production, change * to your React app's specific domain
+header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 
@@ -9,27 +8,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     http_response_code(200);
     exit();
 }
-
+require 'vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
-// Option 1: Manual require (as you have it)
-// Ensure the 'PHPMailer/' directory is uploaded with these files.
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
-
-// Option 2: Composer (Recommended for App Engine)
-// If you use Composer, this single line handles loading all dependencies
-// require 'vendor/autoload.php';
 
 // Hibakezelés bekapcsolása - Good for development, consider adjusting for production
 error_reporting(E_ALL);
 ini_set('display_errors', 1); // In production, log errors to Stackdriver Logging instead of displaying them
 
-// --- Security & Best Practice: Environment Variables for Credentials ---
-// DO NOT hardcode credentials like this directly in your script.
-// Use Environment Variables set in app.yaml or through the Cloud Console.
 $smtpUsername = getenv('SMTP_USER') ?: 'fallback_user@example.com'; // Fallback for local testing if needed
 $smtpPassword = getenv('SMTP_PASS') ?: 'fallback_password';
 $smtpHost = getenv('SMTP_HOST') ?: 'smtp.gmail.com';
@@ -37,6 +23,14 @@ $adminEmail = getenv('ADMIN_EMAIL') ?: 'admin@example.com';
 $fromEmail = getenv('FROM_EMAIL') ?: 'noreply@example.com';
 $fromName = getenv('FROM_NAME') ?: 'My Application';
 
+// Get JSON input
+$json = file_get_contents('php://input');
+$data = json_decode($json, true);
+
+// If JSON parsing failed, check for regular POST data
+if (json_last_error() !== JSON_ERROR_NONE) {
+    $data = $data;
+}
 
 // Ellenőrizzük, hogy POST kérés érkezett-e
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -46,10 +40,10 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // Form adatok validálása
-$required_fields = ['name', 'furigana', 'email', 'instrument', 'plusone', 'age', 'consent2'];
+$required_fields = ['name', 'email', 'instrument', 'plusone', 'age', 'consent2'];
 $errors = [];
 foreach ($required_fields as $field) {
-    if (empty($_POST[$field])) {
+    if (empty($data[$field])) {
         $errors[] = "Field '{$field}' is required.";
     }
 }
@@ -61,23 +55,17 @@ if (!empty($errors)) {
 }
 
 // Adatok tisztítása
-$name = htmlspecialchars(trim($_POST['name']));
-$furigana = htmlspecialchars(trim($_POST['furigana']));
-$email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
-
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    http_response_code(400);
-    echo json_encode(['status' => 'error', 'message' => 'Invalid email address.']);
-    exit();
-}
-$instrument = htmlspecialchars(trim($_POST['instrument']));
-$plusone = htmlspecialchars(trim($_POST['plusone']));
-$age = htmlspecialchars(trim($_POST['age']));
-$school = isset($_POST['school']) ? htmlspecialchars(trim($_POST['school'])) : 'N/A';
-$videolinks = isset($_POST['videolinks']) ? htmlspecialchars(trim($_POST['videolinks'])) : 'N/A';
-$consent1 = isset($_POST['consent1']) && $_POST['consent1'] === 'on' ? 'Yes' : 'No'; // Assuming 'on' for checkboxes
-$consent2 = isset($_POST['consent2']) && $_POST['consent2'] === 'on' ? 'Yes' : 'No';
-$consent3 = isset($_POST['consent3']) && $_POST['consent3'] === 'on' ? 'Yes' : 'No';
+$name = isset($data['name']) ? htmlspecialchars(trim($data['name'])) : '';
+$furigana = isset($data['furigana']) ? htmlspecialchars(trim($data['furigana'])) : 'N/A';
+$email = isset($data['email']) ? filter_var(trim($data['email']), FILTER_SANITIZE_EMAIL) : '';
+$instrument = isset($data['instrument']) ? htmlspecialchars(trim($data['instrument'])) : '';
+$plusone = isset($data['plusone']) ? htmlspecialchars(trim($data['plusone'])) : '';
+$age = isset($data['age']) ? htmlspecialchars(trim($data['age'])) : '';
+$school = isset($data['school']) ? htmlspecialchars(trim($data['school'])) : 'N/A';
+$videolinks = isset($data['videolinks']) ? htmlspecialchars(trim($data['videolinks'])) : 'N/A';
+$consent1 = isset($data['consent1']) && $data['consent1'] === 'on' ? 'Yes' : 'No';
+$consent2 = isset($data['consent2']) && $data['consent2'] === 'on' ? 'Yes' : 'No';
+$consent3 = isset($data['consent3']) && $data['consent3'] === 'on' ? 'Yes' : 'No';
 
 
 // Email tartalom
