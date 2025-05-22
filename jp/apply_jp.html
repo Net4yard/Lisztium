@@ -131,14 +131,14 @@
                 <h5>10〜15分の長さの自由選択によるピアノ曲（1曲または複数曲） </h5></br>
             </div>
         </div>
-        <form class="application-form" action="send.php" method="POST" onsubmit="return validateForm()">
+        <form class="application-form" action="" method="POST" onsubmit="return validateForm(event)">
             <h2>個人情報:</h2>
         
             <label for="name">お名前:</label>
             <input type="text" id="name" name="name" required>
 
-            <label for="name">フリガナ:</label>
-            <input type="text" id="name" name="name" required>
+            <label for="furigana">フリガナ:</label>
+            <input type="text" id="furigana" name="furigana" required>
 
             <label for="email">メールアドレス:</label>
             <input type="email" id="email" name="email" required>

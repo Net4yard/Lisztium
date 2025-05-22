@@ -1,0 +1,15 @@
+runtime: php82
+service: lisztium-mailer # Or your chosen service name
+entrypoint: serve send.php
+
+env_variables:
+  SMTP_HOST: "smtp.gmail.com" # Change if using SendGrid, etc.
+  SMTP_USER: "szabolcs.szelenyi@net4yard.com"
+  SMTP_PASS: "paxrdmxwfxnfmebm"
+  ADMIN_EMAIL: "szabolcs.szelenyi@net4yard.com"
+  FROM_EMAIL: "szabolcs.szelenyi@net4yard.com" # Or a dedicated no-reply@yourdomain.com
+  FROM_NAME: "Lisztium Application"
+
+handlers:
+  - url: /.* # Route all requests to send.php
+    script: send.php

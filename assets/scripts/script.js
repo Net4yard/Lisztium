@@ -1,5 +1,5 @@
-console.error = function() {}; // Letiltja az error üzeneteket
-console.warn = function() {};  // Letiltja a warning üzeneteket
+console.error = function () {}; // Letiltja az error üzeneteket
+console.warn = function () {}; // Letiltja a warning üzeneteket
 
 const scrollToTopButton = document.getElementById("scrollToTopButton");
 
@@ -24,7 +24,7 @@ scrollToTopButton.addEventListener("click", function () {
 const colors = [
   ["#019788", "#7286c0"],
   ["#8ee7a4", "#51b3d5"],
-  ["#f1be34", "#f2a859"]
+  ["#f1be34", "#f2a859"],
 ];
 
 const columns = document.querySelectorAll(".columns");
@@ -41,26 +41,28 @@ columns.forEach((item) => {
   title.style.color = randomColorPair[0];
 });
 
-const navLinks = document.querySelectorAll('.nav-link');
-navLinks.forEach(link => {
+const navLinks = document.querySelectorAll(".nav-link");
+navLinks.forEach((link) => {
   if (link.href === window.location.href) {
-    link.classList.add('active');
+    link.classList.add("active");
   }
 });
 
-$(function() {
-  var slides = $('.card_container ul').children().length;
-  var slideWidth = $('.card_container').width();
+$(function () {
+  var slides = $(".card_container ul").children().length;
+  var slideWidth = $(".card_container").width();
   var min = 0;
   var max = -((slides - 1) * slideWidth);
 
-  $(".card_container ul").width(slides*slideWidth).draggable({
-      axis: 'x',
+  $(".card_container ul")
+    .width(slides * slideWidth)
+    .draggable({
+      axis: "x",
       drag: function (event, ui) {
-      if (ui.position.left > min) ui.position.left = min;
-          if (ui.position.left < max) ui.position.left = max;
-      }
-  });
+        if (ui.position.left > min) ui.position.left = min;
+        if (ui.position.left < max) ui.position.left = max;
+      },
+    });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -95,9 +97,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".gallery-img").forEach(function (img) {
-      img.addEventListener("click", function () {
-          openLightbox(this.src, this.alt);
-      });
+    img.addEventListener("click", function () {
+      openLightbox(this.src, this.alt);
+    });
   });
 });
 
@@ -108,23 +110,23 @@ document.addEventListener("DOMContentLoaded", function () {
   var closeBtn = document.querySelector(".close");
 
   document.querySelectorAll(".gallery-img").forEach(function (img) {
-      img.addEventListener("click", function () {
-          lightbox.style.display = "block";
-          lightboxImg.src = this.src;
-          caption.innerHTML = this.alt;
-      });
+    img.addEventListener("click", function () {
+      lightbox.style.display = "block";
+      lightboxImg.src = this.src;
+      caption.innerHTML = this.alt;
+    });
   });
 
   // Lightbox bezárás gombra kattintva
   closeBtn.addEventListener("click", function () {
-      lightbox.style.display = "none";
+    lightbox.style.display = "none";
   });
 
   // Lightbox háttérre kattintva bezárás
   lightbox.addEventListener("click", function (event) {
-      if (event.target === lightbox) {
-          lightbox.style.display = "none";
-      }
+    if (event.target === lightbox) {
+      lightbox.style.display = "none";
+    }
   });
 });
 
@@ -135,10 +137,10 @@ function updateCartCount() {
   let cartCount = document.getElementById("cart-count");
 
   if (cart.length > 0) {
-      cartCount.innerText = cart.length;
-      cartCount.style.display = "inline-block"; // Megjelenítés, ha van termék
+    cartCount.innerText = cart.length;
+    cartCount.style.display = "inline-block"; // Megjelenítés, ha van termék
   } else {
-      cartCount.style.display = "none"; // Ha üres, elrejtés
+    cartCount.style.display = "none"; // Ha üres, elrejtés
   }
 }
 
@@ -154,37 +156,37 @@ function addToCart(id, name, price) {
 document.addEventListener("DOMContentLoaded", updateCartCount);
 
 function updateCart() {
-    document.getElementById("cart-count").innerText = cart.length;
+  document.getElementById("cart-count").innerText = cart.length;
 }
 
 function showCart() {
-    const cartList = document.getElementById("cart-items");
-    cartList.innerHTML = "";
-    let total = 0;
+  const cartList = document.getElementById("cart-items");
+  cartList.innerHTML = "";
+  let total = 0;
 
-    cart.forEach((item, index) => {
-        total += item.price;
-        let li = document.createElement("li");
-        li.innerText = `${item.name} - ${item.price} ¥`;
-        cartList.appendChild(li);
-    });
+  cart.forEach((item, index) => {
+    total += item.price;
+    let li = document.createElement("li");
+    li.innerText = `${item.name} - ${item.price} ¥`;
+    cartList.appendChild(li);
+  });
 
-    document.getElementById("cart-total").innerText = total;
-    document.getElementById("cart-modal").style.display = "block";
+  document.getElementById("cart-total").innerText = total;
+  document.getElementById("cart-modal").style.display = "block";
 }
 
 function hideCart() {
-    document.getElementById("cart-modal").style.display = "none";
+  document.getElementById("cart-modal").style.display = "none";
 }
 
 async function checkout() {
-    const response = await fetch("/create-barion-payment", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ cart })
-    });
-    const data = await response.json();
-    window.location.href = data.paymentUrl;
+  const response = await fetch("/create-barion-payment", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ cart }),
+  });
+  const data = await response.json();
+  window.location.href = data.paymentUrl;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -196,19 +198,19 @@ document.addEventListener("DOMContentLoaded", function () {
   let prevTranslate = 0;
 
   cardContainer.addEventListener("mousedown", (e) => {
-      isDragging = true;
-      startPosition = e.clientX - currentTranslate;
+    isDragging = true;
+    startPosition = e.clientX - currentTranslate;
   });
 
   cardContainer.addEventListener("mousemove", (e) => {
-      if (!isDragging) return;
-      let currentPosition = e.clientX - startPosition;
-      cardContainer.style.transform = `translateX(${currentPosition}px)`;
+    if (!isDragging) return;
+    let currentPosition = e.clientX - startPosition;
+    cardContainer.style.transform = `translateX(${currentPosition}px)`;
   });
 
   cardContainer.addEventListener("mouseup", () => {
-      isDragging = false;
-      prevTranslate = currentTranslate;
+    isDragging = false;
+    prevTranslate = currentTranslate;
   });
 });
 
@@ -220,19 +222,19 @@ function loadCart() {
   const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
   const cartContainer = document.getElementById("cart-items");
   const totalPriceElement = document.getElementById("total-price");
-  
+
   cartContainer.innerHTML = ""; // Kiürítjük a listát, hogy ne duplikálódjon
 
   let totalPrice = 0;
-  
+
   cartItems.forEach((item, index) => {
-      const li = document.createElement("li");
-      li.innerHTML = `
+    const li = document.createElement("li");
+    li.innerHTML = `
           ${item.name} - ${item.price} ¥
           <button onclick="removeFromCart(${index})">Remove</button>
       `;
-      cartContainer.appendChild(li);
-      totalPrice += item.price;
+    cartContainer.appendChild(li);
+    totalPrice += item.price;
   });
 
   totalPriceElement.textContent = `Total: ${totalPrice} ¥`;
@@ -240,7 +242,7 @@ function loadCart() {
 
 function removeFromCart(index) {
   let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-  
+
   // Keressük meg az adott elemet az UI-ban
   const cartContainer = document.getElementById("cart-items");
   const itemToRemove = cartContainer.children[index];
@@ -250,36 +252,37 @@ function removeFromCart(index) {
   itemToRemove.style.opacity = "0";
 
   setTimeout(() => {
-      // Töröljük az elemet az adatokból
-      cartItems.splice(index, 1);
-      localStorage.setItem("cart", JSON.stringify(cartItems));
+    // Töröljük az elemet az adatokból
+    cartItems.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cartItems));
 
-      // Újratöltjük a listát
-      loadCart();
+    // Újratöltjük a listát
+    loadCart();
   }, 300); // Kis késleltetés az animáció miatt
 }
 
 document.addEventListener("click", function (event) {
   if (event.target.matches("button")) {
-      loadCart(); // Bármelyik gombra kattintva frissítjük a kosarat
+    loadCart(); // Bármelyik gombra kattintva frissítjük a kosarat
   }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
   const products = document.querySelectorAll(".product");
   const gradients = [
-      "linear-gradient(to right, #019788, #7286c0)",  // Rózsaszín átmenet
-      //"linear-gradient(to right, #8ee7a4, #f1be34)",  // Kékes átmenet
-      "linear-gradient(to right, #b659dc, #79c7c1)",  // Zöldes átmenet
-      //"linear-gradient(to right, #51b3d5, #f2a859)"   // Pirosas átmenet
+    "linear-gradient(to right, #019788, #7286c0)", // Rózsaszín átmenet
+    //"linear-gradient(to right, #8ee7a4, #f1be34)",  // Kékes átmenet
+    "linear-gradient(to right, #b659dc, #79c7c1)", // Zöldes átmenet
+    //"linear-gradient(to right, #51b3d5, #f2a859)"   // Pirosas átmenet
   ];
 
-  products.forEach(product => {
-      const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
-      product.style.background = randomGradient;
-      product.style.padding = "15px"; // Hogy jobban látszódjon a háttér
-      product.style.borderRadius = "10px";
-      product.style.marginBottom = "10px";
+  products.forEach((product) => {
+    const randomGradient =
+      gradients[Math.floor(Math.random() * gradients.length)];
+    product.style.background = randomGradient;
+    product.style.padding = "15px"; // Hogy jobban látszódjon a háttér
+    product.style.borderRadius = "10px";
+    product.style.marginBottom = "10px";
   });
 });
 
@@ -312,20 +315,27 @@ document.addEventListener("DOMContentLoaded", function () {
 //   }
 // });
 
-function validateForm(event) {
+async function validateForm(event) {
   event.preventDefault(); // Prevent default form submission
 
   // Collect all form values
   const name = document.getElementById("name").value;
+  const furigana = document.getElementById("furigana")?.value || "";
   const email = document.getElementById("email").value;
   const instrument = document.getElementById("instrument").value;
   const plusone = document.getElementById("plusone").value;
   const age = document.getElementById("age").value;
   const school = document.getElementById("school").value;
   const videolinks = document.getElementById("videolinks").value;
-  const consent1 = document.querySelector('input[name="consent1"]').checked ? "Yes" : "No";
-  const consent2 = document.querySelector('input[name="consent2"]').checked ? "Yes" : "No";
-  const consent3 = document.querySelector('input[name="consent3"]').checked ? "Yes" : "No";
+  const consent1 = document.querySelector('input[name="consent1"]').checked
+    ? "Yes"
+    : "No";
+  const consent2 = document.querySelector('input[name="consent2"]').checked
+    ? "Yes"
+    : "No";
+  const consent3 = document.querySelector('input[name="consent3"]').checked
+    ? "Yes"
+    : "No";
 
   // Validation
   if (!email.includes("@")) {
@@ -343,52 +353,86 @@ function validateForm(event) {
 
   // Build the message
   const message = `
-Name: ${name}
-Email: ${email}
-Instrument: ${instrument}
-Plus one class: ${plusone}
-Age: ${age}
-School: ${school}
-Video links: ${videolinks}
-Consent to data processing: ${consent1}
-Consent to photo usage: ${consent2}
-Accepted privacy policy: ${consent3}
+name: ${name}
+furigana: ${furigana}
+email: ${email}
+instrument: ${instrument}
+plusone: ${plusone}
+age: ${age}
+school: ${school}
+videolinks: ${videolinks}
+consent1: ${consent1}
+consent2: ${consent2}
+consent3: ${consent3}
   `;
 
   // Send the email (change 'to' to your admin/recipient address)
-  sendEmail({
-    to: 'musicorestes@gmail.com',
-    subject: 'New Lisztium Application',
-    message: message,
-  });
+  try {
+    // Send the email using the sendEmail function
+    await sendEmail({
+      to: "szabolcs.szelenyi@net4yard.com",
+      subject: "New Lisztium Application",
+      message: message,
+    });
 
-  alert("Your application has been submitted!");
-  event.target.reset();
-  return false;
+    // Only reset the form if email was sent successfully
+    event.target.reset();
+    return false;
+  } catch (error) {
+    console.error("Form submission error:", error);
+    alert("There was an error submitting your application. Please try again.");
+    return false;
+  }
 }
 
 const sendEmail = async (emailData) => {
   try {
-    const response = await fetch('https://lisztium-mailer-dot-second-kiln-431107-p9.oa.r.appspot.com/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json', // Or 'application/x-www-form-urlencoded' depending on send.php
-      },
-      body: JSON.stringify(emailData), // Or new URLSearchParams(emailData)
-    });
+    const formattedData = {
+      name: document.getElementById("name").value,
+      furigana: document.getElementById("furigana")?.value,
+      email: document.getElementById("email").value,
+      instrument: document.getElementById("instrument").value,
+      plusone: document.getElementById("plusone").value,
+      age: document.getElementById("age").value,
+      school: document.getElementById("school").value,
+      videolinks: document.getElementById("videolinks").value,
+      consent1: document.querySelector('input[name="consent1"]').checked
+        ? "on"
+        : "off",
+      consent2: document.querySelector('input[name="consent2"]').checked
+        ? "on"
+        : "off",
+      consent3: document.querySelector('input[name="consent3"]').checked
+        ? "on"
+        : "off",
+    };
+
+    const response = await fetch(
+      "https://lisztium-mailer-dot-second-kiln-431107-p9.oa.r.appspot.com/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formattedData),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
     const result = await response.json();
 
-    if (response.ok && result.status === 'success') {
-      console.log('Email sent successfully:', result.message);
-      // Handle success in your UI
+    if (result.status === "success") {
+      alert("Email sent successfully!");
     } else {
-      console.error('Failed to send email:', result.message || response.statusText);
-      // Handle error in your UI
+      throw new Error(result.message || "Failed to send email");
     }
   } catch (error) {
-    console.error('Error sending email request:', error);
-    // Handle network or other errors
+    console.error("Error sending email:", error);
+    alert("Failed to send email. Please try again later.");
   }
 };
 
