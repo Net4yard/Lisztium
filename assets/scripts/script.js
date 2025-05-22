@@ -283,53 +283,93 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.getElementById('applicationForm').addEventListener('submit', function(event) {
-  const email = document.getElementById('email').value;
-  const age = document.getElementById('age').value;
-  const consentPhotos = document.querySelector('input[name="consent-photos"]');
-  let errors = [];
+// document.getElementById('applicationForm').addEventListener('submit', function(event) {
+//   const email = document.getElementById('email').value;
+//   const age = document.getElementById('age').value;
+//   const consentPhotos = document.querySelector('input[name="consent-photos"]');
+//   let errors = [];
 
-  // Email must contain @
-  if (!email.includes('@')) {
-    errors.push('Please enter a valid email address.');
-  }
+//   // Email must contain @
+//   if (!email.includes('@')) {
+//     errors.push('Please enter a valid email address.');
+//   }
 
-  // Age must be a number between 1 and 150
-  if (!/^\d+$/.test(age)) {
-    errors.push('Age must be a valid number.');
-  } else if (parseInt(age) <= 0 || parseInt(age) > 150) {
-    errors.push('Please enter a realistic age (1-150).');
-  }
+//   // Age must be a number between 1 and 150
+//   if (!/^\d+$/.test(age)) {
+//     errors.push('Age must be a valid number.');
+//   } else if (parseInt(age) <= 0 || parseInt(age) > 150) {
+//     errors.push('Please enter a realistic age (1-150).');
+//   }
 
-  // 2. checkbox kötelező
-  if (!consentPhotos.checked) {
-    errors.push('You must agree to the photo usage policy.');
-  }
+//   // 2. checkbox kötelező
+//   if (!consentPhotos.checked) {
+//     errors.push('You must agree to the photo usage policy.');
+//   }
 
-  if (errors.length > 0) {
-    event.preventDefault();
-    alert(errors.join('\n'));
-  }
-});
+//   if (errors.length > 0) {
+//     event.preventDefault();
+//     alert(errors.join('\n'));
+//   }
+// });
 
-function validateForm() {
+function validateForm(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  // Collect all form values
+  const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
+  const instrument = document.getElementById("instrument").value;
+  const plusone = document.getElementById("plusone").value;
   const age = document.getElementById("age").value;
+  const school = document.getElementById("school").value;
+  const videolinks = document.getElementById("videolinks").value;
+  const consent1 = document.querySelector('input[name="consent1"]').checked ? "Yes" : "No";
+  const consent2 = document.querySelector('input[name="consent2"]').checked ? "Yes" : "No";
+  const consent3 = document.querySelector('input[name="consent3"]').checked ? "Yes" : "No";
 
+  // Validation
   if (!email.includes("@")) {
-      alert("Please enter a valid email address.");
-      return false;
+    alert("Please enter a valid email address.");
+    return false;
   }
   if (isNaN(age) || age < 1 || age > 150) {
-      alert("Please enter a valid age between 1 and 150.");
-      return false;
+    alert("Please enter a valid age between 1 and 150.");
+    return false;
   }
-  return true;
+  if (consent2 !== "Yes") {
+    alert("You must agree to the photo usage policy.");
+    return false;
+  }
+
+  // Build the message
+  const message = `
+Name: ${name}
+Email: ${email}
+Instrument: ${instrument}
+Plus one class: ${plusone}
+Age: ${age}
+School: ${school}
+Video links: ${videolinks}
+Consent to data processing: ${consent1}
+Consent to photo usage: ${consent2}
+Accepted privacy policy: ${consent3}
+  `;
+
+  // Send the email (change 'to' to your admin/recipient address)
+  sendEmail({
+    to: 'musicorestes@gmail.com',
+    subject: 'New Lisztium Application',
+    message: message,
+  });
+
+  alert("Your application has been submitted!");
+  event.target.reset();
+  return false;
 }
 
 const sendEmail = async (emailData) => {
   try {
-    const response = await fetch('https://lisztium-mailer-dot-second-kiln-431107-p9.oa.r.appspot.com/', { // Or your custom domain
+    const response = await fetch('https://lisztium-mailer-dot-second-kiln-431107-p9.oa.r.appspot.com/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json', // Or 'application/x-www-form-urlencoded' depending on send.php
