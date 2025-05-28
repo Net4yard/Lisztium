@@ -23,6 +23,26 @@ footer .links {
 footer .links ul li {
   padding: 5px;
 }
+footer .links ul li .follow {
+  background-color: #fff;
+  width: 300px;
+  height: 130px;
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+footer .links ul li .follow h6 {
+  color: #7286c0;
+}
+footer .links ul li .follow img {
+  width: 75px;
+  height: 75px;
+  background: linear-gradient(to right bottom, #004aad, #b659dc);
+  border-radius: 50%;
+  margin: 10px;
+  padding: 5px;
+}
 footer a {
   color: white;
 }
@@ -39,6 +59,10 @@ footer .bottom {
 @media screen and (max-width: 850px) {
   footer .links {
     grid-template-columns: repeat(1, 1fr);
+  }
+  footer .links ul li .follow {
+    align-items: center;
+    margin: auto;
   }
 }
 
