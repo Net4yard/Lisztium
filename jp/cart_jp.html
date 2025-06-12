@@ -92,7 +92,7 @@
           <div id="cart-container">
               <ul id="cart-items"></ul>
               <p id="total-price">合計: 0 ¥</p>
-              <form action="https://lisztium-291825688948.europe-west1.run.app/pay" method="post">
+              <form id="payment-form">
                 <input type="submit" value="決済" />
               </form>
           </div>
@@ -144,4 +144,24 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <script src="../assets/scripts/hamburger.js"></script>
   <script src="../assets/scripts/script.js" defer></script>
+  <script>
+    // 決済処理
+    $("#payment-form").submit(function(event) {
+      event.preventDefault(); // フォームのデフォルトの送信を防ぐ
+
+      // カートの内容を取得
+      const cart = []; // ここにカートのアイテムを追加
+
+      fetch("https://lisztium-291825688948.europe-west1.run.app/pay", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ cart })
+      })
+      .then(res => res.json())
+      .then(data => {
+        // Irányítsd át a felhasználót a PayPal approval_url-re
+        window.location.href = data.approval_url;
+      });
+    });
+  </script>
 </html>
