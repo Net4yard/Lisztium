@@ -1,0 +1,11 @@
+body {
+  background: linear-gradient(to right, #4CAF50, #b659dc);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/*# sourceMappingURL=succes.css.map */
