@@ -24,74 +24,56 @@ paypal.configure({
 });
 
 app.post("/pay", (req, res) => {
+  const cart = req.body.cart;
+  if (!cart || !Array.isArray(cart) || cart.length === 0) {
+    return res.status(400).json({ error: "Cart is empty" });
+  }
+
+  // Átalakítás PayPal formátumra
+  const items = cart.map((item) => ({
+    name: item.name,
+    sku: item.name.replace(/\s/g, "_"),
+    price: (item.price / 100).toFixed(2), // ha Ft-ot használsz, váltsd át EUR-ra!
+    currency: "EUR",
+    quantity: item.quantity,
+  }));
+
+  // Összesítés
+  const total = items
+    .reduce(
+      (sum, item) => sum + parseFloat(item.price) * item.quantity,
+      0
+    )
+    .toFixed(2);
+
   const create_payment_json = {
     intent: "sale",
-    payer: {
-      payment_method: "paypal",
-    },
+    payer: { payment_method: "paypal" },
     redirect_urls: {
-      return_url: "https://lisztium.com/",
+      return_url: "https://lisztium.com/succes.html",
       cancel_url: "https://lisztium.com/",
     },
     transactions: [
       {
-        item_list: {
-          items: [
-            {
-              name: "Red Sox Hat",
-              sku: "001",
-              price: "25.00",
-              currency: "EUR",
-              quantity: 1,
-            },
-          ],
-        },
-        amount: {
-          currency: "EUR",
-          total: "25.00",
-        },
-        description: "Hat for the best team ever",
+        item_list: { items },
+        amount: { currency: "EUR", total },
+        description: "Lisztium purchase",
       },
     ],
   };
-  app.get("/success", (req, res) => {
-    const payerId = req.query.PayerID;
-    const paymentId = req.query.paymentId;
 
-    const execute_payment_json = {
-      payer_id: payerId,
-      transactions: [
-        {
-          amount: {
-            currency: "EUR",
-            total: "25.00",
-          },
-        },
-      ],
-    };
-
-    paypal.payment.execute(
-      paymentId,
-      execute_payment_json,
-      function (error, payment) {
-        if (error) {
-          console.log(error.response);
-          throw error;
-        } else {
-          console.log(JSON.stringify(payment));
-          res.send("Success");
-        }
-      }
-    );
-  });
   paypal.payment.create(create_payment_json, function (error, payment) {
     if (error) {
-      throw error;
+      return res.status(500).json({ error: "Payment creation failed" });
     } else {
-      for (let i = 0; i < payment.links.length; i++) {
-        if (payment.links[i].rel === "approval_url") {
-          res.redirect(payment.links[i].href);
-        }
+      // approval_url keresése
+      const approvalUrl = payment.links.find(
+        (link) => link.rel === "approval_url"
+      );
+      if (approvalUrl) {
+        res.json({ approval_url: approvalUrl.href });
+      } else {
+        res.status(500).json({ error: "No approval_url found" });
       }
     }
   });
