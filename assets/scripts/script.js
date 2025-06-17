@@ -149,6 +149,7 @@ function addToCart(id, name, price) {
   let cart = JSON.parse(localStorage.getItem("cart")) || []; // Ha nincs kosár, hozzunk létre egyet
   cart.push({ id, name, price });
   localStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem("cartTimestamp", Date.now().toString());
   updateCartCount();
 }
 
@@ -436,5 +437,30 @@ const sendEmail = async (emailData) => {
   }
 };
 
-// Example usage:
-// sendEmail({ to: 'test@example.com', subject: 'Hello from React', message: 'This is a test.' });
+// Success oldal betöltésekor törli a kosarat
+if (window.location.pathname.endsWith("success.html")) {
+  localStorage.removeItem("cart");
+  localStorage.removeItem("cart_jp");
+  localStorage.removeItem("cartTimestamp");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (localStorage.getItem("clearCart") === "1") {
+    localStorage.removeItem("cart");
+    localStorage.removeItem("cart_jp");
+    localStorage.removeItem("cartTimestamp");
+    localStorage.removeItem("clearCart");
+    updateCartCount && updateCartCount();
+  }
+
+  const cartTimestamp = localStorage.getItem("cartTimestamp");
+  if (cartTimestamp) {
+    const now = Date.now();
+    if (now - parseInt(cartTimestamp, 10) > 10 * 60 * 1000) {
+      // 10 perc eltelt
+      localStorage.removeItem("cart");
+      localStorage.removeItem("cartTimestamp");
+      updateCartCount && updateCartCount();
+    }
+  }
+});
