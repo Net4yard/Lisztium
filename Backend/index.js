@@ -1,5 +1,5 @@
-console.error = function() {}; // Letiltja az error üzeneteket
-console.warn = function() {};  // Letiltja a warning üzeneteket
+console.error = function () {}; // Letiltja az error üzeneteket
+console.warn = function () {}; // Letiltja a warning üzeneteket
 
 const express = require("express");
 const app = express();
@@ -18,9 +18,9 @@ app.get("/", (req, res) => {
 paypal.configure({
   mode: "live",
   client_id:
-    "ATkAnoxZLye22E-qVoBJeYwqOvBf3QkK0lsmNb2q54saeQKfJtr-ONj5hO1SC1KLgPi6MdKIrIFc5IIR",
+    "AZsazF1nl5HwwJvOhZJYyhhI_ygxi9fwaKlKQoTG-1PQSzzFpwdV1bK3-iW3LPLgjMvyYsQpcVS3J-4H",
   client_secret:
-    "EHmqiOsZm1ZUJdpsMOxgrXXkbxHSujMyG2rZUYcKeZiFN4sGo_fhJm0itqtPl51q2ZTO_ZqlH6Cdtrcm",
+    "EEWFkNK76l5UqZIdA6h_M-j94RcWiw_tB27YddKnGAxmy4ppwYWmDAmS0WQ6MGN8x5C7ATd8MGq-Dxy2",
 });
 
 app.post("/pay", (req, res) => {
@@ -40,10 +40,7 @@ app.post("/pay", (req, res) => {
 
   // Összesítés
   const total = items
-    .reduce(
-      (sum, item) => sum + parseFloat(item.price) * item.quantity,
-      0
-    )
+    .reduce((sum, item) => sum + parseFloat(item.price) * item.quantity, 0)
     .toFixed(2);
 
   const create_payment_json = {
@@ -64,6 +61,7 @@ app.post("/pay", (req, res) => {
 
   paypal.payment.create(create_payment_json, function (error, payment) {
     if (error) {
+      console.log(error);
       return res.status(500).json({ error: "Payment creation failed" });
     } else {
       // approval_url keresése
@@ -83,4 +81,3 @@ app.get("/cancel", (req, res) => res.send("Cancelled"));
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
-

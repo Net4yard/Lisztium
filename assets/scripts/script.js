@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-let cart = [];
+// let cart = []; // This global cart is not consistently used with localStorage logic. Prefer localStorage.
 
 function updateCartCount() {
   let cart = JSON.parse(localStorage.getItem("cart")) || []; // Ha nincs kosár, legyen üres tömb
@@ -156,39 +156,42 @@ function addToCart(id, name, price) {
 // Oldalbetöltéskor frissítse a kosár ikonját
 document.addEventListener("DOMContentLoaded", updateCartCount);
 
-function updateCart() {
-  document.getElementById("cart-count").innerText = cart.length;
-}
+// function updateCart() { // Uses global cart, prefer localStorage version if this is for general count
+//   const localCart = JSON.parse(localStorage.getItem("cart")) || [];
+//   document.getElementById("cart-count").innerText = localCart.length;
+// }
 
-function showCart() {
-  const cartList = document.getElementById("cart-items");
-  cartList.innerHTML = "";
-  let total = 0;
+// function showCart() { // Uses global cart, cart.html uses loadCart() which uses localStorage
+//   const cartList = document.getElementById("cart-items");
+//   cartList.innerHTML = "";
+//   let total = 0;
+//   const localCart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  cart.forEach((item, index) => {
-    total += item.price;
-    let li = document.createElement("li");
-    li.innerText = `${item.name} - ${item.price} ¥`;
-    cartList.appendChild(li);
-  });
+//   localCart.forEach((item, index) => {
+//     total += item.price;
+//     let li = document.createElement("li");
+//     li.innerText = `${item.name} - ${item.price} ¥`;
+//     cartList.appendChild(li);
+//   });
 
-  document.getElementById("cart-total").innerText = total;
-  document.getElementById("cart-modal").style.display = "block";
-}
+//   document.getElementById("cart-total").innerText = total; // Assumes #cart-total exists
+//   // document.getElementById("cart-modal").style.display = "block"; // For a modal, not cart.html page
+// }
 
-function hideCart() {
-  document.getElementById("cart-modal").style.display = "none";
-}
+// function hideCart() { // For a modal
+//   // document.getElementById("cart-modal").style.display = "none";
+// }
 
-async function checkout() {
-  const response = await fetch("/create-barion-payment", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ cart }),
-  });
-  const data = await response.json();
-  window.location.href = data.paymentUrl;
-}
+// async function checkout() { // This seems to be for a different payment system (Barion) and uses global cart
+//   const localCart = JSON.parse(localStorage.getItem("cart")) || [];
+//   const response = await fetch("/create-barion-payment", {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify({ cart: localCart }), // Send localStorage cart
+//   });
+//   const data = await response.json();
+//   window.location.href = data.paymentUrl;
+// }
 
 document.addEventListener("DOMContentLoaded", function () {
   let cardContainer = document.querySelector(".card_container ul");
@@ -263,8 +266,65 @@ function removeFromCart(index) {
 }
 
 document.addEventListener("click", function (event) {
-  if (event.target.matches("button")) {
-    loadCart(); // Bármelyik gombra kattintva frissítjük a kosarat
+  // Be more specific if this is for remove buttons, as removeFromCart already calls loadCart.
+  // Example: if (event.target.closest('#cart-items') && event.target.tagName === 'BUTTON')
+  // For now, assuming it might be for other general button interactions needing cart refresh.
+  // If it's only for "Remove" buttons in cart, it's redundant due to removeFromCart calling loadCart.
+  if (
+    event.target.matches("button") &&
+    !event.target.closest("#checkoutForm")
+  ) {
+    // Avoid re-running loadCart on "Buy"
+    // Check if loadCart function is available (it might be specific to cart.html's scope)
+    if (typeof loadCart === "function") {
+      // loadCart(); // Consider if this is too broad.
+    }
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const checkoutForm = document.getElementById("checkoutForm");
+
+  if (checkoutForm) {
+    // Ensure this code only runs on pages with the checkout form (e.g., cart.html)
+    checkoutForm.addEventListener("submit", async function (event) {
+      event.preventDefault(); // Prevent default HTML form submission
+
+      const cartFromStorage = JSON.parse(localStorage.getItem("cart")) || [];
+
+      if (cartFromStorage.length === 0) {
+        alert(
+          "Your cart is empty. Please add items to your cart before proceeding."
+        );
+        return;
+      }
+
+      // Ensure each item has a quantity, defaulting to 1, as backend expects it.
+      const itemsToPay = cartFromStorage.map((item) => ({
+        ...item,
+        quantity: item.quantity || 1, // Default to 1 if quantity is not present
+      }));
+
+      try {
+        const response = await fetch("http://localhost:8080/pay", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ cart: itemsToPay }), // Send the processed cart
+        });
+        const data = await response.json();
+        if (data.approval_url) {
+          window.location.href = data.approval_url; // Redirect to PayPal
+        } else {
+          console.error("Payment initiation failed:", data);
+          alert(data.error || "Payment initiation failed. Please try again.");
+        }
+      } catch (error) {
+        console.error("Error during checkout:", error);
+        alert(
+          "An error occurred while trying to proceed to payment. Please check your connection and try again."
+        );
+      }
+    });
   }
 });
 
