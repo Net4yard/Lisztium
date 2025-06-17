@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
   );
 });
 paypal.configure({
-  mode: "sandbox",
+  mode: "live",
   client_id:
     "ATkAnoxZLye22E-qVoBJeYwqOvBf3QkK0lsmNb2q54saeQKfJtr-ONj5hO1SC1KLgPi6MdKIrIFc5IIR",
   client_secret:
@@ -50,7 +50,7 @@ app.post("/pay", (req, res) => {
     intent: "sale",
     payer: { payment_method: "paypal" },
     redirect_urls: {
-      return_url: "https://lisztium.com/succes.html",
+      return_url: "https://lisztium.com/success.html",
       cancel_url: "https://lisztium.com/",
     },
     transactions: [

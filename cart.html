@@ -103,7 +103,7 @@
           <div id="cart-container">
             <ul id="cart-items"></ul>
             <p id="total-price">Total: 0 ¥</p>
-            <form id="paypal-form">
+            <form action="https://lisztium-291825688948.europe-west1.run.app/pay" method="post">
               <input type="submit" value="Buy" />
             </form>
           </div>
@@ -151,26 +151,10 @@
       </div>
   </footer>
   </body>
-  <script src="https://www.paypal.com/sdk/js?client-id=test&currency=EUR"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=ATkAnoxZLye22E-qVoBJeYwqOvBf3QkK0lsmNb2q54saeQKfJtr-ONj5hO1SC1KLgPi6MdKIrIFc5IIR
+&currency=EUR"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <script src="assets/scripts/hamburger.js"></script>
   <script src="assets/scripts/script.js" defer></script>
-  <script>
-    // Fetch API call to handle the form submission
-    document.getElementById('paypal-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const cart = []; // Populate this with the actual cart data
-      fetch("https://lisztium-291825688948.europe-west1.run.app/pay", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ cart })
-      })
-      .then(res => res.json())
-      .then(data => {
-        // Redirect the user to the PayPal approval_url
-        window.location.href = data.approval_url;
-      });
-    });
-  </script>
 </html>
