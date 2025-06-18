@@ -33,15 +33,15 @@ app.post("/pay", (req, res) => {
   const items = cart.map((item) => ({
     name: item.name,
     sku: item.name.replace(/\s/g, "_"),
-    price: (item.price / 100).toFixed(2), // ha Ft-ot használsz, váltsd át EUR-ra!
-    currency: "EUR",
+    price: Math.round(item.price), // JPY-hez egész szám kell!
+    currency: "JPY",
     quantity: item.quantity,
   }));
 
   // Összesítés
   const total = items
-    .reduce((sum, item) => sum + parseFloat(item.price) * item.quantity, 0)
-    .toFixed(2);
+    .reduce((sum, item) => sum + item.price * item.quantity, 0)
+    .toString(); // JPY-hez string, tizedes NEM kell
 
   const create_payment_json = {
     intent: "sale",
@@ -53,7 +53,7 @@ app.post("/pay", (req, res) => {
     transactions: [
       {
         item_list: { items },
-        amount: { currency: "EUR", total },
+        amount: { currency: "JPY", total },
         description: "Lisztium purchase",
       },
     ],
