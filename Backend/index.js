@@ -25,8 +25,8 @@ paypal.configure({
 
 app.post("/pay", (req, res) => {
   const cart = req.body.cart;
-  if (!cart || !Array.isArray(cart) || cart.length === 0) {
-    return res.status(400).json({ error: "Cart is empty" });
+  if (!Array.isArray(cart)) {
+    return res.status(400).json({ error: "Cart is missing or invalid" });
   }
 
   // Átalakítás PayPal formátumra
@@ -80,4 +80,75 @@ app.get("/cancel", (req, res) => res.send("Cancelled"));
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
+});
+
+const nodemailer = require("nodemailer");
+
+// Nodemailer transporter a környezeti változókkal
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST,      // pl. "smtp.gmail.com"
+  port: 587,                        // Gmailnél 587 (TLS), ha SSL: 465
+  secure: false,                    // true, ha 465, egyébként false
+  auth: {
+    user: process.env.SMTP_USER,    // pl. "musicorestes@gmail.com"
+    pass: process.env.SMTP_PASS     // alkalmazásjelszó
+  }
+});
+
+// Példa email küldés (pl. jelentkezés POST végpontban)
+app.post("/send-email", async (req, res) => {
+  const {
+    name, furigana, email, instrument, plusone, age, school, videolinks,
+    consent1, consent2, consent3, message
+  } = req.body;
+
+  // Adminnak küldött email tartalma
+  const adminMailOptions = {
+    from: `"${process.env.FROM_NAME}" <${process.env.FROM_EMAIL}>`,
+    to: process.env.ADMIN_EMAIL,
+    subject: `Application - ${name}`,
+    text: `
+New Application Received:
+
+Name: ${name}
+Furigana: ${furigana}
+Email: ${email}
+Instrument: ${instrument}
+Optional plus one class: ${plusone}
+Age: ${age}
+Current School/Institution: ${school}
+Video links: ${videolinks}
+
+Consents:
+- Processing Personal Info: ${consent1}
+- Photos Usage Consent: ${consent2}
+- Privacy Policy Accepted: ${consent3}
+
+Message:
+${message}
+    `
+  };
+
+  // Jelentkezőnek visszaigazoló email
+  const userMailOptions = {
+    from: `"${process.env.FROM_NAME}" <${process.env.FROM_EMAIL}>`,
+    to: email,
+    subject: "Your application to Lisztium Masterclasses has been received",
+    text: `Dear ${name},
+
+Thank you for your application to the Lisztium Masterclasses!
+We have successfully received your submission and will get back to you shortly.
+
+Best regards,
+Lisztium Masterclasses Team`
+  };
+
+  try {
+    await transporter.sendMail(adminMailOptions); // Adminnak
+    await transporter.sendMail(userMailOptions);  // Jelentkezőnek
+    res.json({ status: "success" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ status: "error", error: error.message });
+  }
 });
