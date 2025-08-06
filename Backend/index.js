@@ -84,25 +84,22 @@ app.listen(port, () => {
 
 const nodemailer = require("nodemailer");
 
-// Nodemailer transporter a környezeti változókkal
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,      // pl. "smtp.gmail.com"
-  port: 587,                        // Gmailnél 587 (TLS), ha SSL: 465
-  secure: false,                    // true, ha 465, egyébként false
+  host: process.env.SMTP_HOST,
+  port: 587,
+  secure: false,
   auth: {
-    user: process.env.SMTP_USER,    // pl. "musicorestes@gmail.com"
-    pass: process.env.SMTP_PASS     // alkalmazásjelszó
-  }
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
 });
 
-// Példa email küldés (pl. jelentkezés POST végpontban)
 app.post("/send-email", async (req, res) => {
   const {
     name, furigana, email, instrument, plusone, age, school, videolinks,
     consent1, consent2, consent3, message
   } = req.body;
 
-  // Adminnak küldött email tartalma
   const adminMailOptions = {
     from: `"${process.env.FROM_NAME}" <${process.env.FROM_EMAIL}>`,
     to: process.env.ADMIN_EMAIL,
