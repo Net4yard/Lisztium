@@ -306,11 +306,14 @@ document.addEventListener("DOMContentLoaded", function () {
       }));
 
       try {
-        const response = await fetch("http://localhost:8080/pay", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ cart: itemsToPay }), // Send the processed cart
-        });
+        const response = await fetch(
+          "https://lisztium-291825688948.europe-west1.run.app/pay",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ cart: itemsToPay }), // Send the processed cart
+          }
+        );
         const data = await response.json();
         if (data.approval_url) {
           window.location.href = data.approval_url; // Redirect to PayPal
