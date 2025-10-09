@@ -1,0 +1,194 @@
+$main-color: #019788;
+$main-secondary-color: #7286c0;
+$main-third-color: #8ee7a4;
+$main-fouth-color: #51b3d5;
+$main-fifth-color: #b659dc;
+$main-sixth-color: #f1be34;
+$main-seventh-color: #f2a859;
+$main-eighth-color: #79c7c1;
+
+.section-3 {
+  .section-3-div {
+    max-width: 1920px;
+    align-items: center;
+    margin: auto;
+    text-align: justify;
+    transition: all 0.3;
+    h1 {
+      background: linear-gradient(
+        to right,
+        $main-eighth-color,
+        $main-secondary-color
+      );
+      text-align: center;
+      border-radius: 10px;
+      width: 350px;
+      align-items: center;
+      margin: auto;
+      margin-top: 50px;
+    }
+
+    a {
+      width: 90%;
+    }
+
+    .profile {
+      pointer-events: auto; /* De a gomb megmarad kattinthatónak */
+      position: relative;
+      align-items: center;
+      margin: auto;
+      background-color: #019788;
+      padding: 10px;
+      width: 150px;
+      text-align: center;
+      border-radius: 10px;
+      color: #fff;
+      display: block; /* Kitölti az egész gombot */
+    }
+
+    .container850above {
+      display: flex; /* Flexbox alapértelmezett használata */
+      flex-wrap: wrap; /* Elemek új sorba kerülnek, ha nem férnek el */
+      justify-content: space-around; /* Elemek közötti térköz */
+      align-items: center; /* Vertikális igazítás középre */
+      margin: auto;
+      width: 90%; /* 90%-os szélességet használja */
+      gap: 20px; /* Elemek közötti távolság */
+      margin-bottom: 10px;
+
+      .columns {
+        display: flex; /* Egy sor elemeinek elrendezése */
+        flex-direction: row; /* Elemek egymás mellett vízszintesen */
+        width: 80%; /* A teljes szélességet használja */
+        align-items: center;
+        margin: auto;
+        justify-content: center;
+        margin-bottom: 50px;
+
+        .leftbox,
+        .rightbox {
+          width: 600px;
+          height: 250;
+          border-radius: 10px;
+          margin-top: 6vh;
+          z-index: -1;
+          box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+          color: grey;
+          vertical-align: middle;
+          pointer-events: none; /* Kikapcsolja az egér-interakciókat az egész dobozra */
+        }
+
+        .leftbox {
+          transform: translateX(20%); /* Belógás jobbról */
+          padding-left: 5%;
+          padding-right: 18%;
+        }
+
+        .rightbox {
+          transform: translateX(-20%); /* Belógás balról */
+          padding-left: 18%;
+          padding-right: 5%;
+        }
+
+        .circle {
+          width: 250px;
+          height: 250px;
+          border-radius: 50%;
+          box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+          display: flex; /* Flexbox aktiválása */
+          justify-content: center; /* Vízszintes középre igazítás */
+          align-items: center; /* Függőleges középre igazítás */
+          transform: translateY(3vh);
+          img {
+            width: 90%;
+            min-width: 230px;
+            object-fit: cover;
+          }
+        }
+
+        .title {
+          margin-top: 10px;
+          text-align: center;
+          vertical-align: bottom;
+        }
+      }
+
+      @media only screen and (max-width: 850px) {
+        display: none;
+      }
+    }
+    .container850below {
+      display: flex; /* Flexbox alapértelmezett használata */
+      flex-wrap: wrap; /* Elemek új sorba kerülnek, ha nem férnek el */
+      justify-content: space-around; /* Elemek közötti térköz */
+      width: 80%; /* 90%-os szélességet használja */
+      gap: 20px; /* Elemek közötti távolság */
+      margin-bottom: 10px;
+      align-items: center;
+      margin: auto;
+
+      h1 {
+        text-align: center;
+        border-radius: 10px;
+        margin-left: 20%;
+        margin-right: 20%;
+      }
+
+      .columns {
+        display: flex; /* Egy sor elemeinek elrendezése */
+        flex-direction: column; /* Elemek egymás alatt */
+        align-items: center;
+        margin: auto;
+        width: 80%; /* A teljes szélességet használja */
+
+        .leftbox,
+        .rightbox {
+          justify-content: center;
+          align-items: center;
+          margin: auto;
+          width: 100% !important;
+          max-width: 330px !important;
+          height: auto;
+          border-radius: 10px;
+          z-index: -1;
+          box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+          margin-top: -150px; /* Doboz belógása a körbe */
+          margin-bottom: 50px;
+          color: grey;
+          padding-left: 10%;
+          padding-right: 10%;
+          p {
+            padding-bottom: 25px;
+          }
+        }
+
+        .circle {
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+          display: flex; /* Flexbox aktiválása */
+          justify-content: center; /* Vízszintes középre igazítás */
+          align-items: center; /* Függőleges középre igazítás */
+          margin: auto;
+          margin-bottom: 25px;
+          img {
+            width: 90%;
+            align-items: center; /* Függőleges középre igazítás */
+            margin: auto;
+            justify-content: center; /* Vízszintes középre igazítás */
+          }
+        }
+
+        .title {
+          margin-top: 150px;
+          text-align: center;
+        }
+      }
+
+      @media only screen and (min-width: 851px) {
+        display: none;
+      }
+    }
+  }
+}

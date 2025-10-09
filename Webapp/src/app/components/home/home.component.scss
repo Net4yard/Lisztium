@@ -1,0 +1,581 @@
+$main-color: #019788;
+$main-secondary-color: #7286c0;
+$main-third-color: #8ee7a4;
+$main-fouth-color: #51b3d5;
+$main-fifth-color: #b659dc;
+$main-sixth-color: #f1be34;
+$main-seventh-color: #f2a859;
+$main-eighth-color: #79c7c1;
+
+body {
+  overflow-x: hidden !important;
+}
+
+.semiovaltop {
+  background-color: white;
+  width: 100%;
+  height: 50px;
+  border-radius: 50% / 100%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.semiovalbottom {
+  background-color: white;
+  width: 100%;
+  height: 50px;
+  border-radius: 50% / 100%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.section-3 {
+  margin-bottom: 150px;
+  h4 {
+    margin-top: -15px;
+  }
+
+  .greenline {
+    margin-top: 100px;
+    background: linear-gradient(to right, $main-color, $main-third-color);
+    width: 90%;
+    height: 280px;
+    border-radius: 0 200px 200px 0;
+    display: flex;
+    /* Kezdőállapot: eltolás és átlátszóság */
+    transform: translateX(-100%);
+    opacity: 0;
+
+    /* Animáció alkalmazása */
+    animation: slideInLeft 1.5s ease-out forwards;
+    animation-delay: 0s;
+
+    &.visible {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .shortgreenline {
+      background: linear-gradient(to right, $main-third-color, $main-color);
+      width: 40%;
+      height: 350px;
+      transform: translateY(-5vh);
+      border-radius: 0 200px 200px 0;
+      img {
+        height: 391px;
+        width: auto;
+        transform: translateY(-4.2vh);
+        float: right;
+        margin-right: 1px;
+        border-top-right-radius: 150px; /* Csak a jobb alsó sarok lesz lekerekítve */
+        border-bottom-right-radius: 150px; /* Csak a jobb alsó sarok lesz lekerekítve */
+        @media only screen and (max-width: 1440px) {
+          transform: translateY(-5vh);
+        }
+      }
+    }
+
+    .piano {
+      width: 45%;
+      text-align: center;
+      margin-top: 5vh;
+      margin-left: 5vh;
+    }
+
+    @media only screen and (max-width: 1080px) {
+      background: transparent;
+      border: 1px solid grey;
+      border-radius: 10px;
+      width: 90%;
+      color: #000;
+      flex-direction: column; /* Elemek egymás alá helyezése */
+      align-items: center;
+      margin: auto;
+      margin-top: 35vh;
+      height: 85%;
+      padding-top: 20px;
+
+      .shortgreenline {
+        width: 125%;
+        transform: translate(-7%, -75%);
+        position: fixed;
+        height: 25vh;
+        img {
+          height: 30vh;
+          width: auto;
+          transform: translateY(-5vh);
+          float: right;
+          margin-right: 1px;
+          border-top-right-radius: 100px; /* Csak a jobb alsó sarok lesz lekerekítve */
+          border-bottom-right-radius: 75px; /* Csak a jobb alsó sarok lesz lekerekítve */
+        }
+      }
+
+      .piano {
+        width: 70%;
+        padding-top: 10vh;
+        padding-bottom: 1vh;
+        text-align: center;
+        margin: auto;
+        height: 80%;
+      }
+    }
+  }
+
+  .purpleline {
+    margin-top: 20vh;
+    background: linear-gradient(
+      to right,
+      $main-fouth-color,
+      $main-secondary-color
+    );
+    width: 95%;
+    height: 30vh;
+    border-radius: 200px 0 0 200px;
+    display: flex;
+    margin-left: auto;
+    margin-right: 0;
+    /* Kezdőállapot: eltolás és átlátszóság */
+    transform: translateX(-100%);
+    opacity: 0;
+
+    /* Animáció alkalmazása */
+    animation: slideInRight 1.5s ease-out forwards;
+    animation-delay: 0s;
+
+    &.visible {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .shortpurpleline {
+      background: linear-gradient(to right, $main-fifth-color, $main-color);
+      width: 50%;
+      height: 40vh;
+      transform: translateY(-5vh);
+      border-radius: 200px 0 0 200px;
+      margin-right: 0;
+      img {
+        height: 45vh;
+        min-height: auto;
+        width: auto;
+        transform: translateY(-5vh);
+        float: right;
+      }
+    }
+
+    .violin {
+      width: 45%;
+      text-align: center;
+      margin-top: 5vh;
+      margin-left: 10vh;
+    }
+
+    @media only screen and (max-width: 1080px) {
+      background: transparent;
+      border: 1px solid grey;
+      border-radius: 10px;
+      width: 90%;
+      color: #000;
+      flex-direction: column; /* Elemek egymás alá helyezése */
+      align-items: center;
+      margin: auto;
+      margin-top: 35vh;
+      height: 85%;
+      padding-top: 20px;
+
+      .shortpurpleline {
+        width: 125%;
+        transform: translate(7%, -75%);
+        position: fixed;
+        height: 25vh;
+        img {
+          height: 30vh;
+          width: auto;
+          transform: translateY(-5vh);
+          align-items: center;
+          margin-right: 100px;
+        }
+      }
+
+      .violin {
+        width: 70%;
+        padding-top: 10vh;
+        padding-bottom: 1vh;
+        text-align: center;
+        margin: auto;
+        height: 80%;
+      }
+    }
+  }
+
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100%); /* Teljesen balra */
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0); /* Eredeti helyére */
+      opacity: 1;
+    }
+  }
+  @media only screen and (max-width: 1080px) {
+    overflow: hidden;
+  }
+}
+
+.section-4 {
+  max-height: 1500px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  max-width: 1680px;
+  align-items: center;
+  margin: auto;
+  ul {
+    list-style-type: circle !important;
+  }
+  .plane_left {
+    left: 0;
+    width: 10vh;
+    height: auto;
+    position: fixed;
+  }
+
+  .plane_right {
+    margin-left: 80%;
+    width: 15vh;
+    height: auto;
+    position: relative;
+    transform: scaleX(-1); /* A kép vízszintesen tükrözve lesz */
+    overflow-x: hidden !important;
+  }
+
+  .orangebox {
+    align-items: center;
+    margin: auto;
+    background: linear-gradient(
+      to right,
+      $main-sixth-color,
+      $main-seventh-color
+    );
+    min-height: 25vh;
+    height: auto;
+    width: 70%;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    transform: translateY(10%);
+    opacity: 0;
+
+    /* Animáció alkalmazása */
+    animation: slideInUp 1.5s ease-out forwards;
+    animation-delay: 0s;
+
+    &.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    p {
+      padding: 50px;
+    }
+    .plane_left {
+      @extend .plane_left;
+      margin-top: -50px;
+    }
+  }
+
+  .bluebox {
+    background: linear-gradient(
+      to right,
+      $main-eighth-color,
+      $main-secondary-color
+    );
+    align-items: center;
+    margin: auto;
+    min-height: calc(110% + 5vh);
+    height: calc(110% + 5vh) !important;
+    width: 60%;
+    margin-top: 50px;
+    border-radius: 10px;
+    padding: 50px;
+
+    transform: translateY(10%);
+    opacity: 0;
+
+    /* Animáció alkalmazása */
+    animation: slideInUp 1.5s ease-out forwards;
+    animation-delay: 0s;
+
+    &.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    h3 {
+      margin-bottom: 30px;
+    }
+    li {
+      padding: 20px;
+      list-style: disc;
+    }
+  }
+
+  .smallbluebox {
+    background: linear-gradient(
+      to right,
+      $main-eighth-color,
+      $main-secondary-color
+    );
+    align-items: center;
+    margin: auto;
+    min-height: 100%;
+    height: 100% !important;
+    width: 70%;
+    margin-top: 50px;
+    border-radius: 10px;
+    text-align: center;
+    transform: translateY(10%);
+    opacity: 0;
+
+    /* Animáció alkalmazása */
+    animation: slideInUp 1.5s ease-out forwards;
+    animation-delay: 0s;
+
+    &.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    h3 {
+      padding: 10px;
+    }
+    p {
+      padding: 20px;
+    }
+  }
+
+  @keyframes slideInUp {
+    0% {
+      transform: translateY(10%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @media only screen and (max-width: 720px) {
+    img {
+      display: none;
+    }
+    .orangebox {
+      width: 90%;
+      p {
+        padding: 10px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+    }
+    .bluebox {
+      width: 90%;
+      h3 {
+        text-align: center;
+      }
+
+      li {
+        padding: 5px;
+      }
+    }
+    .smallbluebox {
+      width: 90%;
+      h3 {
+        padding-top: 45px;
+      }
+      p {
+        padding: 10px;
+        padding-bottom: 25px;
+      }
+      .plane_left {
+        margin-bottom: 50px;
+        width: 75px;
+      }
+    }
+  }
+}
+
+.section-5 {
+  background: linear-gradient(to right, $main-color, $main-secondary-color);
+  max-height: 1000vh;
+  min-height: auto;
+
+  h2 {
+    padding-top: 50px;
+    width: 350px;
+    text-align: center;
+    margin: auto;
+    z-index: 15;
+    margin-bottom: -125px;
+  }
+
+  .whitebox {
+    width: 90%;
+    max-width: 1920px;
+    min-height: 100%;
+    height: 100% !important;
+    background: white;
+    margin: auto;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+    mask: linear-gradient(to top, #fff 50%, transparent 40%),
+      linear-gradient(to bottom, #fff -10%, transparent -10%),
+      linear-gradient(to left, #fff 40%, transparent 400px),
+      linear-gradient(to right, #fff 10%, transparent 10%),
+      radial-gradient(circle 50px at 20% 50%, black 100%, transparent 100%);
+    mask-repeat: no-repeat;
+
+    -webkit-mask: linear-gradient(
+        to top,
+        #fff calc(100% - 5vh),
+        transparent calc(100% - 5vh)
+      ),
+      linear-gradient(to bottom, #fff -97%, transparent -97%),
+      linear-gradient(to left, #fff 40%, transparent 40%),
+      linear-gradient(to right, #fff 40%, transparent 40%);
+
+    .card_container {
+      width: 90%;
+      min-height: 100%;
+      height: 100% !important;
+      align-items: center;
+      margin: auto;
+      transform: translateY(8vh);
+      position: relative;
+      display: flex;
+      flex-wrap: wrap; // Törje a sorokat
+      padding-bottom: 100px;
+
+      .card {
+        height: 65vh;
+        width: 30vh;
+        background-color: lightgray;
+        border-radius: 10px;
+        margin: 15px;
+        display: inline-flex;
+        flex-direction: column; // A gyerek elemeket egymás alá helyezi
+        margin-bottom: 10px;
+
+        .top-half {
+          height: 50%; // Az elem felső fele
+          background-color: $main-seventh-color;
+          border-radius: 10px;
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+          }
+        }
+
+        .bottom-half {
+          height: 50%; // Az elem alsó fele
+          padding: 5px;
+          color: #000;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 720px) {
+    h2 {
+      margin-bottom: -75px;
+    }
+    .whitebox {
+      -webkit-mask: linear-gradient(to top, #fff 100%, transparent 100%);
+
+      .card_container {
+        align-items: center;
+        margin: auto;
+
+        .card {
+          justify-content: center;
+          margin: auto;
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}
+
+.section-profiles {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .image-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+
+    .overlay-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      opacity: 1 !important;
+
+      .overlay-text {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  // Ha az egész containeren van hover, akkor minden image-card elsötétül:
+  &:hover {
+    .image-card {
+      opacity: 0.3;
+    }
+
+    // De amelyiken konkrétan hover van, az marad világos
+    .image-card:hover {
+      opacity: 1 !important;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (max-width: 500px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

@@ -1,1 +1,91 @@
-<p>footer works!</p>
+<footer>
+  <div class="links">
+    <div>
+      <img
+        src="assets/images/Lisztkukac.webp"
+        alt="Lisztkukac - lisztium.com"
+        width="auto"
+        height="auto"
+      />
+      <a
+        href="assets/documents/Adatkezelési tájékoztató -Orestes - EN.pdf"
+        target="_blank"
+      >
+        <h6>Privacy Policy</h6>
+      </a>
+    </div>
+    <div>
+      <ul>
+        <li><h6>Pages</h6></li>
+        <li>
+          <a routerLink="/" (click)="scrollToTop()"> Home </a>
+        </li>
+        <li>
+          <a routerLink="/about" (click)="scrollToTop()"> About us </a>
+        </li>
+        <li>
+          <a routerLink="/services" (click)="scrollToTop()">
+            Schedule & Activities
+          </a>
+        </li>
+        <li>
+          <a (click)="scrollToEvents()" style="cursor: pointer"> Events </a>
+        </li>
+        <li>
+          <a routerLink="/gallery" (click)="scrollToTop()"> Gallery </a>
+        </li>
+        <li>
+          <a routerLink="/apply" (click)="scrollToTop()"> Application </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h6>Contact</h6>
+      <ul>
+        <li>
+          <a href="mailto:musicorestesgmail.com"> musicorestesgmail.com </a>
+        </li>
+        <li>4032 Debrecen Civis utca 12</li>
+        <li>
+          <div class="follow">
+            <h6>Follow us</h6>
+            <a
+              href="https://www.facebook.com/profile.php?id=61576024300627"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <img
+                src="assets/images/face.svg"
+                alt="Facebook - lisztium.com"
+                width="auto"
+                height="auto"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/lisztiummasterclass/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <img
+                src="assets/images/insta.svg"
+                alt="Instagram - lisztium.com"
+                width="auto"
+                height="auto"
+              />
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom">
+    <p>
+      <a href="https://net4yard.com" target="_blank" rel="noopener noreferrer">
+        Net4Yard
+      </a>
+      - We Make The Impossible Come True
+    </p>
+  </div>
+</footer>

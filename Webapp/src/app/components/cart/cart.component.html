@@ -1,1 +1,60 @@
-<p>cart works!</p>
+<section class="section-3">
+  <div class="section-3-div">
+    <h1>Shopping cart</h1>
+    <div class="container">
+      <div class="cart-container">
+        <!-- Ha üres a kosár -->
+        <div *ngIf="cartItems.length === 0" class="empty-cart">
+          <p>Your cart is empty</p>
+          <button routerLink="/services" class="continue-shopping-btn">
+            Continue Shopping
+          </button>
+        </div>
+
+        <!-- Ha van elem a kosárban -->
+        <div *ngIf="cartItems.length > 0">
+          <ul class="cart-items">
+            <li
+              *ngFor="let item of cartItems; trackBy: trackByCartItem"
+              class="cart-item"
+            >
+              <div class="item-details">
+                <h3>{{ item.name }}</h3>
+                <p class="item-price">{{ item.price }} ¥</p>
+              </div>
+              <div class="item-controls">
+                <div class="quantity-controls">
+                  <button
+                    (click)="decreaseQuantity(item)"
+                    [disabled]="item.quantity <= 1"
+                    class="quantity-btn"
+                  >
+                    -
+                  </button>
+                  <span class="quantity">{{ item.quantity }}</span>
+                  <button (click)="increaseQuantity(item)" class="quantity-btn">
+                    +
+                  </button>
+                </div>
+                <button (click)="removeItem(item)" class="remove-btn">
+                  Remove
+                </button>
+              </div>
+            </li>
+          </ul>
+
+          <div class="cart-summary">
+            <p class="total-price">Total: {{ totalPrice }} ¥</p>
+            <button
+              (click)="proceedToCheckout()"
+              class="checkout-btn"
+              [disabled]="isProcessing"
+            >
+              {{ isProcessing ? "Processing..." : "Buy" }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

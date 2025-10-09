@@ -1,1 +1,100 @@
-<p>navbar works!</p>
+<header class="header">
+  <nav class="navbar">
+    <div routerLink="/" class="nav-logo"></div>
+    <ul class="nav-menu" [class.active]="isMenuOpen">
+      <li class="nav-item">
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-link"
+          (click)="closeMenu()"
+        >
+          <img src="images/index.svg" alt="Index - lisztium.com" />
+          Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/about"
+          routerLinkActive="active"
+          class="nav-link"
+          (click)="closeMenu()"
+        >
+          <img src="images/about.svg" alt="About - lisztium.com" />
+          About us
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/services"
+          routerLinkActive="active"
+          class="nav-link"
+          (click)="closeMenu()"
+        >
+          <img src="images/services.svg" alt="Services - lisztium.com" />
+          Schedule & Activities
+        </a>
+      </li>
+      <li class="nav-item">
+        <a (click)="scrollToEvents()" class="nav-link" style="cursor: pointer">
+          <img src="images/event.svg" alt="Events - lisztium.com" />
+          Events
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/gallery"
+          routerLinkActive="active"
+          class="nav-link"
+          (click)="closeMenu()"
+        >
+          <img src="images/gallery.svg" alt="Gallery - lisztium.com" />
+          Gallery
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/apply"
+          routerLinkActive="active"
+          class="nav-link"
+          (click)="closeMenu()"
+        >
+          <img src="images/apply.svg" alt="Apply - lisztium.com" />
+          Application
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/cart"
+          routerLinkActive="active"
+          class="nav-link"
+          (click)="closeMenu()"
+        >
+          <img
+            src="images/icons8-shopping-cart-100.webp"
+            alt="Cart - lisztium.com"
+          />
+          <span
+            class="cart-count"
+            [style.display]="cartCount > 0 ? 'inline-block' : 'none'"
+          >
+            {{ cartCount }}
+          </span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/jp" class="nav-link" (click)="closeMenu()">
+          <img src="images/japan-flag.svg" alt="Japan - lisztium.com" />
+        </a>
+      </li>
+    </ul>
+    <div class="hamburger" (click)="toggleMenu()" [class.active]="isMenuOpen">
+      <div class="bar_container">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+</header>
