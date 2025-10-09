@@ -1,11 +1,4 @@
-$main-color: #019788;
-$main-secondary-color: #7286c0;
-$main-third-color: #8ee7a4;
-$main-fouth-color: #51b3d5;
-$main-fifth-color: #b659dc;
-$main-sixth-color: #f1be34;
-$main-seventh-color: #f2a859;
-$main-eighth-color: #79c7c1;
+@import "../../../styles.scss";
 
 body {
   overflow-x: hidden !important;
@@ -503,8 +496,6 @@ body {
       margin-bottom: -75px;
     }
     .whitebox {
-      -webkit-mask: linear-gradient(to top, #fff 100%, transparent 100%);
-
       .card_container {
         align-items: center;
         margin: auto;
