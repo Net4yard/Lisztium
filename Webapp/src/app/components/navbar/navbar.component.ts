@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule, NavigationEnd } from '@angular/router'; // ← Router import
+import { Router, RouterModule, NavigationEnd } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button'; // ← Material Button import
 import { CartService } from '../../services/cart.service';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
@@ -8,7 +9,7 @@ import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, MatButtonModule], // ← MatButtonModule hozzáadva
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
