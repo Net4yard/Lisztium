@@ -1,3 +1,5 @@
+<app-navbar></app-navbar>
+
 <section class="section-3">
   <div class="section-3-div">
     <h1>Shopping cart</h1>
@@ -6,7 +8,7 @@
         <!-- Ha üres a kosár -->
         <div *ngIf="cartItems.length === 0" class="empty-cart">
           <p>Your cart is empty</p>
-          <button routerLink="/services" class="continue-shopping-btn">
+          <button routerLink="/apply" class="continue-shopping-btn">
             Continue Shopping
           </button>
         </div>
@@ -45,16 +47,23 @@
 
           <div class="cart-summary">
             <p class="total-price">Total: {{ totalPrice }} ¥</p>
-            <button
-              (click)="proceedToCheckout()"
-              class="checkout-btn"
-              [disabled]="isProcessing"
-            >
-              {{ isProcessing ? "Processing..." : "Buy" }}
-            </button>
+            <div class="cart-actions">
+              <button (click)="clearCart()" class="clear-btn">
+                Clear Cart
+              </button>
+              <button
+                (click)="proceedToCheckout()"
+                class="checkout-btn"
+                [disabled]="isProcessing"
+              >
+                {{ isProcessing ? "Processing..." : "Proceed to Payment" }}
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<app-footer></app-footer>

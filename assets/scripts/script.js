@@ -156,43 +156,6 @@ function addToCart(id, name, price) {
 // Oldalbetöltéskor frissítse a kosár ikonját
 document.addEventListener("DOMContentLoaded", updateCartCount);
 
-// function updateCart() { // Uses global cart, prefer localStorage version if this is for general count
-//   const localCart = JSON.parse(localStorage.getItem("cart")) || [];
-//   document.getElementById("cart-count").innerText = localCart.length;
-// }
-
-// function showCart() { // Uses global cart, cart.html uses loadCart() which uses localStorage
-//   const cartList = document.getElementById("cart-items");
-//   cartList.innerHTML = "";
-//   let total = 0;
-//   const localCart = JSON.parse(localStorage.getItem("cart")) || [];
-
-//   localCart.forEach((item, index) => {
-//     total += item.price;
-//     let li = document.createElement("li");
-//     li.innerText = `${item.name} - ${item.price} ¥`;
-//     cartList.appendChild(li);
-//   });
-
-//   document.getElementById("cart-total").innerText = total; // Assumes #cart-total exists
-//   // document.getElementById("cart-modal").style.display = "block"; // For a modal, not cart.html page
-// }
-
-// function hideCart() { // For a modal
-//   // document.getElementById("cart-modal").style.display = "none";
-// }
-
-// async function checkout() { // This seems to be for a different payment system (Barion) and uses global cart
-//   const localCart = JSON.parse(localStorage.getItem("cart")) || [];
-//   const response = await fetch("/create-barion-payment", {
-//     method: "POST",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify({ cart: localCart }), // Send localStorage cart
-//   });
-//   const data = await response.json();
-//   window.location.href = data.paymentUrl;
-// }
-
 document.addEventListener("DOMContentLoaded", function () {
   let cardContainer = document.querySelector(".card_container ul");
 
@@ -349,35 +312,6 @@ document.addEventListener("DOMContentLoaded", function () {
     product.style.marginBottom = "10px";
   });
 });
-
-// document.getElementById('applicationForm').addEventListener('submit', function(event) {
-//   const email = document.getElementById('email').value;
-//   const age = document.getElementById('age').value;
-//   const consentPhotos = document.querySelector('input[name="consent-photos"]');
-//   let errors = [];
-
-//   // Email must contain @
-//   if (!email.includes('@')) {
-//     errors.push('Please enter a valid email address.');
-//   }
-
-//   // Age must be a number between 1 and 150
-//   if (!/^\d+$/.test(age)) {
-//     errors.push('Age must be a valid number.');
-//   } else if (parseInt(age) <= 0 || parseInt(age) > 150) {
-//     errors.push('Please enter a realistic age (1-150).');
-//   }
-
-//   // 2. checkbox kötelező
-//   if (!consentPhotos.checked) {
-//     errors.push('You must agree to the photo usage policy.');
-//   }
-
-//   if (errors.length > 0) {
-//     event.preventDefault();
-//     alert(errors.join('\n'));
-//   }
-// });
 
 async function validateForm(event) {
   event.preventDefault(); // Prevent default form submission

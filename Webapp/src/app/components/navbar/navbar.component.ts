@@ -64,4 +64,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
     }
     this.closeMenu();
   }
+
+  // Bármilyen komponensben lekérheted a totalt:
+  getTotalPrice(): number {
+    return this.cartService.getCartTotal();
+  }
 }

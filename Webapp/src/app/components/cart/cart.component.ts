@@ -1,12 +1,16 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { FooterComponent } from '../footer/footer.component';
 import { CartService } from '../../services/cart.service';
-// import { PaymentService } from '../../services/payment.service';
 import { CartItem } from '../../models/cart-item';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
+  standalone: true,
+  imports: [CommonModule, RouterModule, NavbarComponent, FooterComponent],
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss'],
 })
@@ -14,31 +18,30 @@ export class CartComponent implements OnInit, OnDestroy {
   cartItems: CartItem[] = [];
   totalPrice = 0;
   isProcessing = false;
+
   private cartSubscription?: Subscription;
 
-  constructor(
-    private cartService: CartService,
-    //private paymentService: PaymentService,
-    private router: Router
-  ) {}
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
     this.cartSubscription = this.cartService
       .getCartItems()
       .subscribe((items) => {
         this.cartItems = items;
-        this.calculateTotal();
+        this.totalPrice = this.cartService.getCartTotal();
       });
   }
 
   ngOnDestroy(): void {
-    if (this.cartSubscription) {
-      this.cartSubscription.unsubscribe();
-    }
+    this.cartSubscription?.unsubscribe();
   }
 
-  trackByCartItem(index: number, item: CartItem): string {
+  trackByCartItem(index: number, item: CartItem): number {
     return item.id;
+  }
+
+  removeItem(item: CartItem): void {
+    this.cartService.removeFromCart(item.id);
   }
 
   increaseQuantity(item: CartItem): void {
@@ -51,34 +54,45 @@ export class CartComponent implements OnInit, OnDestroy {
     }
   }
 
-  removeItem(item: CartItem): void {
-    this.cartService.removeFromCart(item.id);
-  }
-
-  private calculateTotal(): void {
-    this.totalPrice = this.cartItems.reduce(
-      (total, item) => total + item.price * item.quantity,
-      0
-    );
-  }
-
   async proceedToCheckout(): Promise<void> {
     if (this.cartItems.length === 0) {
+      alert('Your cart is empty!');
       return;
     }
 
     this.isProcessing = true;
 
     try {
-      // //const paymentUrl = await this.paymentService.createPayment(
-      //   this.cartItems
-      // );
-      // Átirányítás PayPal-hoz
-      //window.location.href = paymentUrl;
+      const checkoutItems = this.cartService.prepareCheckout();
+
+      const response = await fetch(
+        'https://lisztium-291825688948.europe-west1.run.app/pay',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ cart: checkoutItems }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (data.approval_url) {
+        window.location.href = data.approval_url;
+      } else {
+        console.error('Payment initiation failed:', data);
+        alert(data.error || 'Payment initiation failed. Please try again.');
+      }
     } catch (error) {
-      console.error('Payment error:', error);
-      alert('Payment failed. Please try again.');
+      console.error('Error during checkout:', error);
+      alert(
+        'An error occurred while trying to proceed to payment. Please check your connection and try again.'
+      );
+    } finally {
       this.isProcessing = false;
     }
+  }
+
+  clearCart(): void {
+    this.cartService.clearCart();
   }
 }

@@ -1,0 +1,283 @@
+@import "../../../styles.scss";
+
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: $main-color;
+  box-shadow: 0px 4px 10px rgba(73, 45, 22, 0.801);
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+  transition: all 0.5s ease-in-out;
+
+  &.visible {
+    display: block;
+  }
+
+  svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  &:hover {
+    background-color: $main-secondary-color;
+  }
+}
+
+.application-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    color: $main-color;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: $main-color;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $main-color;
+    }
+
+    &.ng-invalid.ng-touched {
+      border-color: #dc3545;
+    }
+  }
+
+  .checkbox-group {
+    margin: 1.5rem 0;
+
+    label {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      font-weight: 400;
+      font-size: 0.9rem;
+
+      input[type="checkbox"] {
+        width: auto;
+        margin-right: 0.5rem;
+        margin-top: 0.1rem;
+      }
+    }
+  }
+
+  .error {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: $main-color;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover:not(:disabled) {
+      background-color: $main-secondary-color;
+    }
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.requirement-item {
+  margin-bottom: 1rem;
+
+  h4 {
+    color: $main-color;
+    margin-bottom: 0.5rem;
+  }
+
+  h5 {
+    color: #666;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+}
+
+.cart {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: $main-color;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+
+  &:hover {
+    background-color: $main-secondary-color;
+  }
+
+  #cart-count {
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 3px 6px;
+    margin-left: 5px;
+  }
+}
+
+#cart-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-width: 500px;
+  width: 90%;
+
+  h2 {
+    color: $main-color;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+
+    li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      button {
+        background: #dc3545;
+        color: white;
+        border: none;
+        padding: 0.25rem 0.5rem;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 0.8rem;
+
+        &:hover {
+          background: #c82333;
+        }
+      }
+    }
+  }
+
+  button {
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+
+    &:first-of-type {
+      background-color: $main-color;
+      color: white;
+
+      &:hover {
+        background-color: $main-secondary-color;
+      }
+    }
+
+    &:last-of-type {
+      background-color: #6c757d;
+      color: white;
+
+      &:hover {
+        background-color: #5a6268;
+      }
+    }
+  }
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+
+  .product {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    h5 {
+      color: $main-color;
+      margin-bottom: 0.5rem;
+    }
+
+    h6 {
+      color: $main-secondary-color;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #666;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    button {
+      background-color: $main-color;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $main-secondary-color;
+      }
+    }
+  }
+}
