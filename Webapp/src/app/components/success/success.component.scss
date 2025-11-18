@@ -1,0 +1,28 @@
+.success-container {
+  background: linear-gradient(to right, #4caf50, #b659dc);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  min-height: 100vh;
+  padding: 2rem;
+
+  h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  .redirect-message {
+    color: white;
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+}

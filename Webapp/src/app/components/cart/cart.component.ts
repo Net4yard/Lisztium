@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
@@ -18,6 +18,7 @@ export class CartComponent implements OnInit, OnDestroy {
   cartItems: CartItem[] = [];
   totalPrice = 0;
   isProcessing = false;
+  showScrollButton = false;
 
   private cartSubscription?: Subscription;
 
@@ -34,6 +35,18 @@ export class CartComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.cartSubscription?.unsubscribe();
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll(): void {
+    this.showScrollButton = window.scrollY > 300;
+  }
+
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   }
 
   trackByCartItem(index: number, item: CartItem): number {

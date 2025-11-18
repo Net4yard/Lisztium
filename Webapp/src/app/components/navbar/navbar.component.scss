@@ -15,24 +15,27 @@ html {
 
 // Global list style reset
 ul {
-  list-style: none; // ← Ez távolítja el a pontokat
+  list-style: none;
   padding: 0;
   margin: 0;
 }
 
 li {
-  list-style: none; // ← Extra biztonság
+  list-style: none;
 }
 
 a {
   text-decoration: none;
-  padding-left: 5px; // ← 10px helyett 5px
-  padding-right: 5px; // ← 10px helyett 5px
+  padding-left: 5px;
+  padding-right: 5px;
   margin: 0;
 }
 
 .header {
-  border-bottom: 1px solid #e2e8f0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .navbar {
@@ -40,14 +43,32 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1.5rem;
-  background: linear-gradient(to right, $main-color, $main-secondary-color);
+
+  // Glassmorphism effect az eredeti színekkel
+  background: linear-gradient(
+    to right,
+    rgba($main-color, 0.95),
+    rgba($main-secondary-color, 0.95)
+  );
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+
   height: 50px;
   position: fixed;
-  overflow: hidden;
-  float: right;
   width: 100%;
   z-index: 999;
-  box-shadow: 0px 1px 20px black;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  // Scroll effect - kicsit átlátszóbb lesz
+  &.scrolled {
+    background: linear-gradient(
+      to right,
+      rgba($main-color, 0.98),
+      rgba($main-secondary-color, 0.98)
+    );
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
 
   .nav-menu {
     display: flex;
