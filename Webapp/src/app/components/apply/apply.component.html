@@ -1,0 +1,262 @@
+<app-navbar></app-navbar>
+
+<!-- Scroll to top button -->
+<button
+  class="scroll-to-top-btn"
+  (click)="scrollToTop()"
+  [class.visible]="showScrollButton"
+>
+  <svg fill="#ffffff" viewBox="0 0 330 330">
+    <path
+      d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394 l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393 C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z"
+    ></path>
+  </svg>
+</button>
+
+<!-- Section 1: Image Gallery Banner -->
+<section class="section-1">
+  <div class="section-1-div">
+    <div class="container">
+      <div class="wrapper">
+        <img
+          src="images/IMG_5840.webp"
+          alt="Pálfi Csaba - lisztium.com"
+          loading="eager"
+        />
+        <img
+          src="images/Haruka.webp"
+          alt="Nagao Haruka - lisztium.com"
+          loading="lazy"
+        />
+        <img
+          src="images/DSC_0456-images-61.webp"
+          alt="Pálfi Csaba - lisztium.com"
+          loading="lazy"
+        />
+        <img
+          src="images/veronika1.webp"
+          alt="Dr. Oross Veronika - lisztium.com"
+          loading="lazy"
+        />
+        <img
+          src="images/IMG_5851.webp"
+          alt="Pálfi Csaba - lisztium.com"
+          loading="lazy"
+        />
+        <img
+          src="images/balazs1.webp"
+          alt="Dr Réti Balázs - lisztium.com"
+          loading="lazy"
+        />
+        <img
+          src="images/IMG_5840.webp"
+          alt="Pálfi Csaba - lisztium.com"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 2: Welcome -->
+<section class="section-2">
+  <div class="section-2-div">
+    <div class="row">
+      <div class="column_left">
+        <img src="images/Lisztkukac.webp" alt="Lisztium Logo" />
+      </div>
+      <div class="column_right">
+        <h1>Welcome to the home of Lisztium masterclasses!</h1>
+        <p>
+          If the world of Lisztium touched your heart and you feel you'd like to
+          become part of this unique musical community, don't hesitate! Whether
+          you're just beginning your musical journey or already an experienced
+          musician, you'll find your place with us. Fill out the application
+          form and open the door to a world where music is not just about
+          learning—but about experience, community, and inspiration.<br /><br />
+          🎵 Join us—and let the sounds guide you!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 4: Audition Requirements & Application Form -->
+<section class="section-4">
+  <div class="section-4-div">
+    <div class="orangebox">
+      <h3>Participant selection will be through video auditions.</h3>
+      <div
+        *ngFor="let requirement of auditionRequirements"
+        class="requirement-item"
+      >
+        <h4>{{ requirement.title }}</h4>
+        <h5>{{ requirement.description }}</h5>
+        <br />
+      </div>
+    </div>
+  </div>
+
+  <form
+    class="application-form"
+    [formGroup]="applicationForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <h2>Personal Information</h2>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" formControlName="name" required />
+    <div
+      *ngIf="
+        applicationForm.get('name')?.invalid &&
+        applicationForm.get('name')?.touched
+      "
+      class="error"
+    >
+      Name is required
+    </div>
+
+    <label for="email">E-mail address:</label>
+    <input type="email" id="email" formControlName="email" required />
+    <div
+      *ngIf="
+        applicationForm.get('email')?.invalid &&
+        applicationForm.get('email')?.touched
+      "
+      class="error"
+    >
+      Valid email is required
+    </div>
+
+    <label for="instrument">Instrument:</label>
+    <select id="instrument" formControlName="instrument" required>
+      <option value="">-- Please select --</option>
+      <option *ngFor="let instrument of instruments" [value]="instrument">
+        {{ instrument }}
+      </option>
+    </select>
+    <div
+      *ngIf="
+        applicationForm.get('instrument')?.invalid &&
+        applicationForm.get('instrument')?.touched
+      "
+      class="error"
+    >
+      Please select an instrument
+    </div>
+
+    <label for="plusone">Optional plus one class:</label>
+    <select id="plusone" formControlName="plusone" required>
+      <option value="">-- Please select --</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" formControlName="age" required />
+    <div
+      *ngIf="
+        applicationForm.get('age')?.invalid &&
+        applicationForm.get('age')?.touched
+      "
+      class="error"
+    >
+      Age is required
+    </div>
+
+    <label for="school">Current school/institution:</label>
+    <input type="text" id="school" formControlName="school" />
+
+    <label for="videolinks">Video links for audition:</label>
+    <textarea id="videolinks" formControlName="videolinks" rows="5"></textarea>
+
+    <div class="checkbox-group">
+      <label>
+        <input type="checkbox" formControlName="consent1" />
+        I hereby consent to the processing of my personal information by the
+        Organizers for the sake of organizing the master class in accordance
+        with Privacy Policy Guideline.
+      </label>
+      <label>
+        <input type="checkbox" formControlName="consent2" required />
+        I hereby consent to the taking and usage of photos made during the
+        master class by the Organizers in accordance with the Privacy Policy
+        Guideline.
+      </label>
+      <label>
+        <input type="checkbox" formControlName="consent3" />
+        I hereby declare that I have read, understood and accept the Privacy
+        Policy Guideline for this event.
+      </label>
+    </div>
+
+    <button
+      type="submit"
+      class="submit-btn"
+      [disabled]="applicationForm.invalid"
+    >
+      Submit
+    </button>
+  </form>
+</section>
+
+<!-- Section 3: Application Info -->
+<section class="section-3">
+  <div class="section-3-div">
+    <div class="purpleline">
+      <div class="violin">
+        <h4>Application</h4>
+        <p>
+          Please choose the event and type of package you would like to apply
+          for and fill out the forms below to apply.
+        </p>
+      </div>
+      <div class="shortpurpleline">
+        <img src="images/lisztium_violin.webp" alt="Violin" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 5: Products -->
+<section class="section-5">
+  <h1 class="product">Music Education Courses</h1>
+  <div class="section-5-div">
+    <div id="products">
+      <div
+        *ngFor="let product of products"
+        class="product"
+        [attr.data-id]="product.id"
+        [attr.data-name]="product.name"
+        [attr.data-price]="product.price"
+      >
+        <h5>{{ product.name }}</h5>
+        <h6>{{ product.price }}¥</h6>
+        <p>{{ product.description }}</p>
+        <button (click)="addToCart(product)">Add to cart</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart" (click)="showCart()">
+    Cart <span id="cart-count">{{ cartCount }}</span>
+  </div>
+
+  <div id="cart-modal" [style.display]="cartVisible ? 'block' : 'none'">
+    <h2>Cart</h2>
+    <ul id="cart-items">
+      <li *ngFor="let item of cartItems">
+        {{ item.name }} - {{ item.price }}¥
+        <button (click)="removeFromCart(item.id)">Remove</button>
+      </li>
+    </ul>
+    <p>
+      Total: <span id="cart-total">{{ cartTotal }}</span
+      >¥
+    </p>
+    <button (click)="checkout()">Pay</button>
+    <button (click)="hideCart()">Close</button>
+  </div>
+</section>
+
+<app-footer></app-footer>

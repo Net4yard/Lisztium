@@ -1,0 +1,150 @@
+$main-color: #79c7c1;
+$main-secondary-color: #7286c0;
+
+footer {
+  background: linear-gradient(to right, $main-color, $main-secondary-color);
+  height: auto;
+  text-align: center;
+  color: white;
+  text-decoration: none !important;
+  border-radius: 10px 10px 0 0;
+
+  img {
+    width: 40%;
+    height: auto;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+  }
+
+  .links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: left;
+    padding: 25px;
+    text-decoration: none !important;
+
+    // ← CONTACT RÉSZ JOBBRA IGAZÍTÁSA
+    .contact {
+      text-align: right !important; // ← Jobbra igazítás
+      justify-self: end; // ← Grid cellában jobbra
+
+      h6 {
+        text-align: right; // ← Cím is jobbra
+      }
+
+      ul {
+        text-align: right; // ← Lista jobbra
+
+        li {
+          text-align: right; // ← Lista elemek jobbra
+
+          .follow {
+            margin-left: auto; // ← Follow box jobbra
+            margin-right: 0;
+            text-align: center !important; // ← Follow box tartalma középre
+          }
+        }
+      }
+    }
+
+    ul {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      text-decoration: none !important;
+
+      li {
+        padding: 5px;
+        text-decoration: none !important;
+        list-style: none !important;
+
+        .follow {
+          background-color: #fff;
+          width: 300px;
+          height: 130px;
+          border-radius: 10px;
+          text-align: center;
+          justify-content: center;
+          vertical-align: middle;
+          text-decoration: none;
+
+          h6 {
+            color: $main-secondary-color;
+            text-decoration: none !important;
+            text-align: center !important;
+          }
+
+          img {
+            width: 75px;
+            height: 75px;
+            background: linear-gradient(to right bottom, #004aad, #b659dc);
+            border-radius: 50%;
+            margin: 10px;
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  // Minden link stílus felülírása
+  a {
+    color: white !important;
+    text-decoration: none !important; // ← Link aláhúzás eltávolítása
+
+    &:hover {
+      text-decoration: none !important; // ← Hover állapotban is
+      color: rgba(255, 255, 255, 0.8); // ← Hover effekt színváltozás
+    }
+
+    &:visited {
+      text-decoration: none !important; // ← Meglátogatott linkek
+      color: white !important;
+    }
+
+    &:focus {
+      text-decoration: none !important; // ← Focus állapot
+    }
+
+    &:active {
+      text-decoration: none !important; // ← Aktív állapot
+    }
+  }
+
+  .bottom {
+    display: grid;
+    align-items: end;
+    justify-items: center;
+  }
+
+  @media screen and (max-width: 850px) {
+    .links {
+      grid-template-columns: repeat(1, 1fr);
+
+      // ← MOBIL NÉZETBEN KÖZÉPRE
+      .contact {
+        text-align: center !important; // ← Mobil: középre
+        justify-self: center;
+
+        ul {
+          text-align: center;
+
+          li {
+            text-align: center;
+
+            .follow {
+              margin: auto; // ← Mobil: középre
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Global overrides footer-en belül
+footer * {
+  text-decoration: none !important; // ← Minden elem a footerben
+  list-style: none !important; // ← Minden lista a footerben
+}

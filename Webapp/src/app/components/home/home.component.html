@@ -1,0 +1,281 @@
+<app-navbar></app-navbar>
+
+<!-- Scroll to top button -->
+<button
+  class="scroll-to-top-btn"
+  (click)="scrollToTop()"
+  [class.visible]="showScrollButton"
+>
+  <svg fill="#ffffff" viewBox="0 0 330 330">
+    <path
+      d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394 l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393 C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z"
+    ></path>
+  </svg>
+</button>
+
+<!-- Section 1: Image Gallery -->
+<section class="section-1">
+  <div class="section-1-div">
+    <div class="container">
+      <div class="wrapper">
+        <img
+          src="images/IMG_5840.webp"
+          alt="Pálfi Csaba - lisztium.com"
+          loading="eager"
+        />
+        <img
+          src="images/Haruka.webp"
+          alt="Nagao Haruka - lisztium.com"
+          loading="lazy"
+        />
+        <img
+          src="images/DSC_0456-images-61.webp"
+          alt="Pálfi Csaba - lisztium.com"
+          loading="lazy"
+        />
+        <img
+          src="images/veronika1.webp"
+          alt="Dr. Oross Veronika - lisztium.com"
+          loading="lazy"
+        />
+        <img
+          src="images/IMG_5851.webp"
+          alt="Pálfi Csaba - lisztium.com"
+          loading="lazy"
+        />
+        <img
+          src="images/balazs1.webp"
+          alt="Dr Réti Balázs - lisztium.com"
+          loading="lazy"
+        />
+        <img
+          src="images/IMG_5840.webp"
+          alt="Pálfi Csaba - lisztium.com"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 2: Welcome -->
+<section class="section-2">
+  <div class="section-2-div">
+    <div class="row">
+      <div class="column_left">
+        <img
+          src="images/Lisztkukac.webp"
+          alt="Lisztkukac - lisztium.com"
+          loading="eager"
+        />
+      </div>
+      <div class="column_right">
+        <h1>Welcome to the home of Lisztium masterclasses!</h1>
+        <p>
+          These masterclasses are for those who want to deepen their knowledge
+          of music, and learned from established, well-known musicians. Lisztium
+          is a community where a passion for music and a thirst for learning
+          come together to unite Japanese and Hungarian cultures through the
+          power of music.<br /><br />
+          Discover the beauty of keyboard and string instruments, where melody
+          and harmony come together. From grand pianos to violins, each
+          instrument offers a unique sound and character.<br /><br />
+          Explore the rich tones of woodwind and brass wind instruments, where
+          breath and technique create captivating melodies. From elegant flutes,
+          clarinets to trumpets, each instrument brings its own distinct voice
+          to the ensemble. Woodwind and brass wind instruments bring a rich and
+          dynamic sound to orchestras, bands, and solo performances.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section Profiles -->
+<section class="section-profiles">
+  <div class="image-card">
+    <a routerLink="/profile/balazs">
+      <img src="images/balazs7main.webp" alt="Réti Balázs - Lisztium" />
+      <div class="overlay-text">Balázs Réti</div>
+    </a>
+  </div>
+  <div class="image-card">
+    <a routerLink="/profile/csaba">
+      <img src="images/csabamain.webp" alt="Pálfi Csaba - Lisztium" />
+      <div class="overlay-text">Csaba Pálfi</div>
+    </a>
+  </div>
+  <div class="image-card">
+    <a routerLink="/profile/haruka">
+      <img src="images/Haruka_2main.webp" alt="Haruka Nagao - Lisztium" />
+      <div class="overlay-text">Haruka Nagao</div>
+    </a>
+  </div>
+  <div class="image-card">
+    <a routerLink="/profile/veronika">
+      <img src="images/veronikamain.webp" alt="Dr. Oross Veronika - Lisztium" />
+      <div class="overlay-text">Dr. Veronika Oross</div>
+    </a>
+  </div>
+</section>
+
+<!-- Background Notes -->
+<div class="notes">
+  <div class="background-notes" #notesContainer>
+    <i class="note"></i>
+    <i class="note"></i>
+    <i class="note"></i>
+  </div>
+</div>
+
+<!-- Section 3: Instruments -->
+<section class="section-3" #section3>
+  <div class="greenline" [class.visible]="greenlineVisible">
+    <div class="shortgreenline">
+      <img
+        src="images/lisztium_piano.webp"
+        alt="Piano - lisztium.com"
+        loading="lazy"
+      />
+    </div>
+    <div class="piano">
+      <h4>Keyboard and String instruments</h4>
+      <p>
+        Keyboard and string instruments have shaped the history of music,
+        bringing emotion and depth to countless compositions. From the delicate
+        tones of a violin to the powerful chords of a grand piano, these
+        instruments offer endless possibilities for musicians. Whether you
+        prefer classical elegance or modern versatility, keyboard and string
+        instruments provide the perfect foundation for musical creativity.
+      </p>
+    </div>
+  </div>
+  <div class="purpleline" [class.visible]="purplelineVisible">
+    <div class="violin">
+      <h4>Woodwind and Brasswind instruments</h4>
+      <p>
+        From the sooth melodies of the flute to the powerful sound of the
+        trumpet, woodwind and brass instruments add character and expression to
+        any musical composition. Whether you're working in classical or
+        contemporary music, these instruments offer endless variety and depth.
+        Their distinct timbres and incredible soundscapes make them essential
+        for creating compelling, emotional musical experiences.
+      </p>
+    </div>
+    <div class="shortpurpleline">
+      <img
+        src="images/lisztium_flute.webp"
+        alt="Flute - lisztium.com"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- Section 4: What We Offer -->
+<section class="section-4">
+  <div class="orangebox">
+    <p>
+      At Lisztium Masterclasses, music is not just a subject — it's an
+      experience that enriches our everyday lives and allows us to express our
+      creative selves. If you're an experienced musician looking to further
+      develop your skills, you're in the right place. Let the doors of Lisztium
+      Masterclasses open for you, and step into the realm of sound — where
+      melodies lift you on wings, and harmonies warm your soul. Here, you don't
+      just learn instruments — you nurture a lifelong passion.
+    </p>
+    <img
+      class="plane_left"
+      src="images/plane.webp"
+      alt="Plane - lisztium.com"
+      loading="lazy"
+    />
+  </div>
+  <div class="bluebox">
+    <h3>What We Offer</h3>
+    <ul>
+      <li>
+        <b>Individual attention: </b>We believe that every student is unique,
+        which is why our lessons are tailored to your pace. Whether you're
+        passionate about classical music or drawn to modern rhythms, you'll find
+        your place here. Lisztium Music School is not just a school—it's a
+        community where a shared love of music connects us all.
+      </li>
+      <li>
+        <b>Friendly environment: </b>A place where making mistakes is part of
+        the joy, because for us, learning is not stressful—it's an inspiring and
+        motivating journey. Our teachers are dedicated masters of music who
+        share not only their knowledge but also their hearts and souls. With
+        their guidance, you'll explore the hidden paths of music, set your
+        creativity free, and unlock your full potential.
+      </li>
+      <li>
+        <b>Professional support: </b>In addition to our passion for music, we
+        offer years of professional experience to help you develop both your
+        technique and artistic expression. Visit us and discover your inner
+        musical potential! Let the sounds guide you, and let music become the
+        meaning of your life.
+      </li>
+    </ul>
+    <img
+      class="plane_right"
+      src="images/plane.webp"
+      alt="Plane - lisztium.com"
+      loading="lazy"
+    />
+  </div>
+  <div class="smallbluebox">
+    <img
+      class="plane_left"
+      src="images/plane.webp"
+      alt="Plane - lisztium.com"
+      loading="lazy"
+    />
+    <h3>Why Choose Us?</h3>
+    <p>
+      Lisztium is more than music education—it's a community where the love of
+      music brings us together. Whether it's classical pieces, modern melodies,
+      or creating your own style, we'll help you get closer to your dreams.
+      Let's discover the joy of music together! Get in touch with us and begin
+      this special journey side by side.
+    </p>
+  </div>
+</section>
+
+<!-- Section 5: Events -->
+<section class="section-5" id="Events">
+  <div class="semiovalbottom"></div>
+  <h2>Events</h2>
+  <div class="whitebox">
+    <div class="card_container">
+      <div class="card">
+        <a routerLink="/services">
+          <div class="top-half">
+            <img
+              src="images/Heisei.webp"
+              alt="Heisei - lisztium.com"
+              loading="lazy"
+            />
+          </div>
+          <div class="bottom-half">
+            <h6>Lisztium in Kumamoto 2025</h6>
+            <h6>Date:</h6>
+            <p>2025 August 19th-23th</p>
+            <h6>Venue:</h6>
+            <p>Heisei College of Music, Kumamoto</p>
+            <h6>Content:</h6>
+            <p>Audition to participate at the event</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="semiovaltop"></div>
+</section>
+
+<!-- Section 6: Empty section for spacing -->
+<section class="section-6">
+  <div class="card_container"></div>
+</section>
+
+<app-footer></app-footer>

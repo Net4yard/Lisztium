@@ -1,0 +1,248 @@
+$main-color: #019788;
+$main-secondary-color: #4f68b0;
+$main-sixth-color: #f1be34;
+$main-seventh-color: #f2a859;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+// Global list style reset
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 0;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+
+  // Glassmorphism effect az eredeti színekkel
+  background: linear-gradient(
+    to right,
+    rgba($main-color, 0.95),
+    rgba($main-secondary-color, 0.95)
+  );
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  // Scroll effect - kicsit átlátszóbb lesz
+  &.scrolled {
+    background: linear-gradient(
+      to right,
+      rgba($main-color, 0.98),
+      rgba($main-secondary-color, 0.98)
+    );
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem; // ← 1rem helyett 0.5rem
+    list-style: none; // ← Itt is, specifikusan a nav-menu-ra
+
+    @media only screen and (max-width: 850px) {
+      position: fixed;
+      left: -100%;
+      flex-direction: column;
+      top: 5vh;
+      width: 100%;
+      border-radius: 5px;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+      background: linear-gradient(to right, $main-color, $main-secondary-color);
+      a {
+        font-size: 1.3rem;
+      }
+    }
+
+    &.active {
+      left: 0;
+    }
+
+    .nav-item {
+      margin: 0.5rem 0; // ← 1rem helyett 0.5rem (vertical spacing)
+      list-style: none; // ← Specifikusan minden nav-item-re
+
+      .nav-link {
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: white;
+        margin-right: 10px; // ← 20px helyett 10px
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        padding: 5px 8px; // ← Specifikus padding a linkekre
+
+        img {
+          height: 35px;
+          vertical-align: middle;
+          margin-right: 5px;
+        }
+
+        @media only screen and (max-width: 1440px) {
+          font-size: 1rem;
+          img {
+            height: 30px;
+          }
+        }
+
+        @media only screen and (max-width: 1080px) {
+          font-size: 0.7rem;
+          img {
+            height: 25px;
+          }
+        }
+
+        @media only screen and (max-width: 850px) {
+          font-size: 1.3rem;
+          justify-content: center; // ← Mobile-on középre
+          img {
+            height: 35px;
+          }
+        }
+
+        &:hover,
+        &:active {
+          color: $main-seventh-color;
+          font-size: 1.4rem;
+          transition: all 0.3s;
+          img {
+            height: 37px;
+            transition: all 0.3s;
+          }
+
+          @media only screen and (max-width: 1440px) {
+            font-size: 1.1rem;
+            img {
+              height: 32px;
+            }
+          }
+
+          @media only screen and (max-width: 1080px) {
+            font-size: 0.8rem;
+            img {
+              height: 27px;
+            }
+          }
+
+          @media only screen and (max-width: 850px) {
+            font-size: 1.4rem;
+            img {
+              height: 37px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .nav-logo {
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: white;
+  }
+}
+
+.hamburger {
+  display: none;
+
+  &.active {
+    .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .bar:nth-child(1) {
+      transform: translateY(1.3vh) rotate(45deg);
+      margin-top: 1vh;
+    }
+
+    .bar:nth-child(3) {
+      transform: translateY(-1.3vh) rotate(-45deg);
+      margin-top: 1vh;
+    }
+  }
+
+  @media only screen and (max-width: 850px) {
+    position: absolute;
+    display: flex;
+    cursor: pointer;
+    left: 10px;
+  }
+
+  .bar_container {
+    background-color: white;
+    border-radius: 5px;
+    width: 5vh;
+    height: 5vh;
+    .bar {
+      display: flex;
+      width: 25px;
+      height: 0.3vh;
+      margin: 5px auto;
+      transition: all 0.3s ease-in-out;
+      background-color: #101010;
+      margin-top: 1vh;
+    }
+  }
+}
+
+#apply {
+  @extend .nav-link;
+  padding: 10px;
+  border-radius: 10px;
+  background: linear-gradient(to right, $main-sixth-color, $main-seventh-color);
+
+  &:hover {
+    color: $main-secondary-color !important;
+  }
+}
+
+#cart-count {
+  background: red;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 3px 3px;
+  position: relative;
+  top: 8px;
+  right: 12px;
+  display: none;
+}
